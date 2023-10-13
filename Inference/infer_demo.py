@@ -11,9 +11,9 @@ class Inference():
     def infer(self, image_path):
 
         custom_ocr=PaddleOCR(use_angle_cls=True,
-                            rec_model_dir="recognition_infer_pdmodel_acc92",
-                            det_model_dir="detection_infer_pdmodel_hmean0.80\\Student1",
-                            rec_char_dict_path="PaddleOCR\\ppocr\\utils\\en_dict.txt",
+                            rec_model_dir="Retrained_model\\rec\\rec_infer_pdmodel_acc92",
+                            det_model_dir="Retrained_model\\det\\det_infer_pdmodel_hmean0.80\\Student",
+                            rec_char_dict_path="en_dict.txt",
                             use_gpu=True)
 
         ocr = PaddleOCR(use_angle_cls=True, lang="en")
