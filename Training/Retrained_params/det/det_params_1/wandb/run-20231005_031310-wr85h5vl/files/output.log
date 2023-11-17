@@ -1,0 +1,248 @@
+[2023/10/05 03:13:16] ppocr INFO: Architecture :
+[2023/10/05 03:13:16] ppocr INFO:     Models :
+[2023/10/05 03:13:16] ppocr INFO:         Student :
+[2023/10/05 03:13:16] ppocr INFO:             Backbone :
+[2023/10/05 03:13:16] ppocr INFO:                 disable_se : True
+[2023/10/05 03:13:16] ppocr INFO:                 model_name : large
+[2023/10/05 03:13:16] ppocr INFO:                 name : MobileNetV3
+[2023/10/05 03:13:16] ppocr INFO:                 scale : 0.5
+[2023/10/05 03:13:16] ppocr INFO:             Head :
+[2023/10/05 03:13:16] ppocr INFO:                 k : 50
+[2023/10/05 03:13:16] ppocr INFO:                 name : DBHead
+[2023/10/05 03:13:16] ppocr INFO:             Neck :
+[2023/10/05 03:13:16] ppocr INFO:                 name : RSEFPN
+[2023/10/05 03:13:16] ppocr INFO:                 out_channels : 96
+[2023/10/05 03:13:16] ppocr INFO:                 shortcut : True
+[2023/10/05 03:13:16] ppocr INFO:             Transform : None
+[2023/10/05 03:13:16] ppocr INFO:             algorithm : DB
+[2023/10/05 03:13:16] ppocr INFO:             model_type : det
+[2023/10/05 03:13:16] ppocr INFO:             pretrained : None
+[2023/10/05 03:13:16] ppocr INFO:         Student2 :
+[2023/10/05 03:13:16] ppocr INFO:             Backbone :
+[2023/10/05 03:13:16] ppocr INFO:                 disable_se : True
+[2023/10/05 03:13:16] ppocr INFO:                 model_name : large
+[2023/10/05 03:13:16] ppocr INFO:                 name : MobileNetV3
+[2023/10/05 03:13:16] ppocr INFO:                 scale : 0.5
+[2023/10/05 03:13:16] ppocr INFO:             Head :
+[2023/10/05 03:13:16] ppocr INFO:                 k : 50
+[2023/10/05 03:13:16] ppocr INFO:                 name : DBHead
+[2023/10/05 03:13:16] ppocr INFO:             Neck :
+[2023/10/05 03:13:16] ppocr INFO:                 name : RSEFPN
+[2023/10/05 03:13:16] ppocr INFO:                 out_channels : 96
+[2023/10/05 03:13:16] ppocr INFO:                 shortcut : True
+[2023/10/05 03:13:16] ppocr INFO:             Transform : None
+[2023/10/05 03:13:16] ppocr INFO:             algorithm : DB
+[2023/10/05 03:13:16] ppocr INFO:             model_type : det
+[2023/10/05 03:13:16] ppocr INFO:             pretrained : None
+[2023/10/05 03:13:16] ppocr INFO:         Teacher :
+[2023/10/05 03:13:16] ppocr INFO:             Backbone :
+[2023/10/05 03:13:16] ppocr INFO:                 in_channels : 3
+[2023/10/05 03:13:16] ppocr INFO:                 layers : 50
+[2023/10/05 03:13:16] ppocr INFO:                 name : ResNet_vd
+[2023/10/05 03:13:16] ppocr INFO:             Head :
+[2023/10/05 03:13:16] ppocr INFO:                 k : 50
+[2023/10/05 03:13:16] ppocr INFO:                 kernel_list : [7, 2, 2]
+[2023/10/05 03:13:16] ppocr INFO:                 name : DBHead
+[2023/10/05 03:13:16] ppocr INFO:             Neck :
+[2023/10/05 03:13:16] ppocr INFO:                 name : LKPAN
+[2023/10/05 03:13:16] ppocr INFO:                 out_channels : 256
+[2023/10/05 03:13:16] ppocr INFO:             algorithm : DB
+[2023/10/05 03:13:16] ppocr INFO:             freeze_params : True
+[2023/10/05 03:13:16] ppocr INFO:             model_type : det
+[2023/10/05 03:13:16] ppocr INFO:             return_all_feats : False
+[2023/10/05 03:13:16] ppocr INFO:     algorithm : Distillation
+[2023/10/05 03:13:16] ppocr INFO:     model_type : det
+[2023/10/05 03:13:16] ppocr INFO:     name : DistillationModel
+[2023/10/05 03:13:16] ppocr INFO: Eval :
+[2023/10/05 03:13:16] ppocr INFO:     dataset :
+[2023/10/05 03:13:16] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/evaluate_data/Detection/data1/images
+[2023/10/05 03:13:16] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/evaluate_data/Detection/data1/label.txt']
+[2023/10/05 03:13:16] ppocr INFO:         name : SimpleDataSet
+[2023/10/05 03:13:16] ppocr INFO:         transforms :
+[2023/10/05 03:13:16] ppocr INFO:             DecodeImage :
+[2023/10/05 03:13:16] ppocr INFO:                 channel_first : False
+[2023/10/05 03:13:16] ppocr INFO:                 img_mode : BGR
+[2023/10/05 03:13:16] ppocr INFO:             DetLabelEncode : None
+[2023/10/05 03:13:16] ppocr INFO:             DetResizeForTest : None
+[2023/10/05 03:13:16] ppocr INFO:             NormalizeImage :
+[2023/10/05 03:13:16] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2023/10/05 03:13:16] ppocr INFO:                 order : hwc
+[2023/10/05 03:13:16] ppocr INFO:                 scale : 1./255.
+[2023/10/05 03:13:16] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2023/10/05 03:13:16] ppocr INFO:             ToCHWImage : None
+[2023/10/05 03:13:16] ppocr INFO:             KeepKeys :
+[2023/10/05 03:13:16] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2023/10/05 03:13:16] ppocr INFO:     loader :
+[2023/10/05 03:13:16] ppocr INFO:         batch_size_per_card : 1
+[2023/10/05 03:13:16] ppocr INFO:         drop_last : False
+[2023/10/05 03:13:16] ppocr INFO:         num_workers : 2
+[2023/10/05 03:13:16] ppocr INFO:         shuffle : False
+[2023/10/05 03:13:16] ppocr INFO: Global :
+[2023/10/05 03:13:16] ppocr INFO:     amp_dtype : bfloat16
+[2023/10/05 03:13:16] ppocr INFO:     cal_metric_during_train : False
+[2023/10/05 03:13:16] ppocr INFO:     calc_metric_during_train : True
+[2023/10/05 03:13:16] ppocr INFO:     checkpoints : None
+[2023/10/05 03:13:16] ppocr INFO:     d2s_train_image_shape : [3, -1, -1]
+[2023/10/05 03:13:16] ppocr INFO:     debug : False
+[2023/10/05 03:13:16] ppocr INFO:     distributed : False
+[2023/10/05 03:13:16] ppocr INFO:     epoch_num : 100
+[2023/10/05 03:13:16] ppocr INFO:     eval_batch_step : [0, 100]
+[2023/10/05 03:13:16] ppocr INFO:     infer_img : doc/imgs_en/img_10.jpg
+[2023/10/05 03:13:16] ppocr INFO:     log_smooth_window : 20
+[2023/10/05 03:13:16] ppocr INFO:     pretrained_model : /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_det_ppocr_v3.pdparams
+[2023/10/05 03:13:16] ppocr INFO:     print_batch_step : 10
+[2023/10/05 03:13:16] ppocr INFO:     save_epoch_step : 100
+[2023/10/05 03:13:16] ppocr INFO:     save_inference_dir : None
+[2023/10/05 03:13:16] ppocr INFO:     save_model_dir : ./output/ch_PP-OCR_v3_det_05102023_v2/
+[2023/10/05 03:13:16] ppocr INFO:     save_res_path : ./checkpoints/det_db/predicts_db_ppocrv3_05102023_ppocrv3_v2.txt
+[2023/10/05 03:13:16] ppocr INFO:     use_gpu : True
+[2023/10/05 03:13:16] ppocr INFO:     use_visualdl : False
+[2023/10/05 03:13:16] ppocr INFO: Loss :
+[2023/10/05 03:13:16] ppocr INFO:     loss_config_list :
+[2023/10/05 03:13:16] ppocr INFO:         DistillationDilaDBLoss :
+[2023/10/05 03:13:16] ppocr INFO:             alpha : 5
+[2023/10/05 03:13:16] ppocr INFO:             balance_loss : True
+[2023/10/05 03:13:16] ppocr INFO:             beta : 10
+[2023/10/05 03:13:16] ppocr INFO:             key : maps
+[2023/10/05 03:13:16] ppocr INFO:             main_loss_type : DiceLoss
+[2023/10/05 03:13:16] ppocr INFO:             model_name_pairs : [['Student', 'Teacher'], ['Student2', 'Teacher']]
+[2023/10/05 03:13:16] ppocr INFO:             ohem_ratio : 3
+[2023/10/05 03:13:16] ppocr INFO:             weight : 1.0
+[2023/10/05 03:13:16] ppocr INFO:         DistillationDMLLoss :
+[2023/10/05 03:13:16] ppocr INFO:             key : maps
+[2023/10/05 03:13:16] ppocr INFO:             maps_name : thrink_maps
+[2023/10/05 03:13:16] ppocr INFO:             model_name_pairs : ['Student', 'Student2']
+[2023/10/05 03:13:16] ppocr INFO:             weight : 1.0
+[2023/10/05 03:13:16] ppocr INFO:         DistillationDBLoss :
+[2023/10/05 03:13:16] ppocr INFO:             alpha : 5
+[2023/10/05 03:13:16] ppocr INFO:             balance_loss : True
+[2023/10/05 03:13:16] ppocr INFO:             beta : 10
+[2023/10/05 03:13:16] ppocr INFO:             main_loss_type : DiceLoss
+[2023/10/05 03:13:16] ppocr INFO:             model_name_list : ['Student', 'Student2']
+[2023/10/05 03:13:16] ppocr INFO:             ohem_ratio : 3
+[2023/10/05 03:13:16] ppocr INFO:             weight : 1.0
+[2023/10/05 03:13:16] ppocr INFO:     name : CombinedLoss
+[2023/10/05 03:13:16] ppocr INFO: Metric :
+[2023/10/05 03:13:16] ppocr INFO:     base_metric_name : DetMetric
+[2023/10/05 03:13:16] ppocr INFO:     key : Student
+[2023/10/05 03:13:16] ppocr INFO:     main_indicator : hmean
+[2023/10/05 03:13:16] ppocr INFO:     name : DistillationMetric
+[2023/10/05 03:13:16] ppocr INFO: Optimizer :
+[2023/10/05 03:13:16] ppocr INFO:     beta1 : 0.9
+[2023/10/05 03:13:16] ppocr INFO:     beta2 : 0.999
+[2023/10/05 03:13:16] ppocr INFO:     lr :
+[2023/10/05 03:13:16] ppocr INFO:         learning_rate : 0.001
+[2023/10/05 03:13:16] ppocr INFO:         name : Cosine
+[2023/10/05 03:13:16] ppocr INFO:         warmup_epoch : 2
+[2023/10/05 03:13:16] ppocr INFO:     name : Adam
+[2023/10/05 03:13:16] ppocr INFO:     regularizer :
+[2023/10/05 03:13:16] ppocr INFO:         factor : 5e-05
+[2023/10/05 03:13:16] ppocr INFO:         name : L2
+[2023/10/05 03:13:16] ppocr INFO: PostProcess :
+[2023/10/05 03:13:16] ppocr INFO:     box_thresh : 0.6
+[2023/10/05 03:13:16] ppocr INFO:     key : head_out
+[2023/10/05 03:13:16] ppocr INFO:     max_candidates : 1000
+[2023/10/05 03:13:16] ppocr INFO:     model_name : ['Student']
+[2023/10/05 03:13:16] ppocr INFO:     name : DistillationDBPostProcess
+[2023/10/05 03:13:16] ppocr INFO:     thresh : 0.3
+[2023/10/05 03:13:16] ppocr INFO:     unclip_ratio : 1.5
+[2023/10/05 03:13:16] ppocr INFO: Train :
+[2023/10/05 03:13:16] ppocr INFO:     dataset :
+[2023/10/05 03:13:16] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/05102023-mor
+[2023/10/05 03:13:16] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/05102023-mor/Label.txt']
+[2023/10/05 03:13:16] ppocr INFO:         name : SimpleDataSet
+[2023/10/05 03:13:16] ppocr INFO:         ratio_list : [1.0]
+[2023/10/05 03:13:16] ppocr INFO:         transforms :
+[2023/10/05 03:13:16] ppocr INFO:             DecodeImage :
+[2023/10/05 03:13:16] ppocr INFO:                 channel_first : False
+[2023/10/05 03:13:16] ppocr INFO:                 img_mode : BGR
+[2023/10/05 03:13:16] ppocr INFO:             DetLabelEncode : None
+[2023/10/05 03:13:16] ppocr INFO:             CopyPaste : None
+[2023/10/05 03:13:16] ppocr INFO:             IaaAugment :
+[2023/10/05 03:13:16] ppocr INFO:                 augmenter_args :
+[2023/10/05 03:13:16] ppocr INFO:                     args :
+[2023/10/05 03:13:16] ppocr INFO:                         p : 0.5
+[2023/10/05 03:13:16] ppocr INFO:                     type : Fliplr
+[2023/10/05 03:13:16] ppocr INFO:                     args :
+[2023/10/05 03:13:16] ppocr INFO:                         rotate : [-10, 10]
+[2023/10/05 03:13:16] ppocr INFO:                     type : Affine
+[2023/10/05 03:13:16] ppocr INFO:                     args :
+[2023/10/05 03:13:16] ppocr INFO:                         size : [0.5, 3]
+[2023/10/05 03:13:16] ppocr INFO:                     type : Resize
+[2023/10/05 03:13:16] ppocr INFO:             EastRandomCropData :
+[2023/10/05 03:13:16] ppocr INFO:                 keep_ratio : True
+[2023/10/05 03:13:16] ppocr INFO:                 max_tries : 50
+[2023/10/05 03:13:16] ppocr INFO:                 size : [736, 1123]
+[2023/10/05 03:13:16] ppocr INFO:             MakeBorderMap :
+[2023/10/05 03:13:16] ppocr INFO:                 shrink_ratio : 0.4
+[2023/10/05 03:13:16] ppocr INFO:                 thresh_max : 0.7
+[2023/10/05 03:13:16] ppocr INFO:                 thresh_min : 0.3
+[2023/10/05 03:13:16] ppocr INFO:             MakeShrinkMap :
+[2023/10/05 03:13:16] ppocr INFO:                 min_text_size : 8
+[2023/10/05 03:13:16] ppocr INFO:                 shrink_ratio : 0.4
+[2023/10/05 03:13:16] ppocr INFO:             NormalizeImage :
+[2023/10/05 03:13:16] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2023/10/05 03:13:16] ppocr INFO:                 order : hwc
+[2023/10/05 03:13:16] ppocr INFO:                 scale : 1./255.
+[2023/10/05 03:13:16] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2023/10/05 03:13:16] ppocr INFO:             ToCHWImage : None
+[2023/10/05 03:13:16] ppocr INFO:             KeepKeys :
+[2023/10/05 03:13:16] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2023/10/05 03:13:16] ppocr INFO:     loader :
+[2023/10/05 03:13:16] ppocr INFO:         batch_size_per_card : 8
+[2023/10/05 03:13:16] ppocr INFO:         drop_last : False
+[2023/10/05 03:13:16] ppocr INFO:         num_workers : 4
+[2023/10/05 03:13:16] ppocr INFO:         shuffle : True
+[2023/10/05 03:13:16] ppocr INFO: profiler_options : None
+[2023/10/05 03:13:16] ppocr INFO: wandb :
+[2023/10/05 03:13:16] ppocr INFO:     project : det_05102023_db_mobilenetv3
+[2023/10/05 03:13:16] ppocr INFO:     save_dir : ./output/ch_PP-OCR_v3_det_05102023_v2/
+[2023/10/05 03:13:16] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/05 03:13:16] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/train_data/05102023-mor/Label.txt']
+[2023/10/05 03:13:16] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/evaluate_data/Detection/data1/label.txt']
+[2023/10/05 03:13:45] ppocr INFO: train dataloader has 176 iters
+[2023/10/05 03:13:45] ppocr INFO: valid dataloader has 100 iters
+[2023/10/05 03:13:49] ppocr INFO: load pretrain successful from /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_det_ppocr_v3
+[2023/10/05 03:13:49] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 100 iterations
+[2023/10/05 03:13:49] ppocr INFO: Bắt đầu vòng lặp của epoch: 1
+[2023/10/05 03:13:49] ppocr INFO: số train dataloader của 176 : 1
+[2023/10/05 03:14:03] ppocr INFO:      idx,batch:   0
+[2023/10/05 03:14:03] ppocr INFO: train_reader_cost: 13.406409502029419
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/PaddleOCR/tools/train.py", line 227, in <module>
+    main(config, device, logger, vdl_writer)
+  File "/content/drive/MyDrive/PaddleOCR/tools/train.py", line 198, in main
+    program.train(config, train_dataloader, valid_dataloader, device, model,
+  File "/content/drive/MyDrive/PaddleOCR/tools/program.py", line 313, in train
+    preds = model(images)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/architectures/distillation_model.py", line 59, in forward
+    result_dict[model_name] = self.model_list[idx](x, data)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/architectures/base_model.py", line 93, in forward
+    x = self.neck(x)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/necks/db_fpn.py", line 262, in forward
+    out4 = in4 + F.upsample(
+ValueError: (InvalidArgument) Broadcast dimension mismatch. Operands could not be broadcast together with the shape of X = [8, 96, 71, 46] and the shape of Y = [8, 96, 72, 46]. Received [71] in X is not equal to [72] in Y at i:2.
+  [Hint: Expected x_dims_array[i] == y_dims_array[i] || x_dims_array[i] <= 1 || y_dims_array[i] <= 1 == true, but received x_dims_array[i] == y_dims_array[i] || x_dims_array[i] <= 1 || y_dims_array[i] <= 1:0 != true:1.] (at ../paddle/phi/kernels/funcs/common_shape.h:86)
+Exception in thread Thread-3 (_thread_loop):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 693, in _get_data
+    data = self._data_queue.get(timeout=self._timeout)
+  File "/usr/lib/python3.10/multiprocessing/queues.py", line 114, in get
+    raise Empty
+_queue.Empty
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 604, in _thread_loop
+    batch = self._get_data()
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 708, in _get_data
+    raise RuntimeError(

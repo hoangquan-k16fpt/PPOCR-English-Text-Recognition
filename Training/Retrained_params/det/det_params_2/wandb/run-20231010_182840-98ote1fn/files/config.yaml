@@ -1,0 +1,210 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.12
+    cli_version: 0.15.12
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1696962520.173939
+    t:
+      1:
+      - 54
+      - 55
+      2:
+      - 54
+      - 55
+      3:
+      - 23
+      4: 3.10.12
+      5: 0.15.12
+      8:
+      - 5
+      13: linux-x86_64
+Global:
+  desc: null
+  value:
+    debug: false
+    use_gpu: true
+    epoch_num: 500
+    log_smooth_window: 20
+    print_batch_step: 10
+    save_model_dir: ./output/detection_PPOCR3student_1/
+    save_epoch_step: 100
+    eval_batch_step:
+    - 0
+    - 100
+    cal_metric_during_train: false
+    pretrained_model: /content/drive/MyDrive/ColabNotebooks/PaddleOCR/output/detection_PPOCR3student_1/best_accuracy.pdparams
+    checkpoints: null
+    save_inference_dir: null
+    use_visualdl: false
+    infer_img: /content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/test/evaluate_data/Detection/data1/images
+    save_res_path: ./checkpoints/det_db/detection_PPOCR3student_1.txt
+    distributed: false
+Architecture:
+  desc: null
+  value:
+    model_type: det
+    algorithm: DB
+    Transform: null
+    Backbone:
+      name: MobileNetV3
+      scale: 0.5
+      model_name: large
+      disable_se: true
+    Neck:
+      name: RSEFPN
+      out_channels: 96
+      shortcut: true
+    Head:
+      name: DBHead
+      k: 50
+Loss:
+  desc: null
+  value:
+    name: DBLoss
+    balance_loss: true
+    main_loss_type: DiceLoss
+    alpha: 5
+    beta: 10
+    ohem_ratio: 3
+Optimizer:
+  desc: null
+  value:
+    name: Adam
+    beta1: 0.9
+    beta2: 0.999
+    lr:
+      name: Cosine
+      learning_rate: 0.001
+      warmup_epoch: 2
+    regularizer:
+      name: L2
+      factor: 0.0001
+PostProcess:
+  desc: null
+  value:
+    name: DBPostProcess
+    thresh: 0.3
+    box_thresh: 0.6
+    max_candidates: 1000
+    unclip_ratio: 1.5
+Metric:
+  desc: null
+  value:
+    name: DetMetric
+    main_indicator: hmean
+Train:
+  desc: null
+  value:
+    dataset:
+      name: SimpleDataSet
+      data_dir: /content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/train/05102023-mor
+      label_file_list:
+      - /content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/train/05102023-mor/Label.txt
+      ratio_list:
+      - 1.0
+      transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: false
+      - DetLabelEncode: null
+      - IaaAugment:
+          augmenter_args:
+          - type: Fliplr
+            args:
+              p: 0.5
+          - type: Affine
+            args:
+              rotate:
+              - -10
+              - 10
+          - type: Resize
+            args:
+              size:
+              - 0.5
+              - 3
+      - EastRandomCropData:
+          size:
+          - 960
+          - 960
+          max_tries: 50
+          keep_ratio: true
+      - MakeBorderMap:
+          shrink_ratio: 0.4
+          thresh_min: 0.3
+          thresh_max: 0.7
+      - MakeShrinkMap:
+          shrink_ratio: 0.4
+          min_text_size: 4
+      - NormalizeImage:
+          scale: 1./255.
+          mean:
+          - 0.485
+          - 0.456
+          - 0.406
+          std:
+          - 0.229
+          - 0.224
+          - 0.225
+          order: hwc
+      - ToCHWImage: null
+      - KeepKeys:
+          keep_keys:
+          - image
+          - threshold_map
+          - threshold_mask
+          - shrink_map
+          - shrink_mask
+    loader:
+      shuffle: true
+      drop_last: false
+      batch_size_per_card: 16
+      num_workers: 4
+Eval:
+  desc: null
+  value:
+    dataset:
+      name: SimpleDataSet
+      data_dir: /content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/test/evaluate_data/Detection/data1/images
+      label_file_list:
+      - /content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/test/evaluate_data/Detection/data1/label.txt
+      transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: false
+      - DetLabelEncode: null
+      - DetResizeForTest: null
+      - NormalizeImage:
+          scale: 1./255.
+          mean:
+          - 0.485
+          - 0.456
+          - 0.406
+          std:
+          - 0.229
+          - 0.224
+          - 0.225
+          order: hwc
+      - ToCHWImage: null
+      - KeepKeys:
+          keep_keys:
+          - image
+          - shape
+          - polys
+          - ignore_tags
+    loader:
+      shuffle: false
+      drop_last: false
+      batch_size_per_card: 1
+      num_workers: 2
+wandb:
+  desc: null
+  value:
+    project: det_ppocrv3_student_10102023_ver1
+    save_dir: ./output/detection_PPOCR3student_1/
+profiler_options:
+  desc: null
+  value: null

@@ -1,0 +1,200 @@
+[2023/10/03 16:44:56] ppocr INFO: Architecture :
+[2023/10/03 16:44:56] ppocr INFO:     Backbone :
+[2023/10/03 16:44:56] ppocr INFO:         last_conv_stride : [1, 2]
+[2023/10/03 16:44:56] ppocr INFO:         last_pool_kernel_size : [2, 2]
+[2023/10/03 16:44:56] ppocr INFO:         last_pool_type : avg
+[2023/10/03 16:44:56] ppocr INFO:         name : MobileNetV1Enhance
+[2023/10/03 16:44:56] ppocr INFO:         scale : 0.5
+[2023/10/03 16:44:56] ppocr INFO:     Head :
+[2023/10/03 16:44:56] ppocr INFO:         head_list :
+[2023/10/03 16:44:56] ppocr INFO:             CTCHead :
+[2023/10/03 16:44:56] ppocr INFO:                 Head :
+[2023/10/03 16:44:56] ppocr INFO:                     fc_decay : 1e-05
+[2023/10/03 16:44:56] ppocr INFO:                 Neck :
+[2023/10/03 16:44:56] ppocr INFO:                     depth : 2
+[2023/10/03 16:44:56] ppocr INFO:                     dims : 64
+[2023/10/03 16:44:56] ppocr INFO:                     hidden_dims : 120
+[2023/10/03 16:44:56] ppocr INFO:                     name : svtr
+[2023/10/03 16:44:56] ppocr INFO:                     use_guide : True
+[2023/10/03 16:44:56] ppocr INFO:             SARHead :
+[2023/10/03 16:44:56] ppocr INFO:                 enc_dim : 512
+[2023/10/03 16:44:56] ppocr INFO:                 max_text_length : 25
+[2023/10/03 16:44:56] ppocr INFO:         name : MultiHead
+[2023/10/03 16:44:56] ppocr INFO:     Transform : None
+[2023/10/03 16:44:56] ppocr INFO:     algorithm : SVTR_LCNet
+[2023/10/03 16:44:56] ppocr INFO:     model_type : rec
+[2023/10/03 16:44:56] ppocr INFO: Eval :
+[2023/10/03 16:44:56] ppocr INFO:     dataset :
+[2023/10/03 16:44:56] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/tiny_train_rec_pp/tiny_rec_train
+[2023/10/03 16:44:56] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/tiny_train_rec_pp/transcriptions.txt']
+[2023/10/03 16:44:56] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 16:44:56] ppocr INFO:         transforms :
+[2023/10/03 16:44:56] ppocr INFO:             DecodeImage :
+[2023/10/03 16:44:56] ppocr INFO:                 channel_first : False
+[2023/10/03 16:44:56] ppocr INFO:                 img_mode : BGR
+[2023/10/03 16:44:56] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 16:44:56] ppocr INFO:             RecResizeImg :
+[2023/10/03 16:44:56] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/03 16:44:56] ppocr INFO:             KeepKeys :
+[2023/10/03 16:44:56] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 16:44:56] ppocr INFO:     loader :
+[2023/10/03 16:44:56] ppocr INFO:         batch_size_per_card : 128
+[2023/10/03 16:44:56] ppocr INFO:         drop_last : False
+[2023/10/03 16:44:56] ppocr INFO:         num_workers : 4
+[2023/10/03 16:44:56] ppocr INFO:         shuffle : False
+[2023/10/03 16:44:56] ppocr INFO: Global :
+[2023/10/03 16:44:56] ppocr INFO:     cal_metric_during_train : True
+[2023/10/03 16:44:56] ppocr INFO:     calc_metric_during_train : True
+[2023/10/03 16:44:56] ppocr INFO:     character_dict_path : ppocr/utils/en_dict.txt
+[2023/10/03 16:44:56] ppocr INFO:     checkpoints : None
+[2023/10/03 16:44:56] ppocr INFO:     debug : False
+[2023/10/03 16:44:56] ppocr INFO:     distributed : False
+[2023/10/03 16:44:56] ppocr INFO:     epoch_num : 100
+[2023/10/03 16:44:56] ppocr INFO:     eval_batch_step : [0, 200]
+[2023/10/03 16:44:56] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2023/10/03 16:44:56] ppocr INFO:     infer_mode : False
+[2023/10/03 16:44:56] ppocr INFO:     log_smooth_window : 20
+[2023/10/03 16:44:56] ppocr INFO:     max_text_length : 25
+[2023/10/03 16:44:56] ppocr INFO:     pretrained_model : /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_en_PPOCR_v3.pdparams
+[2023/10/03 16:44:56] ppocr INFO:     print_batch_step : 10
+[2023/10/03 16:44:56] ppocr INFO:     save_epoch_step : 3
+[2023/10/03 16:44:56] ppocr INFO:     save_inference_dir : ./output/v3_en_mobile_v2_03102023_infer
+[2023/10/03 16:44:56] ppocr INFO:     save_model_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 16:44:56] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3_en_v2_03102023.txt
+[2023/10/03 16:44:56] ppocr INFO:     use_gpu : True
+[2023/10/03 16:44:56] ppocr INFO:     use_space_char : True
+[2023/10/03 16:44:56] ppocr INFO:     use_visualdl : False
+[2023/10/03 16:44:56] ppocr INFO: Loss :
+[2023/10/03 16:44:56] ppocr INFO:     loss_config_list :
+[2023/10/03 16:44:56] ppocr INFO:         CTCLoss : None
+[2023/10/03 16:44:56] ppocr INFO:         SARLoss : None
+[2023/10/03 16:44:56] ppocr INFO:     name : MultiLoss
+[2023/10/03 16:44:56] ppocr INFO: Metric :
+[2023/10/03 16:44:56] ppocr INFO:     ignore_space : False
+[2023/10/03 16:44:56] ppocr INFO:     main_indicator : acc
+[2023/10/03 16:44:56] ppocr INFO:     name : RecMetric
+[2023/10/03 16:44:56] ppocr INFO: Optimizer :
+[2023/10/03 16:44:56] ppocr INFO:     beta1 : 0.9
+[2023/10/03 16:44:56] ppocr INFO:     beta2 : 0.999
+[2023/10/03 16:44:56] ppocr INFO:     lr :
+[2023/10/03 16:44:56] ppocr INFO:         learning_rate : 0.001
+[2023/10/03 16:44:56] ppocr INFO:         name : Cosine
+[2023/10/03 16:44:56] ppocr INFO:         warmup_epoch : 5
+[2023/10/03 16:44:56] ppocr INFO:     name : Adam
+[2023/10/03 16:44:56] ppocr INFO:     regularizer :
+[2023/10/03 16:44:56] ppocr INFO:         factor : 3e-05
+[2023/10/03 16:44:56] ppocr INFO:         name : L2
+[2023/10/03 16:44:56] ppocr INFO: PostProcess :
+[2023/10/03 16:44:56] ppocr INFO:     name : CTCLabelDecode
+[2023/10/03 16:44:56] ppocr INFO: Train :
+[2023/10/03 16:44:56] ppocr INFO:     dataset :
+[2023/10/03 16:44:56] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/ppocr_data_large/train_large
+[2023/10/03 16:44:56] ppocr INFO:         ext_op_transform_idx : 1
+[2023/10/03 16:44:56] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/ppocr_data_large/transcriptions.txt']
+[2023/10/03 16:44:56] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 16:44:56] ppocr INFO:         transforms :
+[2023/10/03 16:44:56] ppocr INFO:             DecodeImage :
+[2023/10/03 16:44:56] ppocr INFO:                 channel_first : False
+[2023/10/03 16:44:56] ppocr INFO:                 img_mode : BGR
+[2023/10/03 16:44:56] ppocr INFO:             RecConAug :
+[2023/10/03 16:44:56] ppocr INFO:                 ext_data_num : 2
+[2023/10/03 16:44:56] ppocr INFO:                 image_shape : [48, 320, 3]
+[2023/10/03 16:44:56] ppocr INFO:                 max_text_length : 25
+[2023/10/03 16:44:56] ppocr INFO:                 prob : 0.5
+[2023/10/03 16:44:56] ppocr INFO:             RecAug : None
+[2023/10/03 16:44:56] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 16:44:56] ppocr INFO:             RecResizeImg :
+[2023/10/03 16:44:56] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/03 16:44:56] ppocr INFO:             KeepKeys :
+[2023/10/03 16:44:56] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 16:44:56] ppocr INFO:     loader :
+[2023/10/03 16:44:56] ppocr INFO:         batch_size_per_card : 256
+[2023/10/03 16:44:56] ppocr INFO:         drop_last : True
+[2023/10/03 16:44:56] ppocr INFO:         num_workers : 8
+[2023/10/03 16:44:56] ppocr INFO:         shuffle : True
+[2023/10/03 16:44:56] ppocr INFO: profiler_options : None
+[2023/10/03 16:44:56] ppocr INFO: wandb :
+[2023/10/03 16:44:56] ppocr INFO:     project : text_rec_ppocrv3_v2_03102023
+[2023/10/03 16:44:56] ppocr INFO:     save_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 16:44:56] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/03 16:44:56] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/ppocr_data_large/transcriptions.txt']
+list index out of range
+[2023/10/03 16:44:57] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/train_data/tiny_train_rec_pp/transcriptions.txt']
+[2023/10/03 16:45:16] ppocr INFO: train dataloader has 123 iters
+[2023/10/03 16:45:16] ppocr INFO: valid dataloader has 6 iters
+[2023/10/03 16:45:19] ppocr INFO: load pretrain successful from /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_en_PPOCR_v3
+[2023/10/03 16:45:19] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 200 iterations
+[2023/10/03 16:45:19] ppocr INFO: Bắt đầu vòng lặp của epoch: 1
+[2023/10/03 16:45:19] ppocr INFO: số train dataloader của 123 : 1
+[2023/10/03 16:47:05] ppocr INFO:      idx,batch:   0
+[2023/10/03 16:47:06] ppocr INFO: train_reader_cost: 106.15858578681946
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/PaddleOCR/tools/train.py", line 227, in <module>
+    main(config, device, logger, vdl_writer)
+  File "/content/drive/MyDrive/PaddleOCR/tools/train.py", line 198, in main
+    program.train(config, train_dataloader, valid_dataloader, device, model,
+  File "/content/drive/MyDrive/PaddleOCR/tools/program.py", line 307, in train
+    preds = model(images, data=batch[1:])
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/architectures/base_model.py", line 86, in forward
+    x = self.backbone(x)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/backbones/rec_mv1_enhance.py", line 228, in forward
+    y = self.block_list(y)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/container.py", line 606, in forward
+    input = layer(input)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/backbones/rec_mv1_enhance.py", line 101, in forward
+    y = self._pointwise_conv(y)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/backbones/rec_mv1_enhance.py", line 64, in forward
+    y = self._batch_norm(y)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/norm.py", line 1034, in forward
+    return dygraph_utils._append_activation_in_dygraph(
+  File "<decorator-gen-27>", line 2, in _append_activation_in_dygraph
+  File "/usr/local/lib/python3.10/dist-packages/paddle/fluid/wrapped_decorator.py", line 25, in __impl__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/fluid/framework.py", line 449, in __impl__
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/fluid/dygraph_utils.py", line 43, in _append_activation_in_dygraph
+    return act_op(input, *attrs)
+SystemError: (Fatal) Operator hard_swish raises an paddle::memory::allocation::BadAlloc exception.
+The exception content is
+:
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   hard_swish_dygraph_function(paddle::Tensor const&, paddle::framework::AttributeMap const&)
+1   paddle::imperative::Tracer::TraceOp(std::string const&, paddle::imperative::NameTensorMap const&, paddle::imperative::NameTensorMap const&, paddle::framework::AttributeMap&, phi::Place const&, paddle::framework::AttributeMap*, bool, std::map<std::string, std::string, std::less<std::string >, std::allocator<std::pair<std::string const, std::string > > > const&)
+2   void paddle::imperative::Tracer::TraceOpImpl<egr::EagerVariable>(std::string const&, paddle::imperative::details::NameVarMapTrait<egr::EagerVariable>::Type const&, paddle::imperative::details::NameVarMapTrait<egr::EagerVariable>::Type const&, paddle::framework::AttributeMap&, phi::Place const&, bool, std::map<std::string, std::string, std::less<std::string >, std::allocator<std::pair<std::string const, std::string > > > const&, paddle::framework::AttributeMap*, bool)
+3   paddle::imperative::PreparedOp::Run(paddle::imperative::NameTensorMap const&, paddle::imperative::NameTensorMap const&, paddle::framework::AttributeMap const&, paddle::framework::AttributeMap const&)
+4   void phi::HardSwishKernel<float, phi::GPUContext>(phi::GPUContext const&, phi::DenseTensor const&, phi::DenseTensor*)
+5   void phi::ActivationGPUImpl<float, phi::GPUContext, phi::funcs::CudaHardSwishFunctor<float> >(phi::GPUContext const&, phi::DenseTensor const&, phi::DenseTensor*, phi::funcs::CudaHardSwishFunctor<float> const&)
+6   float* phi::DeviceContext::Alloc<float>(phi::TensorBase*, unsigned long, bool) const
+7   phi::DeviceContext::Impl::Alloc(phi::TensorBase*, phi::Place const&, phi::DataType, unsigned long, bool, bool) const
+8   phi::DenseTensor::AllocateFrom(phi::Allocator*, phi::DataType, unsigned long, bool)
+9   paddle::memory::allocation::Allocator::Allocate(unsigned long)
+10  paddle::memory::allocation::StatAllocator::AllocateImpl(unsigned long)
+11  paddle::memory::allocation::Allocator::Allocate(unsigned long)
+12  paddle::memory::allocation::Allocator::Allocate(unsigned long)
+13  paddle::memory::allocation::Allocator::Allocate(unsigned long)
+14  paddle::memory::allocation::CUDAAllocator::AllocateImpl(unsigned long)
+15  std::string phi::enforce::GetCompleteTraceBackString<std::string >(std::string&&, char const*, int)
+16  phi::enforce::GetCurrentTraceBackString[abi:cxx11](bool)
+----------------------
+Error Message Summary:
+----------------------
+ResourceExhaustedError:
+Out of memory error on GPU 0. Cannot allocate 240.000000MB memory on GPU 0, 14.655273GB memory has been allocated and available memory is only 94.812500MB.
+Please check whether there is any other process using GPU 0.
+1. If yes, please stop them, or start PaddlePaddle on another GPU.
+2. If no, please decrease the batch size of your model.
+ (at ../paddle/fluid/memory/allocation/cuda_allocator.cc:86)

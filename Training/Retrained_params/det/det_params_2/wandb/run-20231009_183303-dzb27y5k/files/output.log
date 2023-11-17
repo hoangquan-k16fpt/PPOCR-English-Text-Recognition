@@ -1,0 +1,168 @@
+[2023/10/09 18:33:03] ppocr INFO: Architecture :
+[2023/10/09 18:33:03] ppocr INFO:     Backbone :
+[2023/10/09 18:33:03] ppocr INFO:         disable_se : True
+[2023/10/09 18:33:03] ppocr INFO:         model_name : large
+[2023/10/09 18:33:03] ppocr INFO:         name : MobileNetV3
+[2023/10/09 18:33:03] ppocr INFO:         scale : 0.5
+[2023/10/09 18:33:03] ppocr INFO:     Head :
+[2023/10/09 18:33:03] ppocr INFO:         k : 50
+[2023/10/09 18:33:03] ppocr INFO:         name : DBHead
+[2023/10/09 18:33:03] ppocr INFO:     Neck :
+[2023/10/09 18:33:03] ppocr INFO:         name : RSEFPN
+[2023/10/09 18:33:03] ppocr INFO:         out_channels : 96
+[2023/10/09 18:33:03] ppocr INFO:         shortcut : True
+[2023/10/09 18:33:03] ppocr INFO:     Transform : None
+[2023/10/09 18:33:03] ppocr INFO:     algorithm : DB
+[2023/10/09 18:33:03] ppocr INFO:     model_type : det
+[2023/10/09 18:33:03] ppocr INFO: Eval :
+[2023/10/09 18:33:03] ppocr INFO:     dataset :
+[2023/10/09 18:33:03] ppocr INFO:         data_dir : /content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/test/evaluate_data/Detection/data1/images
+[2023/10/09 18:33:03] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/test/evaluate_data/Detection/data1/label.txt']
+[2023/10/09 18:33:03] ppocr INFO:         name : SimpleDataSet
+[2023/10/09 18:33:03] ppocr INFO:         transforms :
+[2023/10/09 18:33:03] ppocr INFO:             DecodeImage :
+[2023/10/09 18:33:03] ppocr INFO:                 channel_first : False
+[2023/10/09 18:33:03] ppocr INFO:                 img_mode : BGR
+[2023/10/09 18:33:03] ppocr INFO:             DetLabelEncode : None
+[2023/10/09 18:33:03] ppocr INFO:             DetResizeForTest : None
+[2023/10/09 18:33:03] ppocr INFO:             NormalizeImage :
+[2023/10/09 18:33:03] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2023/10/09 18:33:03] ppocr INFO:                 order : hwc
+[2023/10/09 18:33:03] ppocr INFO:                 scale : 1./255.
+[2023/10/09 18:33:03] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2023/10/09 18:33:03] ppocr INFO:             ToCHWImage : None
+[2023/10/09 18:33:03] ppocr INFO:             KeepKeys :
+[2023/10/09 18:33:03] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2023/10/09 18:33:03] ppocr INFO:     loader :
+[2023/10/09 18:33:03] ppocr INFO:         batch_size_per_card : 1
+[2023/10/09 18:33:03] ppocr INFO:         drop_last : False
+[2023/10/09 18:33:03] ppocr INFO:         num_workers : 2
+[2023/10/09 18:33:03] ppocr INFO:         shuffle : False
+[2023/10/09 18:33:03] ppocr INFO: Global :
+[2023/10/09 18:33:03] ppocr INFO:     cal_metric_during_train : False
+[2023/10/09 18:33:03] ppocr INFO:     checkpoints : /content/drive/MyDrive/ColabNotebooks/PaddleOCR/output/detection_PPOCR3student_1/latest.pdparams
+[2023/10/09 18:33:03] ppocr INFO:     debug : False
+[2023/10/09 18:33:03] ppocr INFO:     distributed : False
+[2023/10/09 18:33:03] ppocr INFO:     epoch_num : 500
+[2023/10/09 18:33:03] ppocr INFO:     eval_batch_step : [0, 100]
+[2023/10/09 18:33:03] ppocr INFO:     infer_img : doc/imgs_en/img_10.jpg
+[2023/10/09 18:33:03] ppocr INFO:     log_smooth_window : 20
+[2023/10/09 18:33:03] ppocr INFO:     pretrained_model : /content/drive/MyDrive/ColabNotebooks/PaddleOCR/pretrained_model/ch_PP-OCRv3_det_distill_train/student_09102023.pdparams
+[2023/10/09 18:33:03] ppocr INFO:     print_batch_step : 10
+[2023/10/09 18:33:03] ppocr INFO:     save_epoch_step : 100
+[2023/10/09 18:33:03] ppocr INFO:     save_inference_dir : None
+[2023/10/09 18:33:03] ppocr INFO:     save_model_dir : ./output/detection_PPOCR3student_1/
+[2023/10/09 18:33:03] ppocr INFO:     save_res_path : ./checkpoints/det_db/detection_PPOCR3student_1.txt
+[2023/10/09 18:33:03] ppocr INFO:     use_gpu : True
+[2023/10/09 18:33:03] ppocr INFO:     use_visualdl : False
+[2023/10/09 18:33:03] ppocr INFO: Loss :
+[2023/10/09 18:33:03] ppocr INFO:     alpha : 5
+[2023/10/09 18:33:03] ppocr INFO:     balance_loss : True
+[2023/10/09 18:33:03] ppocr INFO:     beta : 10
+[2023/10/09 18:33:03] ppocr INFO:     main_loss_type : DiceLoss
+[2023/10/09 18:33:03] ppocr INFO:     name : DBLoss
+[2023/10/09 18:33:03] ppocr INFO:     ohem_ratio : 3
+[2023/10/09 18:33:03] ppocr INFO: Metric :
+[2023/10/09 18:33:03] ppocr INFO:     main_indicator : hmean
+[2023/10/09 18:33:03] ppocr INFO:     name : DetMetric
+[2023/10/09 18:33:03] ppocr INFO: Optimizer :
+[2023/10/09 18:33:03] ppocr INFO:     beta1 : 0.9
+[2023/10/09 18:33:03] ppocr INFO:     beta2 : 0.999
+[2023/10/09 18:33:03] ppocr INFO:     lr :
+[2023/10/09 18:33:03] ppocr INFO:         learning_rate : 0.001
+[2023/10/09 18:33:03] ppocr INFO:         name : Cosine
+[2023/10/09 18:33:03] ppocr INFO:         warmup_epoch : 2
+[2023/10/09 18:33:03] ppocr INFO:     name : Adam
+[2023/10/09 18:33:03] ppocr INFO:     regularizer :
+[2023/10/09 18:33:03] ppocr INFO:         factor : 5e-05
+[2023/10/09 18:33:03] ppocr INFO:         name : L2
+[2023/10/09 18:33:03] ppocr INFO: PostProcess :
+[2023/10/09 18:33:03] ppocr INFO:     box_thresh : 0.6
+[2023/10/09 18:33:03] ppocr INFO:     max_candidates : 1000
+[2023/10/09 18:33:03] ppocr INFO:     name : DBPostProcess
+[2023/10/09 18:33:03] ppocr INFO:     thresh : 0.3
+[2023/10/09 18:33:03] ppocr INFO:     unclip_ratio : 1.5
+[2023/10/09 18:33:03] ppocr INFO: Train :
+[2023/10/09 18:33:03] ppocr INFO:     dataset :
+[2023/10/09 18:33:03] ppocr INFO:         data_dir : /content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/train/05102023-mor
+[2023/10/09 18:33:03] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/train/05102023-mor/Label.txt']
+[2023/10/09 18:33:03] ppocr INFO:         name : SimpleDataSet
+[2023/10/09 18:33:03] ppocr INFO:         ratio_list : [1.0]
+[2023/10/09 18:33:03] ppocr INFO:         transforms :
+[2023/10/09 18:33:03] ppocr INFO:             DecodeImage :
+[2023/10/09 18:33:03] ppocr INFO:                 channel_first : False
+[2023/10/09 18:33:03] ppocr INFO:                 img_mode : BGR
+[2023/10/09 18:33:03] ppocr INFO:             DetLabelEncode : None
+[2023/10/09 18:33:03] ppocr INFO:             IaaAugment :
+[2023/10/09 18:33:03] ppocr INFO:                 augmenter_args :
+[2023/10/09 18:33:03] ppocr INFO:                     args :
+[2023/10/09 18:33:03] ppocr INFO:                         p : 0.5
+[2023/10/09 18:33:03] ppocr INFO:                     type : Fliplr
+[2023/10/09 18:33:03] ppocr INFO:                     args :
+[2023/10/09 18:33:03] ppocr INFO:                         rotate : [-10, 10]
+[2023/10/09 18:33:03] ppocr INFO:                     type : Affine
+[2023/10/09 18:33:03] ppocr INFO:                     args :
+[2023/10/09 18:33:03] ppocr INFO:                         size : [0.5, 3]
+[2023/10/09 18:33:03] ppocr INFO:                     type : Resize
+[2023/10/09 18:33:03] ppocr INFO:             EastRandomCropData :
+[2023/10/09 18:33:03] ppocr INFO:                 keep_ratio : True
+[2023/10/09 18:33:03] ppocr INFO:                 max_tries : 50
+[2023/10/09 18:33:03] ppocr INFO:                 size : [960, 960]
+[2023/10/09 18:33:03] ppocr INFO:             MakeBorderMap :
+[2023/10/09 18:33:03] ppocr INFO:                 shrink_ratio : 0.4
+[2023/10/09 18:33:03] ppocr INFO:                 thresh_max : 0.7
+[2023/10/09 18:33:03] ppocr INFO:                 thresh_min : 0.3
+[2023/10/09 18:33:03] ppocr INFO:             MakeShrinkMap :
+[2023/10/09 18:33:03] ppocr INFO:                 min_text_size : 8
+[2023/10/09 18:33:03] ppocr INFO:                 shrink_ratio : 0.4
+[2023/10/09 18:33:03] ppocr INFO:             NormalizeImage :
+[2023/10/09 18:33:03] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2023/10/09 18:33:03] ppocr INFO:                 order : hwc
+[2023/10/09 18:33:03] ppocr INFO:                 scale : 1./255.
+[2023/10/09 18:33:03] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2023/10/09 18:33:03] ppocr INFO:             ToCHWImage : None
+[2023/10/09 18:33:03] ppocr INFO:             KeepKeys :
+[2023/10/09 18:33:03] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2023/10/09 18:33:03] ppocr INFO:     loader :
+[2023/10/09 18:33:03] ppocr INFO:         batch_size_per_card : 8
+[2023/10/09 18:33:03] ppocr INFO:         drop_last : False
+[2023/10/09 18:33:03] ppocr INFO:         num_workers : 4
+[2023/10/09 18:33:03] ppocr INFO:         shuffle : True
+[2023/10/09 18:33:03] ppocr INFO: profiler_options : None
+[2023/10/09 18:33:03] ppocr INFO: wandb :
+[2023/10/09 18:33:03] ppocr INFO:     project : det_ppocrv3_student_10102023_ver1
+[2023/10/09 18:33:03] ppocr INFO:     save_dir : ./output/detection_PPOCR3student_1/
+[2023/10/09 18:33:03] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/09 18:33:03] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/train/05102023-mor/Label.txt']
+[2023/10/09 18:33:04] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/ColabNotebooks/PaddleOCR/dataset/test/evaluate_data/Detection/data1/label.txt']
+[2023/10/09 18:33:12] ppocr INFO: train dataloader has 194 iters
+[2023/10/09 18:33:12] ppocr INFO: valid dataloader has 100 iters
+[2023/10/09 18:33:12] ppocr INFO: resume from /content/drive/MyDrive/ColabNotebooks/PaddleOCR/output/detection_PPOCR3student_1/latest
+[2023/10/09 18:33:12] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 100 iterations
+[2023/10/09 18:34:02] ppocr INFO: epoch: [4/500], global_step: 10, lr: 0.001000, loss: 1.511521, loss_shrink_maps: 0.868634, loss_threshold_maps: 0.462539, loss_binary_maps: 0.173843, loss_cbn: 0.000000, avg_reader_cost: 2.68942 s, avg_batch_cost: 4.84799 s, avg_samples: 8.0, ips: 1.65017 samples/s, eta: 5 days, 9:49:44
+[2023/10/09 18:34:40] ppocr INFO: epoch: [4/500], global_step: 20, lr: 0.001000, loss: 1.419011, loss_shrink_maps: 0.842806, loss_threshold_maps: 0.429643, loss_binary_maps: 0.168585, loss_cbn: 0.000000, avg_reader_cost: 2.99393 s, avg_batch_cost: 3.80399 s, avg_samples: 8.0, ips: 2.10305 samples/s, eta: 4 days, 19:50:16
+[2023/10/09 18:35:15] ppocr INFO: epoch: [4/500], global_step: 30, lr: 0.001000, loss: 1.396480, loss_shrink_maps: 0.818601, loss_threshold_maps: 0.410899, loss_binary_maps: 0.163349, loss_cbn: 0.000000, avg_reader_cost: 2.62610 s, avg_batch_cost: 3.42680 s, avg_samples: 8.0, ips: 2.33454 samples/s, eta: 4 days, 11:48:03
+[2023/10/09 18:35:57] ppocr INFO: epoch: [4/500], global_step: 40, lr: 0.001000, loss: 1.384928, loss_shrink_maps: 0.807802, loss_threshold_maps: 0.419460, loss_binary_maps: 0.161040, loss_cbn: 0.000000, avg_reader_cost: 3.39899 s, avg_batch_cost: 4.14230 s, avg_samples: 8.0, ips: 1.93129 samples/s, eta: 4 days, 12:33:58
+[2023/10/09 18:36:41] ppocr INFO: epoch: [4/500], global_step: 50, lr: 0.001000, loss: 1.391523, loss_shrink_maps: 0.807802, loss_threshold_maps: 0.415038, loss_binary_maps: 0.161040, loss_cbn: 0.000000, avg_reader_cost: 3.51663 s, avg_batch_cost: 4.35926 s, avg_samples: 8.0, ips: 1.83517 samples/s, eta: 4 days, 14:10:57
+[2023/10/09 18:37:22] ppocr INFO: epoch: [4/500], global_step: 60, lr: 0.001000, loss: 1.376553, loss_shrink_maps: 0.802318, loss_threshold_maps: 0.414942, loss_binary_maps: 0.159927, loss_cbn: 0.000000, avg_reader_cost: 3.22085 s, avg_batch_cost: 4.11680 s, avg_samples: 8.0, ips: 1.94326 samples/s, eta: 4 days, 14:10:27
+[2023/10/09 18:37:56] ppocr INFO: epoch: [4/500], global_step: 70, lr: 0.001000, loss: 1.363240, loss_shrink_maps: 0.803232, loss_threshold_maps: 0.414261, loss_binary_maps: 0.160594, loss_cbn: 0.000000, avg_reader_cost: 2.58992 s, avg_batch_cost: 3.33954 s, avg_samples: 8.0, ips: 2.39554 samples/s, eta: 4 days, 11:11:36
+[2023/10/09 18:38:37] ppocr INFO: epoch: [4/500], global_step: 80, lr: 0.001000, loss: 1.368163, loss_shrink_maps: 0.793215, loss_threshold_maps: 0.417285, loss_binary_maps: 0.158168, loss_cbn: 0.000000, avg_reader_cost: 3.33425 s, avg_batch_cost: 4.05739 s, avg_samples: 8.0, ips: 1.97171 samples/s, eta: 4 days, 11:21:24
+[2023/10/09 18:39:12] ppocr INFO: epoch: [4/500], global_step: 90, lr: 0.001000, loss: 1.368163, loss_shrink_maps: 0.793002, loss_threshold_maps: 0.415952, loss_binary_maps: 0.158168, loss_cbn: 0.000000, avg_reader_cost: 2.54439 s, avg_batch_cost: 3.42157 s, avg_samples: 8.0, ips: 2.33811 samples/s, eta: 4 days, 9:35:27
+[2023/10/09 18:39:50] ppocr INFO: epoch: [4/500], global_step: 100, lr: 0.001000, loss: 1.388787, loss_shrink_maps: 0.805398, loss_threshold_maps: 0.406711, loss_binary_maps: 0.160417, loss_cbn: 0.000000, avg_reader_cost: 3.02378 s, avg_batch_cost: 3.70938 s, avg_samples: 8.0, ips: 2.15669 samples/s, eta: 4 days, 8:56:47
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

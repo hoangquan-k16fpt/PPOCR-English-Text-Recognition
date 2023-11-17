@@ -1,0 +1,290 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.12
+    cli_version: 0.15.12
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1696475818.056687
+    t:
+      1:
+      - 54
+      - 55
+      2:
+      - 54
+      - 55
+      3:
+      - 23
+      4: 3.10.12
+      5: 0.15.12
+      8:
+      - 5
+      13: linux-x86_64
+Architecture:
+  desc: null
+  value:
+    Models:
+      Student:
+        Backbone:
+          disable_se: true
+          model_name: large
+          name: MobileNetV3
+          scale: 0.5
+        Head:
+          k: 50
+          name: DBHead
+        Neck:
+          name: RSEFPN
+          out_channels: 96
+          shortcut: true
+        Transform: null
+        algorithm: DB
+        model_type: det
+        pretrained: null
+      Student2:
+        Backbone:
+          disable_se: true
+          model_name: large
+          name: MobileNetV3
+          scale: 0.5
+        Head:
+          k: 50
+          name: DBHead
+        Neck:
+          name: RSEFPN
+          out_channels: 96
+          shortcut: true
+        Transform: null
+        algorithm: DB
+        model_type: det
+        pretrained: null
+      Teacher:
+        Backbone:
+          in_channels: 3
+          layers: 50
+          name: ResNet_vd
+        Head:
+          k: 50
+          kernel_list:
+          - 7
+          - 2
+          - 2
+          name: DBHead
+        Neck:
+          name: LKPAN
+          out_channels: 256
+        algorithm: DB
+        freeze_params: true
+        model_type: det
+        return_all_feats: false
+    algorithm: Distillation
+    model_type: det
+    name: DistillationModel
+Eval:
+  desc: null
+  value:
+    dataset:
+      data_dir: /content/drive/MyDrive/PaddleOCR/evaluate_data/Detection/data1/images
+      label_file_list:
+      - /content/drive/MyDrive/PaddleOCR/evaluate_data/Detection/data1/label.txt
+      name: SimpleDataSet
+      transforms:
+      - DecodeImage:
+          channel_first: false
+          img_mode: BGR
+      - DetLabelEncode: null
+      - DetResizeForTest: null
+      - NormalizeImage:
+          mean:
+          - 0.485
+          - 0.456
+          - 0.406
+          order: hwc
+          scale: 1./255.
+          std:
+          - 0.229
+          - 0.224
+          - 0.225
+      - ToCHWImage: null
+      - KeepKeys:
+          keep_keys:
+          - image
+          - shape
+          - polys
+          - ignore_tags
+    loader:
+      batch_size_per_card: 1
+      drop_last: false
+      num_workers: 2
+      shuffle: false
+Global:
+  desc: null
+  value:
+    amp_dtype: bfloat16
+    cal_metric_during_train: false
+    calc_metric_during_train: true
+    checkpoints: null
+    d2s_train_image_shape:
+    - 3
+    - -1
+    - -1
+    debug: false
+    distributed: false
+    epoch_num: 100
+    eval_batch_step:
+    - 0
+    - 100
+    infer_img: doc/imgs_en/img_10.jpg
+    log_smooth_window: 20
+    pretrained_model: /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_det_ppocr_v3.pdparams
+    print_batch_step: 10
+    save_epoch_step: 100
+    save_inference_dir: null
+    save_model_dir: ./output/ch_PP-OCR_v3_det_05102023_v2/
+    save_res_path: ./checkpoints/det_db/predicts_db_ppocrv3_05102023_ppocrv3_v2.txt
+    use_gpu: true
+    use_visualdl: false
+Loss:
+  desc: null
+  value:
+    loss_config_list:
+    - DistillationDilaDBLoss:
+        alpha: 5
+        balance_loss: true
+        beta: 10
+        key: maps
+        main_loss_type: DiceLoss
+        model_name_pairs:
+        - - Student
+          - Teacher
+        - - Student2
+          - Teacher
+        ohem_ratio: 3
+        weight: 1.0
+    - DistillationDMLLoss:
+        key: maps
+        maps_name: thrink_maps
+        model_name_pairs:
+        - Student
+        - Student2
+        weight: 1.0
+    - DistillationDBLoss:
+        alpha: 5
+        balance_loss: true
+        beta: 10
+        main_loss_type: DiceLoss
+        model_name_list:
+        - Student
+        - Student2
+        ohem_ratio: 3
+        weight: 1.0
+    name: CombinedLoss
+Metric:
+  desc: null
+  value:
+    base_metric_name: DetMetric
+    key: Student
+    main_indicator: hmean
+    name: DistillationMetric
+Optimizer:
+  desc: null
+  value:
+    beta1: 0.9
+    beta2: 0.999
+    lr:
+      learning_rate: 0.001
+      name: Cosine
+      warmup_epoch: 2
+    name: Adam
+    regularizer:
+      factor: 5.0e-05
+      name: L2
+PostProcess:
+  desc: null
+  value:
+    box_thresh: 0.6
+    key: head_out
+    max_candidates: 1000
+    model_name:
+    - Student
+    name: DistillationDBPostProcess
+    thresh: 0.3
+    unclip_ratio: 1.5
+Train:
+  desc: null
+  value:
+    dataset:
+      data_dir: /content/drive/MyDrive/PaddleOCR/train_data/05102023-mor
+      label_file_list:
+      - /content/drive/MyDrive/PaddleOCR/train_data/05102023-mor/Label.txt
+      name: SimpleDataSet
+      ratio_list:
+      - 1.0
+      transforms:
+      - DecodeImage:
+          channel_first: false
+          img_mode: BGR
+      - DetLabelEncode: null
+      - CopyPaste: null
+      - IaaAugment:
+          augmenter_args:
+          - args:
+              p: 0.5
+            type: Fliplr
+          - args:
+              rotate:
+              - -10
+              - 10
+            type: Affine
+          - args:
+              size:
+              - 0.5
+              - 3
+            type: Resize
+      - EastRandomCropData:
+          keep_ratio: true
+          max_tries: 50
+          size:
+          - 736
+          - 1123
+      - MakeBorderMap:
+          shrink_ratio: 0.4
+          thresh_max: 0.7
+          thresh_min: 0.3
+      - MakeShrinkMap:
+          min_text_size: 8
+          shrink_ratio: 0.4
+      - NormalizeImage:
+          mean:
+          - 0.485
+          - 0.456
+          - 0.406
+          order: hwc
+          scale: 1./255.
+          std:
+          - 0.229
+          - 0.224
+          - 0.225
+      - ToCHWImage: null
+      - KeepKeys:
+          keep_keys:
+          - image
+          - threshold_map
+          - threshold_mask
+          - shrink_map
+          - shrink_mask
+    loader:
+      batch_size_per_card: 8
+      drop_last: false
+      num_workers: 1
+      shuffle: true
+wandb:
+  desc: null
+  value:
+    project: det_05102023_db_mobilenetv3
+    save_dir: ./output/ch_PP-OCR_v3_det_05102023_v2/
+profiler_options:
+  desc: null
+  value: null

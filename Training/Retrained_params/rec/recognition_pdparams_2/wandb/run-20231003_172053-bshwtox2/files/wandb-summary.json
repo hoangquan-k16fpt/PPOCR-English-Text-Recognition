@@ -1,0 +1,1 @@
+{"train/lr": 7.6e-05, "train/acc": 0.601562, "train/norm_edit_dis": 0.928108, "train/CTCLoss": 3.270716, "train/SARLoss": 0.491252, "train/loss": 3.78142, "_timestamp": 1696353799.447379, "_runtime": 146.10081720352173, "_step": 199}

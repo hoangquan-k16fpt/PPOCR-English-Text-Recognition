@@ -1,0 +1,1 @@
+{"train/lr": 0.001, "train/loss": 1.3581509590148926, "train/loss_shrink_maps": 0.769967, "train/loss_threshold_maps": 0.415154, "train/loss_binary_maps": 0.154099, "train/loss_cbn": 0.0, "_timestamp": 1696879257.2971401, "_runtime": 802.9852061271667, "_step": 99}

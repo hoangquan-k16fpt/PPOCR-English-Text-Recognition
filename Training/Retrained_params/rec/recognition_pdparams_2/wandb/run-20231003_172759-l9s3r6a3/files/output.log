@@ -1,0 +1,464 @@
+[2023/10/03 17:28:00] ppocr INFO: Architecture :
+[2023/10/03 17:28:00] ppocr INFO:     Backbone :
+[2023/10/03 17:28:00] ppocr INFO:         last_conv_stride : [1, 2]
+[2023/10/03 17:28:00] ppocr INFO:         last_pool_kernel_size : [2, 2]
+[2023/10/03 17:28:00] ppocr INFO:         last_pool_type : avg
+[2023/10/03 17:28:00] ppocr INFO:         name : MobileNetV1Enhance
+[2023/10/03 17:28:00] ppocr INFO:         scale : 0.5
+[2023/10/03 17:28:00] ppocr INFO:     Head :
+[2023/10/03 17:28:00] ppocr INFO:         head_list :
+[2023/10/03 17:28:00] ppocr INFO:             CTCHead :
+[2023/10/03 17:28:00] ppocr INFO:                 Head :
+[2023/10/03 17:28:00] ppocr INFO:                     fc_decay : 1e-05
+[2023/10/03 17:28:00] ppocr INFO:                 Neck :
+[2023/10/03 17:28:00] ppocr INFO:                     depth : 2
+[2023/10/03 17:28:00] ppocr INFO:                     dims : 64
+[2023/10/03 17:28:00] ppocr INFO:                     hidden_dims : 120
+[2023/10/03 17:28:00] ppocr INFO:                     name : svtr
+[2023/10/03 17:28:00] ppocr INFO:                     use_guide : True
+[2023/10/03 17:28:00] ppocr INFO:             SARHead :
+[2023/10/03 17:28:00] ppocr INFO:                 enc_dim : 512
+[2023/10/03 17:28:00] ppocr INFO:                 max_text_length : 100
+[2023/10/03 17:28:00] ppocr INFO:         name : MultiHead
+[2023/10/03 17:28:00] ppocr INFO:     Transform : None
+[2023/10/03 17:28:00] ppocr INFO:     algorithm : SVTR_LCNet
+[2023/10/03 17:28:00] ppocr INFO:     model_type : rec
+[2023/10/03 17:28:00] ppocr INFO: Eval :
+[2023/10/03 17:28:00] ppocr INFO:     dataset :
+[2023/10/03 17:28:00] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/train_large
+[2023/10/03 17:28:00] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+[2023/10/03 17:28:00] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 17:28:00] ppocr INFO:         transforms :
+[2023/10/03 17:28:00] ppocr INFO:             DecodeImage :
+[2023/10/03 17:28:00] ppocr INFO:                 channel_first : False
+[2023/10/03 17:28:00] ppocr INFO:                 img_mode : BGR
+[2023/10/03 17:28:00] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 17:28:00] ppocr INFO:             RecResizeImg :
+[2023/10/03 17:28:00] ppocr INFO:                 image_shape : [3, 50, 640]
+[2023/10/03 17:28:00] ppocr INFO:             KeepKeys :
+[2023/10/03 17:28:00] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 17:28:00] ppocr INFO:     loader :
+[2023/10/03 17:28:00] ppocr INFO:         batch_size_per_card : 64
+[2023/10/03 17:28:00] ppocr INFO:         drop_last : False
+[2023/10/03 17:28:00] ppocr INFO:         num_workers : 4
+[2023/10/03 17:28:00] ppocr INFO:         shuffle : False
+[2023/10/03 17:28:00] ppocr INFO: Global :
+[2023/10/03 17:28:00] ppocr INFO:     cal_metric_during_train : True
+[2023/10/03 17:28:00] ppocr INFO:     calc_metric_during_train : True
+[2023/10/03 17:28:00] ppocr INFO:     character_dict_path : ppocr/utils/en_dict.txt
+[2023/10/03 17:28:00] ppocr INFO:     checkpoints : None
+[2023/10/03 17:28:00] ppocr INFO:     debug : False
+[2023/10/03 17:28:00] ppocr INFO:     distributed : False
+[2023/10/03 17:28:00] ppocr INFO:     epoch_num : 100
+[2023/10/03 17:28:00] ppocr INFO:     eval_batch_step : [0, 100]
+[2023/10/03 17:28:00] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2023/10/03 17:28:00] ppocr INFO:     infer_mode : False
+[2023/10/03 17:28:00] ppocr INFO:     log_smooth_window : 20
+[2023/10/03 17:28:00] ppocr INFO:     max_text_length : 25
+[2023/10/03 17:28:00] ppocr INFO:     pretrained_model : /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_en_PPOCR_v3.pdparams
+[2023/10/03 17:28:00] ppocr INFO:     print_batch_step : 10
+[2023/10/03 17:28:00] ppocr INFO:     save_epoch_step : 3
+[2023/10/03 17:28:00] ppocr INFO:     save_inference_dir : ./output/v3_en_mobile_v2_03102023_infer
+[2023/10/03 17:28:00] ppocr INFO:     save_model_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 17:28:00] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3_en_v2_03102023.txt
+[2023/10/03 17:28:00] ppocr INFO:     use_gpu : True
+[2023/10/03 17:28:00] ppocr INFO:     use_space_char : True
+[2023/10/03 17:28:00] ppocr INFO:     use_visualdl : False
+[2023/10/03 17:28:00] ppocr INFO: Loss :
+[2023/10/03 17:28:00] ppocr INFO:     loss_config_list :
+[2023/10/03 17:28:00] ppocr INFO:         CTCLoss : None
+[2023/10/03 17:28:00] ppocr INFO:         SARLoss : None
+[2023/10/03 17:28:00] ppocr INFO:     name : MultiLoss
+[2023/10/03 17:28:00] ppocr INFO: Metric :
+[2023/10/03 17:28:00] ppocr INFO:     ignore_space : False
+[2023/10/03 17:28:00] ppocr INFO:     main_indicator : acc
+[2023/10/03 17:28:00] ppocr INFO:     name : RecMetric
+[2023/10/03 17:28:00] ppocr INFO: Optimizer :
+[2023/10/03 17:28:00] ppocr INFO:     beta1 : 0.9
+[2023/10/03 17:28:00] ppocr INFO:     beta2 : 0.999
+[2023/10/03 17:28:00] ppocr INFO:     lr :
+[2023/10/03 17:28:00] ppocr INFO:         learning_rate : 0.001
+[2023/10/03 17:28:00] ppocr INFO:         name : Cosine
+[2023/10/03 17:28:00] ppocr INFO:         warmup_epoch : 5
+[2023/10/03 17:28:00] ppocr INFO:     name : Adam
+[2023/10/03 17:28:00] ppocr INFO:     regularizer :
+[2023/10/03 17:28:00] ppocr INFO:         factor : 3e-05
+[2023/10/03 17:28:00] ppocr INFO:         name : L2
+[2023/10/03 17:28:00] ppocr INFO: PostProcess :
+[2023/10/03 17:28:00] ppocr INFO:     name : CTCLabelDecode
+[2023/10/03 17:28:00] ppocr INFO: Train :
+[2023/10/03 17:28:00] ppocr INFO:     dataset :
+[2023/10/03 17:28:00] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/train_large
+[2023/10/03 17:28:00] ppocr INFO:         ext_op_transform_idx : 1
+[2023/10/03 17:28:00] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+[2023/10/03 17:28:00] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 17:28:00] ppocr INFO:         transforms :
+[2023/10/03 17:28:00] ppocr INFO:             DecodeImage :
+[2023/10/03 17:28:00] ppocr INFO:                 channel_first : False
+[2023/10/03 17:28:00] ppocr INFO:                 img_mode : BGR
+[2023/10/03 17:28:00] ppocr INFO:             RecConAug :
+[2023/10/03 17:28:00] ppocr INFO:                 ext_data_num : 2
+[2023/10/03 17:28:00] ppocr INFO:                 image_shape : [50, 640, 3]
+[2023/10/03 17:28:00] ppocr INFO:                 max_text_length : 100
+[2023/10/03 17:28:00] ppocr INFO:                 prob : 0.5
+[2023/10/03 17:28:00] ppocr INFO:             RecAug : None
+[2023/10/03 17:28:00] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 17:28:00] ppocr INFO:             RecResizeImg :
+[2023/10/03 17:28:00] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/03 17:28:00] ppocr INFO:             KeepKeys :
+[2023/10/03 17:28:00] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 17:28:00] ppocr INFO:     loader :
+[2023/10/03 17:28:00] ppocr INFO:         batch_size_per_card : 64
+[2023/10/03 17:28:00] ppocr INFO:         drop_last : True
+[2023/10/03 17:28:00] ppocr INFO:         num_workers : 8
+[2023/10/03 17:28:00] ppocr INFO:         shuffle : True
+[2023/10/03 17:28:00] ppocr INFO: profiler_options : None
+[2023/10/03 17:28:00] ppocr INFO: wandb :
+[2023/10/03 17:28:00] ppocr INFO:     project : text_rec_ppocrv3_v2_03102023
+[2023/10/03 17:28:00] ppocr INFO:     save_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 17:28:00] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/03 17:28:00] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+list index out of range
+[2023/10/03 17:28:00] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+[2023/10/03 17:28:02] ppocr INFO: train dataloader has 493 iters
+[2023/10/03 17:28:02] ppocr INFO: valid dataloader has 494 iters
+[2023/10/03 17:28:03] ppocr INFO: load pretrain successful from /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_en_PPOCR_v3
+[2023/10/03 17:28:03] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 100 iterations
+[2023/10/03 17:28:03] ppocr INFO: Bắt đầu vòng lặp của epoch: 1
+[2023/10/03 17:28:03] ppocr INFO: số train dataloader của 493 : 1
+[2023/10/03 17:28:08] ppocr INFO:      idx,batch:   0
+[2023/10/03 17:28:08] ppocr INFO: train_reader_cost: 5.32938027381897
+[2023/10/03 17:28:12] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:12] ppocr INFO:      idx,batch:   1
+[2023/10/03 17:28:12] ppocr INFO: train_reader_cost: 5.333968877792358
+[2023/10/03 17:28:12] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:12] ppocr INFO:      idx,batch:   2
+[2023/10/03 17:28:12] ppocr INFO: train_reader_cost: 5.336886405944824
+[2023/10/03 17:28:12] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:12] ppocr INFO:      idx,batch:   3
+[2023/10/03 17:28:12] ppocr INFO: train_reader_cost: 5.341460943222046
+[2023/10/03 17:28:13] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:13] ppocr INFO:      idx,batch:   4
+[2023/10/03 17:28:13] ppocr INFO: train_reader_cost: 5.34516716003418
+[2023/10/03 17:28:13] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:13] ppocr INFO:      idx,batch:   5
+[2023/10/03 17:28:13] ppocr INFO: train_reader_cost: 5.346839189529419
+[2023/10/03 17:28:13] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:14] ppocr INFO:      idx,batch:   6
+[2023/10/03 17:28:14] ppocr INFO: train_reader_cost: 5.34992790222168
+[2023/10/03 17:28:14] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:14] ppocr INFO:      idx,batch:   7
+[2023/10/03 17:28:14] ppocr INFO: train_reader_cost: 5.354010105133057
+[2023/10/03 17:28:14] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:14] ppocr INFO:      idx,batch:   8
+[2023/10/03 17:28:14] ppocr INFO: train_reader_cost: 5.375207185745239
+[2023/10/03 17:28:15] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:15] ppocr INFO:      idx,batch:   9
+[2023/10/03 17:28:15] ppocr INFO: train_reader_cost: 5.441120147705078
+[2023/10/03 17:28:15] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:15] ppocr INFO: epoch: [1/100], global_step: 10, lr: 0.000002, acc: 0.382812, norm_edit_dis: 0.868681, CTCLoss: 8.230784, SARLoss: 0.686968, loss: 8.920680, avg_reader_cost: 0.54411 s, avg_batch_cost: 1.25112 s, avg_samples: 64.0, ips: 51.15404 samples/s, eta: 17:07:47
+[2023/10/03 17:28:15] ppocr INFO:      idx,batch:   10
+[2023/10/03 17:28:15] ppocr INFO: train_reader_cost: 0.001737356185913086
+[2023/10/03 17:28:15] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:16] ppocr INFO:      idx,batch:   11
+[2023/10/03 17:28:16] ppocr INFO: train_reader_cost: 0.004092693328857422
+[2023/10/03 17:28:16] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:16] ppocr INFO:      idx,batch:   12
+[2023/10/03 17:28:16] ppocr INFO: train_reader_cost: 0.005949974060058594
+[2023/10/03 17:28:16] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:16] ppocr INFO:      idx,batch:   13
+[2023/10/03 17:28:16] ppocr INFO: train_reader_cost: 0.007282733917236328
+[2023/10/03 17:28:17] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:17] ppocr INFO:      idx,batch:   14
+[2023/10/03 17:28:17] ppocr INFO: train_reader_cost: 0.008844614028930664
+[2023/10/03 17:28:17] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:17] ppocr INFO:      idx,batch:   15
+[2023/10/03 17:28:17] ppocr INFO: train_reader_cost: 0.010514497756958008
+[2023/10/03 17:28:17] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:18] ppocr INFO:      idx,batch:   16
+[2023/10/03 17:28:18] ppocr INFO: train_reader_cost: 0.9698145389556885
+[2023/10/03 17:28:19] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:20] ppocr INFO:      idx,batch:   17
+[2023/10/03 17:28:20] ppocr INFO: train_reader_cost: 1.93613862991333
+[2023/10/03 17:28:20] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:20] ppocr INFO:      idx,batch:   18
+[2023/10/03 17:28:20] ppocr INFO: train_reader_cost: 1.939070701599121
+[2023/10/03 17:28:20] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:21] ppocr INFO:      idx,batch:   19
+[2023/10/03 17:28:21] ppocr INFO: train_reader_cost: 1.940849781036377
+[2023/10/03 17:28:21] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:21] ppocr INFO: epoch: [1/100], global_step: 20, lr: 0.000004, acc: 0.390625, norm_edit_dis: 0.862005, CTCLoss: 9.539831, SARLoss: 0.712601, loss: 10.287866, avg_reader_cost: 0.19408 s, avg_batch_cost: 0.57942 s, avg_samples: 64.0, ips: 110.45601 samples/s, eta: 12:31:44
+[2023/10/03 17:28:21] ppocr INFO:      idx,batch:   20
+[2023/10/03 17:28:21] ppocr INFO: train_reader_cost: 0.005833864212036133
+[2023/10/03 17:28:21] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:21] ppocr INFO:      idx,batch:   21
+[2023/10/03 17:28:21] ppocr INFO: train_reader_cost: 0.007458925247192383
+[2023/10/03 17:28:22] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:22] ppocr INFO:      idx,batch:   22
+[2023/10/03 17:28:22] ppocr INFO: train_reader_cost: 0.009095191955566406
+[2023/10/03 17:28:22] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:22] ppocr INFO:      idx,batch:   23
+[2023/10/03 17:28:22] ppocr INFO: train_reader_cost: 0.010413885116577148
+[2023/10/03 17:28:22] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:23] ppocr INFO:      idx,batch:   24
+[2023/10/03 17:28:23] ppocr INFO: train_reader_cost: 0.6284396648406982
+[2023/10/03 17:28:23] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:24] ppocr INFO:      idx,batch:   25
+[2023/10/03 17:28:24] ppocr INFO: train_reader_cost: 1.451690912246704
+[2023/10/03 17:28:25] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:25] ppocr INFO:      idx,batch:   26
+[2023/10/03 17:28:25] ppocr INFO: train_reader_cost: 1.4530351161956787
+[2023/10/03 17:28:25] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:26] ppocr INFO:      idx,batch:   27
+[2023/10/03 17:28:26] ppocr INFO: train_reader_cost: 2.5310585498809814
+[2023/10/03 17:28:26] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:27] ppocr INFO:      idx,batch:   28
+[2023/10/03 17:28:27] ppocr INFO: train_reader_cost: 2.534579038619995
+[2023/10/03 17:28:27] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:27] ppocr INFO:      idx,batch:   29
+[2023/10/03 17:28:27] ppocr INFO: train_reader_cost: 2.5362439155578613
+[2023/10/03 17:28:27] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:27] ppocr INFO: epoch: [1/100], global_step: 30, lr: 0.000008, acc: 0.375000, norm_edit_dis: 0.865850, CTCLoss: 8.319498, SARLoss: 0.763917, loss: 9.095373, avg_reader_cost: 0.25362 s, avg_batch_cost: 0.64162 s, avg_samples: 64.0, ips: 99.74758 samples/s, eta: 11:16:41
+[2023/10/03 17:28:27] ppocr INFO:      idx,batch:   30
+[2023/10/03 17:28:27] ppocr INFO: train_reader_cost: 0.0012373924255371094
+[2023/10/03 17:28:28] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:28] ppocr INFO:      idx,batch:   31
+[2023/10/03 17:28:28] ppocr INFO: train_reader_cost: 0.0024077892303466797
+[2023/10/03 17:28:28] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:29] ppocr INFO:      idx,batch:   32
+[2023/10/03 17:28:29] ppocr INFO: train_reader_cost: 1.2563960552215576
+[2023/10/03 17:28:30] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:30] ppocr INFO:      idx,batch:   33
+[2023/10/03 17:28:30] ppocr INFO: train_reader_cost: 1.2577905654907227
+[2023/10/03 17:28:30] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:30] ppocr INFO:      idx,batch:   34
+[2023/10/03 17:28:30] ppocr INFO: train_reader_cost: 1.2589592933654785
+[2023/10/03 17:28:30] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:32] ppocr INFO:      idx,batch:   35
+[2023/10/03 17:28:32] ppocr INFO: train_reader_cost: 2.884028434753418
+[2023/10/03 17:28:33] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:33] ppocr INFO:      idx,batch:   36
+[2023/10/03 17:28:33] ppocr INFO: train_reader_cost: 2.888633966445923
+[2023/10/03 17:28:33] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:33] ppocr INFO:      idx,batch:   37
+[2023/10/03 17:28:33] ppocr INFO: train_reader_cost: 2.893847703933716
+[2023/10/03 17:28:33] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:33] ppocr INFO:      idx,batch:   38
+[2023/10/03 17:28:33] ppocr INFO: train_reader_cost: 2.8953113555908203
+[2023/10/03 17:28:34] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:34] ppocr INFO:      idx,batch:   39
+[2023/10/03 17:28:34] ppocr INFO: train_reader_cost: 2.8987061977386475
+[2023/10/03 17:28:34] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:34] ppocr INFO: epoch: [1/100], global_step: 40, lr: 0.000012, acc: 0.398437, norm_edit_dis: 0.874670, CTCLoss: 6.897663, SARLoss: 0.731625, loss: 7.533144, avg_reader_cost: 0.28987 s, avg_batch_cost: 0.67842 s, avg_samples: 64.0, ips: 94.33699 samples/s, eta: 10:46:39
+[2023/10/03 17:28:35] ppocr INFO:      idx,batch:   40
+[2023/10/03 17:28:35] ppocr INFO: train_reader_cost: 1.0920264720916748
+[2023/10/03 17:28:36] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:36] ppocr INFO:      idx,batch:   41
+[2023/10/03 17:28:36] ppocr INFO: train_reader_cost: 1.0937705039978027
+[2023/10/03 17:28:36] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:36] ppocr INFO:      idx,batch:   42
+[2023/10/03 17:28:36] ppocr INFO: train_reader_cost: 1.0954139232635498
+[2023/10/03 17:28:36] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:37] ppocr INFO:      idx,batch:   43
+[2023/10/03 17:28:37] ppocr INFO: train_reader_cost: 1.8956503868103027
+[2023/10/03 17:28:38] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:38] ppocr INFO:      idx,batch:   44
+[2023/10/03 17:28:38] ppocr INFO: train_reader_cost: 1.899937629699707
+[2023/10/03 17:28:38] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:38] ppocr INFO:      idx,batch:   45
+[2023/10/03 17:28:38] ppocr INFO: train_reader_cost: 1.9053213596343994
+[2023/10/03 17:28:38] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:38] ppocr INFO:      idx,batch:   46
+[2023/10/03 17:28:38] ppocr INFO: train_reader_cost: 1.906733512878418
+[2023/10/03 17:28:39] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:39] ppocr INFO:      idx,batch:   47
+[2023/10/03 17:28:39] ppocr INFO: train_reader_cost: 1.9087419509887695
+[2023/10/03 17:28:39] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:40] ppocr INFO:      idx,batch:   48
+[2023/10/03 17:28:40] ppocr INFO: train_reader_cost: 2.1292226314544678
+[2023/10/03 17:28:40] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:41] ppocr INFO:      idx,batch:   49
+[2023/10/03 17:28:41] ppocr INFO: train_reader_cost: 3.0102932453155518
+[2023/10/03 17:28:41] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:41] ppocr INFO: epoch: [1/100], global_step: 50, lr: 0.000016, acc: 0.390625, norm_edit_dis: 0.865022, CTCLoss: 8.116042, SARLoss: 0.727009, loss: 8.870694, avg_reader_cost: 0.30103 s, avg_batch_cost: 0.68962 s, avg_samples: 64.0, ips: 92.80517 samples/s, eta: 10:30:25
+[2023/10/03 17:28:42] ppocr INFO:      idx,batch:   50
+[2023/10/03 17:28:42] ppocr INFO: train_reader_cost: 0.5043525695800781
+[2023/10/03 17:28:42] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:43] ppocr INFO:      idx,batch:   51
+[2023/10/03 17:28:43] ppocr INFO: train_reader_cost: 1.6244616508483887
+[2023/10/03 17:28:43] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:44] ppocr INFO:      idx,batch:   52
+[2023/10/03 17:28:44] ppocr INFO: train_reader_cost: 1.6265106201171875
+[2023/10/03 17:28:44] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:44] ppocr INFO:      idx,batch:   53
+[2023/10/03 17:28:44] ppocr INFO: train_reader_cost: 1.6298449039459229
+[2023/10/03 17:28:44] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:44] ppocr INFO:      idx,batch:   54
+[2023/10/03 17:28:44] ppocr INFO: train_reader_cost: 1.6313061714172363
+[2023/10/03 17:28:45] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:45] ppocr INFO:      idx,batch:   55
+[2023/10/03 17:28:45] ppocr INFO: train_reader_cost: 1.6328485012054443
+[2023/10/03 17:28:45] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:45] ppocr INFO:      idx,batch:   56
+[2023/10/03 17:28:45] ppocr INFO: train_reader_cost: 1.7558236122131348
+[2023/10/03 17:28:45] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:46] ppocr INFO:      idx,batch:   57
+[2023/10/03 17:28:46] ppocr INFO: train_reader_cost: 1.7583861351013184
+[2023/10/03 17:28:46] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:48] ppocr INFO:      idx,batch:   58
+[2023/10/03 17:28:48] ppocr INFO: train_reader_cost: 3.311117172241211
+[2023/10/03 17:28:48] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:49] ppocr INFO:      idx,batch:   59
+[2023/10/03 17:28:49] ppocr INFO: train_reader_cost: 4.518444061279297
+[2023/10/03 17:28:49] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:50] ppocr INFO: epoch: [1/100], global_step: 60, lr: 0.000020, acc: 0.398437, norm_edit_dis: 0.870102, CTCLoss: 6.891290, SARLoss: 0.654032, loss: 7.507431, avg_reader_cost: 0.45184 s, avg_batch_cost: 0.84113 s, avg_samples: 64.0, ips: 76.08825 samples/s, eta: 10:40:18
+[2023/10/03 17:28:50] ppocr INFO:      idx,batch:   60
+[2023/10/03 17:28:50] ppocr INFO: train_reader_cost: 0.006863832473754883
+[2023/10/03 17:28:50] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:50] ppocr INFO:      idx,batch:   61
+[2023/10/03 17:28:50] ppocr INFO: train_reader_cost: 0.012145280838012695
+[2023/10/03 17:28:50] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:50] ppocr INFO:      idx,batch:   62
+[2023/10/03 17:28:50] ppocr INFO: train_reader_cost: 0.015116691589355469
+[2023/10/03 17:28:51] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:51] ppocr INFO:      idx,batch:   63
+[2023/10/03 17:28:51] ppocr INFO: train_reader_cost: 0.021894216537475586
+[2023/10/03 17:28:51] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:51] ppocr INFO:      idx,batch:   64
+[2023/10/03 17:28:51] ppocr INFO: train_reader_cost: 0.023142337799072266
+[2023/10/03 17:28:51] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:52] ppocr INFO:      idx,batch:   65
+[2023/10/03 17:28:52] ppocr INFO: train_reader_cost: 0.024717330932617188
+[2023/10/03 17:28:52] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:52] ppocr INFO:      idx,batch:   66
+[2023/10/03 17:28:52] ppocr INFO: train_reader_cost: 0.08999204635620117
+[2023/10/03 17:28:52] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:54] ppocr INFO:      idx,batch:   67
+[2023/10/03 17:28:54] ppocr INFO: train_reader_cost: 2.020991802215576
+[2023/10/03 17:28:55] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:55] ppocr INFO:      idx,batch:   68
+[2023/10/03 17:28:55] ppocr INFO: train_reader_cost: 2.0251078605651855
+[2023/10/03 17:28:55] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:55] ppocr INFO:      idx,batch:   69
+[2023/10/03 17:28:55] ppocr INFO: train_reader_cost: 2.026528835296631
+[2023/10/03 17:28:55] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:56] ppocr INFO: epoch: [1/100], global_step: 70, lr: 0.000024, acc: 0.484375, norm_edit_dis: 0.890995, CTCLoss: 6.321559, SARLoss: 0.632789, loss: 6.968363, avg_reader_cost: 0.20265 s, avg_batch_cost: 0.59890 s, avg_samples: 64.0, ips: 106.86287 samples/s, eta: 10:18:55
+[2023/10/03 17:28:56] ppocr INFO:      idx,batch:   70
+[2023/10/03 17:28:56] ppocr INFO: train_reader_cost: 0.003845691680908203
+[2023/10/03 17:28:56] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:56] ppocr INFO:      idx,batch:   71
+[2023/10/03 17:28:56] ppocr INFO: train_reader_cost: 0.008605480194091797
+[2023/10/03 17:28:56] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:56] ppocr INFO:      idx,batch:   72
+[2023/10/03 17:28:56] ppocr INFO: train_reader_cost: 0.009508132934570312
+[2023/10/03 17:28:57] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:57] ppocr INFO:      idx,batch:   73
+[2023/10/03 17:28:57] ppocr INFO: train_reader_cost: 0.01682591438293457
+[2023/10/03 17:28:57] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:28:57] ppocr INFO:      idx,batch:   74
+[2023/10/03 17:28:57] ppocr INFO: train_reader_cost: 0.018456459045410156
+[2023/10/03 17:28:57] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:00] ppocr INFO:      idx,batch:   75
+[2023/10/03 17:29:00] ppocr INFO: train_reader_cost: 1.9448838233947754
+[2023/10/03 17:29:00] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:00] ppocr INFO:      idx,batch:   76
+[2023/10/03 17:29:00] ppocr INFO: train_reader_cost: 1.946169137954712
+[2023/10/03 17:29:00] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:00] ppocr INFO:      idx,batch:   77
+[2023/10/03 17:29:00] ppocr INFO: train_reader_cost: 1.9485158920288086
+[2023/10/03 17:29:01] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:01] ppocr INFO:      idx,batch:   78
+[2023/10/03 17:29:01] ppocr INFO: train_reader_cost: 1.9499006271362305
+[2023/10/03 17:29:01] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:01] ppocr INFO:      idx,batch:   79
+[2023/10/03 17:29:01] ppocr INFO: train_reader_cost: 1.9539964199066162
+[2023/10/03 17:29:01] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:02] ppocr INFO: epoch: [1/100], global_step: 80, lr: 0.000028, acc: 0.453125, norm_edit_dis: 0.891211, CTCLoss: 6.277100, SARLoss: 0.633836, loss: 6.879547, avg_reader_cost: 0.19540 s, avg_batch_cost: 0.59143 s, avg_samples: 64.0, ips: 108.21163 samples/s, eta: 10:02:05
+[2023/10/03 17:29:02] ppocr INFO:      idx,batch:   80
+[2023/10/03 17:29:02] ppocr INFO: train_reader_cost: 0.6436316967010498
+[2023/10/03 17:29:02] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:03] ppocr INFO:      idx,batch:   81
+[2023/10/03 17:29:03] ppocr INFO: train_reader_cost: 0.6462295055389404
+[2023/10/03 17:29:03] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:03] ppocr INFO:      idx,batch:   82
+[2023/10/03 17:29:03] ppocr INFO: train_reader_cost: 0.6516766548156738
+[2023/10/03 17:29:03] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:06] ppocr INFO:      idx,batch:   83
+[2023/10/03 17:29:06] ppocr INFO: train_reader_cost: 3.7569427490234375
+[2023/10/03 17:29:07] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:07] ppocr INFO:      idx,batch:   84
+[2023/10/03 17:29:07] ppocr INFO: train_reader_cost: 3.758208990097046
+[2023/10/03 17:29:07] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:07] ppocr INFO:      idx,batch:   85
+[2023/10/03 17:29:07] ppocr INFO: train_reader_cost: 3.760932445526123
+[2023/10/03 17:29:08] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:08] ppocr INFO:      idx,batch:   86
+[2023/10/03 17:29:08] ppocr INFO: train_reader_cost: 3.7635159492492676
+[2023/10/03 17:29:08] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:08] ppocr INFO:      idx,batch:   87
+[2023/10/03 17:29:08] ppocr INFO: train_reader_cost: 3.771824598312378
+[2023/10/03 17:29:08] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:09] ppocr INFO:      idx,batch:   88
+[2023/10/03 17:29:09] ppocr INFO: train_reader_cost: 3.778520345687866
+[2023/10/03 17:29:09] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:09] ppocr INFO:      idx,batch:   89
+[2023/10/03 17:29:09] ppocr INFO: train_reader_cost: 3.7842748165130615
+[2023/10/03 17:29:09] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:09] ppocr INFO: epoch: [1/100], global_step: 90, lr: 0.000032, acc: 0.476562, norm_edit_dis: 0.896873, CTCLoss: 5.789531, SARLoss: 0.625499, loss: 6.461118, avg_reader_cost: 0.37843 s, avg_batch_cost: 0.78066 s, avg_samples: 64.0, ips: 81.98232 samples/s, eta: 10:06:13
+[2023/10/03 17:29:09] ppocr INFO:      idx,batch:   90
+[2023/10/03 17:29:09] ppocr INFO: train_reader_cost: 0.0019381046295166016
+[2023/10/03 17:29:10] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:12] ppocr INFO:      idx,batch:   91
+[2023/10/03 17:29:12] ppocr INFO: train_reader_cost: 2.0393269062042236
+[2023/10/03 17:29:12] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:12] ppocr INFO:      idx,batch:   92
+[2023/10/03 17:29:12] ppocr INFO: train_reader_cost: 2.0403945446014404
+[2023/10/03 17:29:12] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:13] ppocr INFO:      idx,batch:   93
+[2023/10/03 17:29:13] ppocr INFO: train_reader_cost: 2.041393518447876
+[2023/10/03 17:29:13] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:13] ppocr INFO:      idx,batch:   94
+[2023/10/03 17:29:13] ppocr INFO: train_reader_cost: 2.0426974296569824
+[2023/10/03 17:29:13] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:13] ppocr INFO:      idx,batch:   95
+[2023/10/03 17:29:13] ppocr INFO: train_reader_cost: 2.044182777404785
+[2023/10/03 17:29:14] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:14] ppocr INFO:      idx,batch:   96
+[2023/10/03 17:29:14] ppocr INFO: train_reader_cost: 2.0491859912872314
+[2023/10/03 17:29:14] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:14] ppocr INFO:      idx,batch:   97
+[2023/10/03 17:29:14] ppocr INFO: train_reader_cost: 2.050380229949951
+[2023/10/03 17:29:14] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:15] ppocr INFO:      idx,batch:   98
+[2023/10/03 17:29:15] ppocr INFO: train_reader_cost: 2.0519959926605225
+[2023/10/03 17:29:15] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:15] ppocr INFO:      idx,batch:   99
+[2023/10/03 17:29:15] ppocr INFO: train_reader_cost: 2.379417657852173
+[2023/10/03 17:29:16] ppocr INFO: cal_metric_during_train, calc_epoch_interval: True 1
+[2023/10/03 17:29:16] ppocr INFO: epoch: [1/100], global_step: 100, lr: 0.000036, acc: 0.523437, norm_edit_dis: 0.920835, CTCLoss: 4.951400, SARLoss: 0.615114, loss: 5.574720, avg_reader_cost: 0.23794 s, avg_batch_cost: 0.63418 s, avg_samples: 64.0, ips: 100.91742 samples/s, eta: 9:57:29
+eval model::   0% 0/494 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/content/drive/MyDrive/PaddleOCR/tools/train.py", line 227, in <module>
+    main(config, device, logger, vdl_writer)
+  File "/content/drive/MyDrive/PaddleOCR/tools/train.py", line 198, in main
+    program.train(config, train_dataloader, valid_dataloader, device, model,
+  File "/content/drive/MyDrive/PaddleOCR/tools/program.py", line 398, in train
+    cur_metric = eval(
+  File "/content/drive/MyDrive/PaddleOCR/tools/program.py", line 544, in eval
+    preds = model(images, data=batch[1:])
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/architectures/base_model.py", line 100, in forward
+    x = self.head(x, targets=data)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/heads/rec_multi_head.py", line 92, in forward
+    ctc_encoder = self.ctc_encoder(x)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/necks/rnn.py", line 262, in forward
+    x = self.encoder_reshape(x)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/nn/layer/layers.py", line 1254, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/content/drive/MyDrive/PaddleOCR/ppocr/modeling/necks/rnn.py", line 33, in forward
+    assert H == 1
+AssertionError

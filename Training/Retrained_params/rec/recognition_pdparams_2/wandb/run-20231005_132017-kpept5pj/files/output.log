@@ -1,0 +1,123 @@
+[2023/10/05 13:20:22] ppocr INFO: Architecture :
+[2023/10/05 13:20:22] ppocr INFO:     Backbone :
+[2023/10/05 13:20:22] ppocr INFO:         last_conv_stride : [1, 2]
+[2023/10/05 13:20:22] ppocr INFO:         last_pool_kernel_size : [2, 2]
+[2023/10/05 13:20:22] ppocr INFO:         last_pool_type : avg
+[2023/10/05 13:20:22] ppocr INFO:         name : MobileNetV1Enhance
+[2023/10/05 13:20:22] ppocr INFO:         scale : 0.5
+[2023/10/05 13:20:22] ppocr INFO:     Head :
+[2023/10/05 13:20:22] ppocr INFO:         head_list :
+[2023/10/05 13:20:22] ppocr INFO:             CTCHead :
+[2023/10/05 13:20:22] ppocr INFO:                 Head :
+[2023/10/05 13:20:22] ppocr INFO:                     fc_decay : 1e-05
+[2023/10/05 13:20:22] ppocr INFO:                 Neck :
+[2023/10/05 13:20:22] ppocr INFO:                     depth : 2
+[2023/10/05 13:20:22] ppocr INFO:                     dims : 64
+[2023/10/05 13:20:22] ppocr INFO:                     hidden_dims : 120
+[2023/10/05 13:20:22] ppocr INFO:                     name : svtr
+[2023/10/05 13:20:22] ppocr INFO:                     use_guide : True
+[2023/10/05 13:20:22] ppocr INFO:             SARHead :
+[2023/10/05 13:20:22] ppocr INFO:                 enc_dim : 512
+[2023/10/05 13:20:22] ppocr INFO:                 max_text_length : 100
+[2023/10/05 13:20:22] ppocr INFO:         name : MultiHead
+[2023/10/05 13:20:22] ppocr INFO:     Transform : None
+[2023/10/05 13:20:22] ppocr INFO:     algorithm : SVTR_LCNet
+[2023/10/05 13:20:22] ppocr INFO:     model_type : rec
+[2023/10/05 13:20:22] ppocr INFO: Eval :
+[2023/10/05 13:20:22] ppocr INFO:     dataset :
+[2023/10/05 13:20:22] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/tiny_train_rec_pp/tiny_rec_train
+[2023/10/05 13:20:22] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/tiny_train_rec_pp/transcriptions.txt']
+[2023/10/05 13:20:22] ppocr INFO:         name : SimpleDataSet
+[2023/10/05 13:20:22] ppocr INFO:         transforms :
+[2023/10/05 13:20:22] ppocr INFO:             DecodeImage :
+[2023/10/05 13:20:22] ppocr INFO:                 channel_first : False
+[2023/10/05 13:20:22] ppocr INFO:                 img_mode : BGR
+[2023/10/05 13:20:22] ppocr INFO:             MultiLabelEncode : None
+[2023/10/05 13:20:22] ppocr INFO:             RecResizeImg :
+[2023/10/05 13:20:22] ppocr INFO:                 image_shape : [3, 48, 480]
+[2023/10/05 13:20:22] ppocr INFO:             KeepKeys :
+[2023/10/05 13:20:22] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/05 13:20:22] ppocr INFO:     loader :
+[2023/10/05 13:20:22] ppocr INFO:         batch_size_per_card : 128
+[2023/10/05 13:20:22] ppocr INFO:         drop_last : False
+[2023/10/05 13:20:22] ppocr INFO:         num_workers : 4
+[2023/10/05 13:20:22] ppocr INFO:         shuffle : False
+[2023/10/05 13:20:22] ppocr INFO: Global :
+[2023/10/05 13:20:22] ppocr INFO:     cal_metric_during_train : True
+[2023/10/05 13:20:22] ppocr INFO:     calc_metric_during_train : True
+[2023/10/05 13:20:22] ppocr INFO:     character_dict_path : ppocr/utils/en_dict.txt
+[2023/10/05 13:20:22] ppocr INFO:     checkpoints : None
+[2023/10/05 13:20:22] ppocr INFO:     debug : False
+[2023/10/05 13:20:22] ppocr INFO:     distributed : False
+[2023/10/05 13:20:22] ppocr INFO:     epoch_num : 100
+[2023/10/05 13:20:22] ppocr INFO:     eval_batch_step : [0, 100]
+[2023/10/05 13:20:22] ppocr INFO:     infer_img : /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000001.jpg
+[2023/10/05 13:20:22] ppocr INFO:     infer_mode : False
+[2023/10/05 13:20:22] ppocr INFO:     log_smooth_window : 20
+[2023/10/05 13:20:22] ppocr INFO:     max_text_length : 25
+[2023/10/05 13:20:22] ppocr INFO:     pretrained_model : /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_1/best_accuracy.pdparams
+[2023/10/05 13:20:22] ppocr INFO:     print_batch_step : 10
+[2023/10/05 13:20:22] ppocr INFO:     save_epoch_step : 3
+[2023/10/05 13:20:22] ppocr INFO:     save_inference_dir : ./output/v3_en_mobile_v2_03102023_infer
+[2023/10/05 13:20:22] ppocr INFO:     save_model_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/05 13:20:22] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3_en_v2_03102023.txt
+[2023/10/05 13:20:22] ppocr INFO:     use_gpu : True
+[2023/10/05 13:20:22] ppocr INFO:     use_space_char : True
+[2023/10/05 13:20:22] ppocr INFO:     use_visualdl : False
+[2023/10/05 13:20:22] ppocr INFO: Loss :
+[2023/10/05 13:20:22] ppocr INFO:     loss_config_list :
+[2023/10/05 13:20:22] ppocr INFO:         CTCLoss : None
+[2023/10/05 13:20:22] ppocr INFO:         SARLoss : None
+[2023/10/05 13:20:22] ppocr INFO:     name : MultiLoss
+[2023/10/05 13:20:22] ppocr INFO: Metric :
+[2023/10/05 13:20:22] ppocr INFO:     ignore_space : False
+[2023/10/05 13:20:22] ppocr INFO:     main_indicator : acc
+[2023/10/05 13:20:22] ppocr INFO:     name : RecMetric
+[2023/10/05 13:20:22] ppocr INFO: Optimizer :
+[2023/10/05 13:20:22] ppocr INFO:     beta1 : 0.9
+[2023/10/05 13:20:22] ppocr INFO:     beta2 : 0.999
+[2023/10/05 13:20:22] ppocr INFO:     lr :
+[2023/10/05 13:20:22] ppocr INFO:         learning_rate : 0.001
+[2023/10/05 13:20:22] ppocr INFO:         name : Cosine
+[2023/10/05 13:20:22] ppocr INFO:         warmup_epoch : 5
+[2023/10/05 13:20:22] ppocr INFO:     name : Adam
+[2023/10/05 13:20:22] ppocr INFO:     regularizer :
+[2023/10/05 13:20:22] ppocr INFO:         factor : 3e-05
+[2023/10/05 13:20:22] ppocr INFO:         name : L2
+[2023/10/05 13:20:22] ppocr INFO: PostProcess :
+[2023/10/05 13:20:22] ppocr INFO:     name : CTCLabelDecode
+[2023/10/05 13:20:22] ppocr INFO: Train :
+[2023/10/05 13:20:22] ppocr INFO:     dataset :
+[2023/10/05 13:20:22] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/train_large
+[2023/10/05 13:20:22] ppocr INFO:         ext_op_transform_idx : 1
+[2023/10/05 13:20:22] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+[2023/10/05 13:20:22] ppocr INFO:         name : SimpleDataSet
+[2023/10/05 13:20:22] ppocr INFO:         transforms :
+[2023/10/05 13:20:22] ppocr INFO:             DecodeImage :
+[2023/10/05 13:20:22] ppocr INFO:                 channel_first : False
+[2023/10/05 13:20:22] ppocr INFO:                 img_mode : BGR
+[2023/10/05 13:20:22] ppocr INFO:             RecConAug :
+[2023/10/05 13:20:22] ppocr INFO:                 ext_data_num : 2
+[2023/10/05 13:20:22] ppocr INFO:                 image_shape : [48, 480, 3]
+[2023/10/05 13:20:22] ppocr INFO:                 max_text_length : 100
+[2023/10/05 13:20:22] ppocr INFO:                 prob : 0.5
+[2023/10/05 13:20:22] ppocr INFO:             RecAug : None
+[2023/10/05 13:20:22] ppocr INFO:             MultiLabelEncode : None
+[2023/10/05 13:20:22] ppocr INFO:             RecResizeImg :
+[2023/10/05 13:20:22] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/05 13:20:22] ppocr INFO:             KeepKeys :
+[2023/10/05 13:20:22] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/05 13:20:22] ppocr INFO:     loader :
+[2023/10/05 13:20:22] ppocr INFO:         batch_size_per_card : 128
+[2023/10/05 13:20:22] ppocr INFO:         drop_last : True
+[2023/10/05 13:20:22] ppocr INFO:         num_workers : 8
+[2023/10/05 13:20:22] ppocr INFO:         shuffle : True
+[2023/10/05 13:20:22] ppocr INFO: profiler_options : None
+[2023/10/05 13:20:22] ppocr INFO: wandb :
+[2023/10/05 13:20:22] ppocr INFO:     project : text_rec_ppocrv3_v2_03102023
+[2023/10/05 13:20:22] ppocr INFO:     save_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/05 13:20:22] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/05 13:20:43] ppocr INFO: load pretrain successful from /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_1/best_accuracy
+[2023/10/05 13:20:44] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000001.jpg
+[2023/10/05 13:20:52] ppocr INFO: 	 result: Tiredness	0.9941427707672119
+[2023/10/05 13:20:52] ppocr INFO: success!

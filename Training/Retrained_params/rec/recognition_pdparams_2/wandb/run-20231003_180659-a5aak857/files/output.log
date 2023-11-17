@@ -1,0 +1,159 @@
+[2023/10/03 18:07:00] ppocr INFO: Architecture :
+[2023/10/03 18:07:00] ppocr INFO:     Backbone :
+[2023/10/03 18:07:00] ppocr INFO:         last_conv_stride : [1, 2]
+[2023/10/03 18:07:00] ppocr INFO:         last_pool_kernel_size : [2, 2]
+[2023/10/03 18:07:00] ppocr INFO:         last_pool_type : avg
+[2023/10/03 18:07:00] ppocr INFO:         name : MobileNetV1Enhance
+[2023/10/03 18:07:00] ppocr INFO:         scale : 0.5
+[2023/10/03 18:07:00] ppocr INFO:     Head :
+[2023/10/03 18:07:00] ppocr INFO:         head_list :
+[2023/10/03 18:07:00] ppocr INFO:             CTCHead :
+[2023/10/03 18:07:00] ppocr INFO:                 Head :
+[2023/10/03 18:07:00] ppocr INFO:                     fc_decay : 1e-05
+[2023/10/03 18:07:00] ppocr INFO:                 Neck :
+[2023/10/03 18:07:00] ppocr INFO:                     depth : 2
+[2023/10/03 18:07:00] ppocr INFO:                     dims : 64
+[2023/10/03 18:07:00] ppocr INFO:                     hidden_dims : 120
+[2023/10/03 18:07:00] ppocr INFO:                     name : svtr
+[2023/10/03 18:07:00] ppocr INFO:                     use_guide : True
+[2023/10/03 18:07:00] ppocr INFO:             SARHead :
+[2023/10/03 18:07:00] ppocr INFO:                 enc_dim : 512
+[2023/10/03 18:07:00] ppocr INFO:                 max_text_length : 100
+[2023/10/03 18:07:00] ppocr INFO:         name : MultiHead
+[2023/10/03 18:07:00] ppocr INFO:     Transform : None
+[2023/10/03 18:07:00] ppocr INFO:     algorithm : SVTR_LCNet
+[2023/10/03 18:07:00] ppocr INFO:     model_type : rec
+[2023/10/03 18:07:00] ppocr INFO: Eval :
+[2023/10/03 18:07:00] ppocr INFO:     dataset :
+[2023/10/03 18:07:00] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/data2/images
+[2023/10/03 18:07:00] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/data2/outputlabel.txt']
+[2023/10/03 18:07:00] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 18:07:00] ppocr INFO:         transforms :
+[2023/10/03 18:07:00] ppocr INFO:             DecodeImage :
+[2023/10/03 18:07:00] ppocr INFO:                 channel_first : False
+[2023/10/03 18:07:00] ppocr INFO:                 img_mode : BGR
+[2023/10/03 18:07:00] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 18:07:00] ppocr INFO:             RecResizeImg :
+[2023/10/03 18:07:00] ppocr INFO:                 image_shape : [3, 48, 480]
+[2023/10/03 18:07:00] ppocr INFO:             KeepKeys :
+[2023/10/03 18:07:00] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 18:07:00] ppocr INFO:     loader :
+[2023/10/03 18:07:00] ppocr INFO:         batch_size_per_card : 1000
+[2023/10/03 18:07:00] ppocr INFO:         drop_last : False
+[2023/10/03 18:07:00] ppocr INFO:         num_workers : 1000
+[2023/10/03 18:07:00] ppocr INFO:         shuffle : False
+[2023/10/03 18:07:00] ppocr INFO: Global :
+[2023/10/03 18:07:00] ppocr INFO:     cal_metric_during_train : True
+[2023/10/03 18:07:00] ppocr INFO:     calc_metric_during_train : True
+[2023/10/03 18:07:00] ppocr INFO:     character_dict_path : ppocr/utils/en_dict.txt
+[2023/10/03 18:07:00] ppocr INFO:     checkpoints : /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_v2_03102023/best_accuracy.pdparams
+[2023/10/03 18:07:00] ppocr INFO:     debug : False
+[2023/10/03 18:07:00] ppocr INFO:     distributed : False
+[2023/10/03 18:07:00] ppocr INFO:     epoch_num : 100
+[2023/10/03 18:07:00] ppocr INFO:     eval_batch_step : [0, 100]
+[2023/10/03 18:07:00] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2023/10/03 18:07:00] ppocr INFO:     infer_mode : True
+[2023/10/03 18:07:00] ppocr INFO:     log_smooth_window : 20
+[2023/10/03 18:07:00] ppocr INFO:     max_text_length : 25
+[2023/10/03 18:07:00] ppocr INFO:     pretrained_model : None
+[2023/10/03 18:07:00] ppocr INFO:     print_batch_step : 10
+[2023/10/03 18:07:00] ppocr INFO:     save_epoch_step : 3
+[2023/10/03 18:07:00] ppocr INFO:     save_inference_dir : ./output/v3_en_mobile_v2_03102023_infer
+[2023/10/03 18:07:00] ppocr INFO:     save_model_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 18:07:00] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3_en_v2_03102023.txt
+[2023/10/03 18:07:00] ppocr INFO:     use_gpu : True
+[2023/10/03 18:07:00] ppocr INFO:     use_space_char : True
+[2023/10/03 18:07:00] ppocr INFO:     use_visualdl : False
+[2023/10/03 18:07:00] ppocr INFO: Loss :
+[2023/10/03 18:07:00] ppocr INFO:     loss_config_list :
+[2023/10/03 18:07:00] ppocr INFO:         CTCLoss : None
+[2023/10/03 18:07:00] ppocr INFO:         SARLoss : None
+[2023/10/03 18:07:00] ppocr INFO:     name : MultiLoss
+[2023/10/03 18:07:00] ppocr INFO: Metric :
+[2023/10/03 18:07:00] ppocr INFO:     ignore_space : False
+[2023/10/03 18:07:00] ppocr INFO:     main_indicator : acc
+[2023/10/03 18:07:00] ppocr INFO:     name : RecMetric
+[2023/10/03 18:07:00] ppocr INFO: Optimizer :
+[2023/10/03 18:07:00] ppocr INFO:     beta1 : 0.9
+[2023/10/03 18:07:00] ppocr INFO:     beta2 : 0.999
+[2023/10/03 18:07:00] ppocr INFO:     lr :
+[2023/10/03 18:07:00] ppocr INFO:         learning_rate : 0.001
+[2023/10/03 18:07:00] ppocr INFO:         name : Cosine
+[2023/10/03 18:07:00] ppocr INFO:         warmup_epoch : 5
+[2023/10/03 18:07:00] ppocr INFO:     name : Adam
+[2023/10/03 18:07:00] ppocr INFO:     regularizer :
+[2023/10/03 18:07:00] ppocr INFO:         factor : 3e-05
+[2023/10/03 18:07:00] ppocr INFO:         name : L2
+[2023/10/03 18:07:00] ppocr INFO: PostProcess :
+[2023/10/03 18:07:00] ppocr INFO:     name : CTCLabelDecode
+[2023/10/03 18:07:00] ppocr INFO: Train :
+[2023/10/03 18:07:00] ppocr INFO:     dataset :
+[2023/10/03 18:07:00] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/train_large
+[2023/10/03 18:07:00] ppocr INFO:         ext_op_transform_idx : 1
+[2023/10/03 18:07:00] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+[2023/10/03 18:07:00] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 18:07:00] ppocr INFO:         transforms :
+[2023/10/03 18:07:00] ppocr INFO:             DecodeImage :
+[2023/10/03 18:07:00] ppocr INFO:                 channel_first : False
+[2023/10/03 18:07:00] ppocr INFO:                 img_mode : BGR
+[2023/10/03 18:07:00] ppocr INFO:             RecConAug :
+[2023/10/03 18:07:00] ppocr INFO:                 ext_data_num : 2
+[2023/10/03 18:07:00] ppocr INFO:                 image_shape : [48, 480, 3]
+[2023/10/03 18:07:00] ppocr INFO:                 max_text_length : 100
+[2023/10/03 18:07:00] ppocr INFO:                 prob : 0.5
+[2023/10/03 18:07:00] ppocr INFO:             RecAug : None
+[2023/10/03 18:07:00] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 18:07:00] ppocr INFO:             RecResizeImg :
+[2023/10/03 18:07:00] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/03 18:07:00] ppocr INFO:             KeepKeys :
+[2023/10/03 18:07:00] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 18:07:00] ppocr INFO:     loader :
+[2023/10/03 18:07:00] ppocr INFO:         batch_size_per_card : 128
+[2023/10/03 18:07:00] ppocr INFO:         drop_last : True
+[2023/10/03 18:07:00] ppocr INFO:         num_workers : 8
+[2023/10/03 18:07:00] ppocr INFO:         shuffle : True
+[2023/10/03 18:07:00] ppocr INFO: profiler_options : None
+[2023/10/03 18:07:00] ppocr INFO: wandb :
+[2023/10/03 18:07:00] ppocr INFO:     project : text_rec_ppocrv3_v2_03102023
+[2023/10/03 18:07:00] ppocr INFO:     save_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 18:07:00] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/03 18:07:00] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/data2/outputlabel.txt']
+[2023/10/03 18:07:03] ppocr INFO: resume from /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_v2_03102023/best_accuracy
+[2023/10/03 18:07:03] ppocr INFO: metric in ckpt ***************
+[2023/10/03 18:07:03] ppocr INFO: acc:0.7531034378882284
+[2023/10/03 18:07:03] ppocr INFO: is_float16:False
+[2023/10/03 18:07:03] ppocr INFO: norm_edit_dis:0.9646916672076624
+[2023/10/03 18:07:03] ppocr INFO: fps:694.3921731519326
+[2023/10/03 18:07:03] ppocr INFO: best_epoch:3
+[2023/10/03 18:07:03] ppocr INFO: start_epoch:4
+eval model::   0% 0/1 [00:00<?, ?it/s]Exception in thread Traceback (most recent call last):
+Thread-4 (_thread_loop)  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 825, in __next__
+:
+Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 693, in _get_data
+self._reader.read_next_list()[0]
+SystemError: (Fatal) Blocking queue is killed because the data reader raises an exception.
+  [Hint: Expected killed_ != true, but received killed_:1 == true:1.] (at ../paddle/fluid/operators/reader/blocking_queue.h:175)
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/PaddleOCR/tools/eval.py", line 146, in <module>
+    data = self._data_queue.get(timeout=self._timeout)
+  File "/usr/lib/python3.10/multiprocessing/queues.py", line 114, in get
+    raise Empty
+_queue.Empty
+During handling of the above exception, another exception occurred:
+main()Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+  File "/content/drive/MyDrive/PaddleOCR/tools/eval.py", line 136, in main
+        metric = program.eval(model, valid_dataloader, post_process_class,self.run()
+  File "/content/drive/MyDrive/PaddleOCR/tools/program.py", line 517, in eval
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 604, in _thread_loop
+    batch = self._get_data()
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 708, in _get_data
+    for idx, batch in enumerate(valid_dataloader):
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 825, in __next__
+    raise RuntimeError(
+self._reader.read_next_list()[0]RuntimeError
+: KeyboardInterruptDataLoader 999 workers exit unexpectedly, pids: 25240, 25242, 25244, 25246, 25248, 25250, 25252, 25254, 25256, 25258, 25260, 25262, 25264, 25266, 25268, 25270, 25272, 25274, 25276, 25278, 25280, 25282, 25284, 25286, 25292, 25294, 25296, 25298, 25300, 25302, 25304, 25306, 25308, 25310, 25312, 25314, 25316, 25318, 25320, 25322, 25324, 25326, 25328, 25330, 25332, 25334, 25336, 25338, 25340, 25342, 25344, 25346, 25348, 25350, 25352, 25354, 25360, 25362, 25364, 25366, 25368, 25370, 25372, 25374, 25376, 25378, 25380, 25382, 25384, 25386, 25388, 25390, 25392, 25394, 25396, 25398, 25400, 25402, 25404, 25406, 25408, 25410, 25412, 25414, 25416, 25418, 25420, 25422, 25424, 25430, 25432, 25434, 25436, 25438, 25440, 25442, 25444, 25446, 25448, 25450, 25452, 25454, 25456, 25458, 25460, 25462, 25464, 25466, 25468, 25470, 25472, 25474, 25476, 25478, 25480, 25482, 25484, 25486, 25488, 25490, 25496, 25498, 25500, 25502, 25504, 25508, 25510, 25512, 25514, 25516, 25518, 25520, 25522, 25524, 25526, 25528, 25530, 25532, 25534, 25536, 25538, 25540, 25542, 25544, 25546, 25548, 25550, 25552, 25554, 25556, 25559, 25564, 25566, 25568, 25570, 25572, 25574, 25576, 25578, 25580, 25582, 25584, 25586, 25588, 25590, 25592, 25594, 25596, 25598, 25600, 25602, 25604, 25606, 25608, 25610, 25612, 25614, 25616, 25618, 25620, 25622, 25628, 25630, 25632, 25634, 25636, 25638, 25640, 25642, 25644, 25646, 25648, 25650, 25652, 25654, 25656, 25658, 25660, 25662, 25664, 25666, 25668, 25670, 25672, 25674, 25676, 25678, 25680, 25682, 25684, 25686, 25692, 25694, 25696, 25698, 25700, 25702, 25704, 25706, 25708, 25710, 25712, 25714, 25716, 25718, 25720, 25722, 25724, 25726, 25728, 25730, 25732, 25734, 25736, 25738, 25740, 25742, 25744, 25746, 25748, 25754, 25756, 25758, 25760, 25762, 25764, 25766, 25768, 25770, 25772, 25774, 25776, 25778, 25780, 25782, 25784, 25786, 25788, 25790, 25792, 25794, 25796, 25798, 25800, 25802, 25804, 25806, 25808, 25810, 25816, 25818, 25820, 25822, 25824, 25826, 25828, 25830, 25832, 25834, 25836, 25838, 25840, 25842, 25844, 25846, 25848, 25850, 25852, 25854, 25856, 25858, 25860, 25862, 25864, 25866, 25868, 25870, 25872, 25878, 25880, 25882, 25884, 25886, 25888, 25890, 25892, 25894, 25896, 25898, 25900, 25902, 25904, 25906, 25908, 25910, 25912, 25914, 25916, 25918, 25920, 25922, 25924, 25926, 25928, 25930, 25932, 25938, 25940, 25942, 25944, 25946, 25948, 25950, 25952, 25954, 25956, 25958, 25960, 25962, 25964, 25966, 25968, 25970, 25972, 25974, 25976, 25978, 25980, 25982, 25984, 25986, 25988, 25990, 25992, 25998, 26000, 26002, 26004, 26006, 26008, 26010, 26012, 26014, 26016, 26018, 26020, 26022, 26024, 26026, 26028, 26030, 26032, 26034, 26036, 26038, 26040, 26042, 26044, 26046, 26048, 26050, 26055, 26058, 26060, 26062, 26064, 26066, 26068, 26070, 26072, 26074, 26076, 26078, 26080, 26082, 26084, 26086, 26088, 26090, 26092, 26094, 26096, 26098, 26100, 26102, 26104, 26106, 26108, 26110, 26116, 26118, 26120, 26122, 26124, 26126, 26128, 26130, 26132, 26134, 26136, 26138, 26140, 26142, 26144, 26148, 26150, 26152, 26154, 26156, 26158, 26160, 26162, 26164, 26166, 26168, 26171, 26176, 26178, 26180, 26182, 26184, 26186, 26188, 26190, 26192, 26194, 26196, 26198, 26200, 26202, 26204, 26206, 26208, 26210, 26212, 26214, 26216, 26218, 26220, 26222, 26224, 26226, 26228, 26234, 26236, 26238, 26240, 26242, 26244, 26246, 26248, 26250, 26252, 26254, 26256, 26258, 26260, 26262, 26264, 26266, 26268, 26270, 26272, 26274, 26276, 26278, 26280, 26282, 26284, 26286, 26292, 26294, 26296, 26298, 26300, 26302, 26304, 26306, 26308, 26310, 26312, 26314, 26316, 26318, 26320, 26322, 26324, 26326, 26328, 26330, 26332, 26334, 26336, 26338, 26340, 26346, 26348, 26350, 26352, 26354, 26356, 26358, 26360, 26362, 26364, 26366, 26368, 26370, 26372, 26374, 26376, 26378, 26380, 26382, 26384, 26386, 26388, 26390, 26392, 26394, 26396, 26400, 26404, 26406, 26408, 26410, 26412, 26414, 26416, 26418, 26420, 26422, 26424, 26426, 26428, 26430, 26432, 26434, 26436, 26438, 26440, 26442, 26444, 26446, 26448, 26450, 26452, 26458, 26460, 26462, 26464, 26466, 26468, 26470, 26472, 26474, 26476, 26478, 26480, 26482, 26484, 26486, 26488, 26490, 26492, 26494, 26496, 26498, 26500, 26502, 26504, 26506, 26508, 26514, 26516, 26518, 26520, 26522, 26524, 26526, 26528, 26530, 26532, 26534, 26536, 26538, 26540, 26542, 26544, 26546, 26548, 26550, 26552, 26554, 26556, 26558, 26560, 26562, 26568, 26570, 26572, 26574, 26576, 26578, 26580, 26582, 26584, 26586, 26588, 26590, 26592, 26594, 26596, 26598, 26600, 26602, 26604, 26606, 26608, 26610, 26612, 26614, 26616, 26622, 26624, 26626, 26628, 26630, 26632, 26634, 26636, 26638, 26640, 26642, 26644, 26646, 26648, 26650, 26652, 26654, 26656, 26658, 26660, 26662, 26664, 26666, 26668, 26673, 26676, 26678, 26680, 26682, 26684, 26686, 26688, 26690, 26692, 26694, 26696, 26698, 26700, 26702, 26704, 26706, 26708, 26710, 26712, 26714, 26716, 26720, 26722, 26728, 26730, 26732, 26734, 26736, 26738, 26740, 26742, 26744, 26746, 26748, 26750, 26752, 26754, 26756, 26758, 26760, 26762, 26764, 26766, 26768, 26770, 26772, 26774, 26780, 26782, 26784, 26786, 26788, 26790, 26792, 26794, 26796, 26798, 26800, 26802, 26804, 26806, 26808, 26810, 26812, 26814, 26816, 26818, 26820, 26822, 26824, 26826, 26832, 26834, 26836, 26838, 26840, 26842, 26844, 26846, 26848, 26852, 26854, 26856, 26858, 26860, 26862, 26864, 26866, 26868, 26870, 26872, 26874, 26876, 26882, 26884, 26886, 26888, 26890, 26892, 26894, 26896, 26898, 26900, 26902, 26904, 26906, 26908, 26910, 26912, 26914, 26916, 26918, 26920, 26922, 26928, 26930, 26932, 26934, 26936, 26938, 26940, 26942, 26944, 26946, 26948, 26950, 26952, 26954, 26956, 26958, 26960, 26962, 26964, 26966, 26968, 26973, 26976, 26978, 26980, 26982, 26984, 26986, 26988, 26990, 26992, 26994, 26996, 26998, 27000, 27002, 27004, 27006, 27008, 27010, 27012, 27014, 27016, 27022, 27024, 27026, 27028, 27030, 27032, 27034, 27036, 27038, 27040, 27042, 27044, 27046, 27048, 27050, 27052, 27054, 27056, 27058, 27060, 27062, 27067, 27070, 27072, 27074, 27076, 27078, 27080, 27082, 27084, 27086, 27088, 27090, 27092, 27094, 27096, 27098, 27100, 27102, 27104, 27106, 27108, 27110, 27112, 27118, 27120, 27122, 27124, 27126, 27128, 27130, 27132, 27134, 27136, 27138, 27140, 27142, 27144, 27146, 27148, 27150, 27152, 27154, 27156, 27158, 27160, 27166, 27168, 27170, 27172, 27174, 27176, 27178, 27180, 27182, 27184, 27186, 27188, 27190, 27192, 27194, 27196, 27198, 27200, 27202, 27204, 27206, 27208, 27214, 27216, 27218, 27220, 27222, 27224, 27228, 27230, 27232, 27234, 27236, 27238, 27240, 27242, 27244, 27246, 27248, 27250, 27252, 27254, 27256, 27258, 27260, 27262, 27268, 27270, 27272, 27274, 27276, 27278, 27280, 27282, 27284, 27286, 27288, 27290, 27292, 27294, 27296, 27298, 27300, 27302, 27304, 27306, 27308, 27310, 27312, 27318, 27320, 27322, 27324, 27326, 27328, 27330, 27332, 27334, 27336, 27338, 27340, 27342, 27344, 27346, 27348, 27350, 27352, 27354, 27356, 27358, 27360, 27362, 27368, 27370, 27372, 27374, 27376, 27378, 27380, 27382, 27384, 27386, 27388, 27390, 27392, 27394, 27396, 27398

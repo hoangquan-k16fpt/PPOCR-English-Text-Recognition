@@ -1,0 +1,94 @@
+{
+    "os": "Linux-5.15.120+-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2023-10-05T07:41:24.061701",
+    "startedAt": "2023-10-05T07:41:23.108125",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "-c",
+        "/content/drive/MyDrive/PaddleOCR/configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_cml.yml",
+        "-o",
+        "Global.infer_img=/content/drive/MyDrive/PaddleOCR/data2/images",
+        "Global.pretrained_model=/content/drive/MyDrive/PaddleOCR/output/ch_PP-OCR_v3_det_05102023_v2/best_accuracy.pdparams"
+    ],
+    "state": "running",
+    "program": "/content/drive/MyDrive/PaddleOCR/tools/infer_det.py",
+    "codePathLocal": "tools/infer_det.py",
+    "codePath": "tools/infer_det.py",
+    "git": {
+        "remote": "https://github.com/PaddlePaddle/PaddleOCR.git",
+        "commit": "89a2f4586e8dc7d1ef477293262aa9cf157a43a5"
+    },
+    "email": null,
+    "root": "/content/drive/MyDrive/PaddleOCR",
+    "host": "e975cd0e5fc3",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2000.1559999999995,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2000.156,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 166.77415084838867,
+            "used": 33.60307693481445
+        }
+    },
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla T4",
+            "memory_total": 16106127360
+        }
+    ],
+    "memory": {
+        "total": 50.99726104736328
+    }
+}

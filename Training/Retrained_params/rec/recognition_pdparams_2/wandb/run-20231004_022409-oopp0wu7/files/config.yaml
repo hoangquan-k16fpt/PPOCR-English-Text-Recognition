@@ -1,0 +1,189 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.12
+    cli_version: 0.15.11
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1696386249.396784
+    t:
+      1:
+      - 54
+      - 55
+      2:
+      - 54
+      - 55
+      3:
+      - 23
+      4: 3.10.12
+      5: 0.15.11
+      8:
+      - 5
+      13: linux-x86_64
+Architecture:
+  desc: null
+  value:
+    Backbone:
+      last_conv_stride:
+      - 1
+      - 2
+      last_pool_kernel_size:
+      - 2
+      - 2
+      last_pool_type: avg
+      name: MobileNetV1Enhance
+      scale: 0.5
+    Head:
+      head_list:
+      - CTCHead:
+          Head:
+            fc_decay: 1.0e-05
+          Neck:
+            depth: 2
+            dims: 64
+            hidden_dims: 120
+            name: svtr
+            use_guide: true
+      - SARHead:
+          enc_dim: 512
+          max_text_length: 100
+      name: MultiHead
+    Transform: null
+    algorithm: SVTR_LCNet
+    model_type: rec
+Eval:
+  desc: null
+  value:
+    dataset:
+      data_dir: /content/drive/MyDrive/PaddleOCR/data2/images
+      label_file_list:
+      - /content/drive/MyDrive/PaddleOCR/data2/outputlabel.txt
+      name: SimpleDataSet
+      transforms:
+      - DecodeImage:
+          channel_first: false
+          img_mode: BGR
+      - MultiLabelEncode: null
+      - RecResizeImg:
+          image_shape:
+          - 3
+          - 48
+          - 320
+      - KeepKeys:
+          keep_keys:
+          - image
+          - label_ctc
+          - label_sar
+          - length
+          - valid_ratio
+    loader:
+      batch_size_per_card: 1
+      drop_last: false
+      num_workers: 1000
+      shuffle: true
+Global:
+  desc: null
+  value:
+    cal_metric_during_train: true
+    calc_metric_during_train: true
+    character_dict_path: ppocr/utils/en_dict.txt
+    checkpoints: /content/drive/MyDrive/PaddleOCR/pretrain_models/best_accuracy_en_PPOCR_v3.pdparams
+    debug: false
+    distributed: false
+    epoch_num: 100
+    eval_batch_step:
+    - 0
+    - 100
+    infer_img: doc/imgs_words/ch/word_1.jpg
+    infer_mode: true
+    log_smooth_window: 20
+    max_text_length: 25
+    pretrained_model: null
+    print_batch_step: 10
+    save_epoch_step: 3
+    save_inference_dir: ./output/v3_en_mobile_v2_03102023_infer
+    save_model_dir: ./output/v3_en_mobile_v2_03102023
+    save_res_path: ./output/rec/predicts_ppocrv3_en_v2_03102023.txt
+    use_gpu: true
+    use_space_char: true
+    use_visualdl: false
+Loss:
+  desc: null
+  value:
+    loss_config_list:
+    - CTCLoss: null
+    - SARLoss: null
+    name: MultiLoss
+Metric:
+  desc: null
+  value:
+    ignore_space: false
+    main_indicator: acc
+    name: RecMetric
+Optimizer:
+  desc: null
+  value:
+    beta1: 0.9
+    beta2: 0.999
+    lr:
+      learning_rate: 0.001
+      name: Cosine
+      warmup_epoch: 5
+    name: Adam
+    regularizer:
+      factor: 3.0e-05
+      name: L2
+PostProcess:
+  desc: null
+  value:
+    name: CTCLabelDecode
+Train:
+  desc: null
+  value:
+    dataset:
+      data_dir: /content/drive/MyDrive/PaddleOCR/train_data/train_large
+      ext_op_transform_idx: 1
+      label_file_list:
+      - /content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt
+      name: SimpleDataSet
+      transforms:
+      - DecodeImage:
+          channel_first: false
+          img_mode: BGR
+      - RecConAug:
+          ext_data_num: 2
+          image_shape:
+          - 48
+          - 480
+          - 3
+          max_text_length: 100
+          prob: 0.5
+      - RecAug: null
+      - MultiLabelEncode: null
+      - RecResizeImg:
+          image_shape:
+          - 3
+          - 48
+          - 320
+      - KeepKeys:
+          keep_keys:
+          - image
+          - label_ctc
+          - label_sar
+          - length
+          - valid_ratio
+    loader:
+      batch_size_per_card: 128
+      drop_last: true
+      num_workers: 8
+      shuffle: true
+wandb:
+  desc: null
+  value:
+    project: text_rec_ppocrv3_v2_03102023
+    save_dir: ./output/v3_en_mobile_v2_03102023
+profiler_options:
+  desc: null
+  value: null

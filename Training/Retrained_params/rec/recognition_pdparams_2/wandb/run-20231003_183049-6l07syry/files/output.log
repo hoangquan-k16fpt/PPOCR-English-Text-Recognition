@@ -1,0 +1,2090 @@
+[2023/10/03 18:30:50] ppocr INFO: Architecture :
+[2023/10/03 18:30:50] ppocr INFO:     Backbone :
+[2023/10/03 18:30:50] ppocr INFO:         last_conv_stride : [1, 2]
+[2023/10/03 18:30:50] ppocr INFO:         last_pool_kernel_size : [2, 2]
+[2023/10/03 18:30:50] ppocr INFO:         last_pool_type : avg
+[2023/10/03 18:30:50] ppocr INFO:         name : MobileNetV1Enhance
+[2023/10/03 18:30:50] ppocr INFO:         scale : 0.5
+[2023/10/03 18:30:50] ppocr INFO:     Head :
+[2023/10/03 18:30:50] ppocr INFO:         head_list :
+[2023/10/03 18:30:50] ppocr INFO:             CTCHead :
+[2023/10/03 18:30:50] ppocr INFO:                 Head :
+[2023/10/03 18:30:50] ppocr INFO:                     fc_decay : 1e-05
+[2023/10/03 18:30:50] ppocr INFO:                 Neck :
+[2023/10/03 18:30:50] ppocr INFO:                     depth : 2
+[2023/10/03 18:30:50] ppocr INFO:                     dims : 64
+[2023/10/03 18:30:50] ppocr INFO:                     hidden_dims : 120
+[2023/10/03 18:30:50] ppocr INFO:                     name : svtr
+[2023/10/03 18:30:50] ppocr INFO:                     use_guide : True
+[2023/10/03 18:30:50] ppocr INFO:             SARHead :
+[2023/10/03 18:30:50] ppocr INFO:                 enc_dim : 512
+[2023/10/03 18:30:50] ppocr INFO:                 max_text_length : 100
+[2023/10/03 18:30:50] ppocr INFO:         name : MultiHead
+[2023/10/03 18:30:50] ppocr INFO:     Transform : None
+[2023/10/03 18:30:50] ppocr INFO:     algorithm : SVTR_LCNet
+[2023/10/03 18:30:50] ppocr INFO:     model_type : rec
+[2023/10/03 18:30:50] ppocr INFO: Eval :
+[2023/10/03 18:30:50] ppocr INFO:     dataset :
+[2023/10/03 18:30:50] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/data2/images
+[2023/10/03 18:30:50] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/data2/outputlabel.txt']
+[2023/10/03 18:30:50] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 18:30:50] ppocr INFO:         transforms :
+[2023/10/03 18:30:50] ppocr INFO:             DecodeImage :
+[2023/10/03 18:30:50] ppocr INFO:                 channel_first : False
+[2023/10/03 18:30:50] ppocr INFO:                 img_mode : BGR
+[2023/10/03 18:30:50] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 18:30:50] ppocr INFO:             RecResizeImg :
+[2023/10/03 18:30:50] ppocr INFO:                 image_shape : [3, 48, 480]
+[2023/10/03 18:30:50] ppocr INFO:             KeepKeys :
+[2023/10/03 18:30:50] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 18:30:50] ppocr INFO:     loader :
+[2023/10/03 18:30:50] ppocr INFO:         batch_size_per_card : 1
+[2023/10/03 18:30:50] ppocr INFO:         drop_last : False
+[2023/10/03 18:30:50] ppocr INFO:         num_workers : 1000
+[2023/10/03 18:30:50] ppocr INFO:         shuffle : True
+[2023/10/03 18:30:50] ppocr INFO: Global :
+[2023/10/03 18:30:50] ppocr INFO:     cal_metric_during_train : True
+[2023/10/03 18:30:50] ppocr INFO:     calc_metric_during_train : True
+[2023/10/03 18:30:50] ppocr INFO:     character_dict_path : ppocr/utils/en_dict.txt
+[2023/10/03 18:30:50] ppocr INFO:     checkpoints : None
+[2023/10/03 18:30:50] ppocr INFO:     debug : False
+[2023/10/03 18:30:50] ppocr INFO:     distributed : False
+[2023/10/03 18:30:50] ppocr INFO:     epoch_num : 100
+[2023/10/03 18:30:50] ppocr INFO:     eval_batch_step : [0, 100]
+[2023/10/03 18:30:50] ppocr INFO:     infer_img : /content/drive/MyDrive/PaddleOCR/data2/images
+[2023/10/03 18:30:50] ppocr INFO:     infer_mode : True
+[2023/10/03 18:30:50] ppocr INFO:     log_smooth_window : 20
+[2023/10/03 18:30:50] ppocr INFO:     max_text_length : 25
+[2023/10/03 18:30:50] ppocr INFO:     pretrained_model : /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_v2_03102023/best_accuracy.pdparams
+[2023/10/03 18:30:50] ppocr INFO:     print_batch_step : 10
+[2023/10/03 18:30:50] ppocr INFO:     save_epoch_step : 3
+[2023/10/03 18:30:50] ppocr INFO:     save_inference_dir : ./output/v3_en_mobile_v2_03102023_infer
+[2023/10/03 18:30:50] ppocr INFO:     save_model_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 18:30:50] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3_en_v2_03102023.txt
+[2023/10/03 18:30:50] ppocr INFO:     use_gpu : True
+[2023/10/03 18:30:50] ppocr INFO:     use_space_char : True
+[2023/10/03 18:30:50] ppocr INFO:     use_visualdl : False
+[2023/10/03 18:30:50] ppocr INFO: Loss :
+[2023/10/03 18:30:50] ppocr INFO:     loss_config_list :
+[2023/10/03 18:30:50] ppocr INFO:         CTCLoss : None
+[2023/10/03 18:30:50] ppocr INFO:         SARLoss : None
+[2023/10/03 18:30:50] ppocr INFO:     name : MultiLoss
+[2023/10/03 18:30:50] ppocr INFO: Metric :
+[2023/10/03 18:30:50] ppocr INFO:     ignore_space : False
+[2023/10/03 18:30:50] ppocr INFO:     main_indicator : acc
+[2023/10/03 18:30:50] ppocr INFO:     name : RecMetric
+[2023/10/03 18:30:50] ppocr INFO: Optimizer :
+[2023/10/03 18:30:50] ppocr INFO:     beta1 : 0.9
+[2023/10/03 18:30:50] ppocr INFO:     beta2 : 0.999
+[2023/10/03 18:30:50] ppocr INFO:     lr :
+[2023/10/03 18:30:50] ppocr INFO:         learning_rate : 0.001
+[2023/10/03 18:30:50] ppocr INFO:         name : Cosine
+[2023/10/03 18:30:50] ppocr INFO:         warmup_epoch : 5
+[2023/10/03 18:30:50] ppocr INFO:     name : Adam
+[2023/10/03 18:30:50] ppocr INFO:     regularizer :
+[2023/10/03 18:30:50] ppocr INFO:         factor : 3e-05
+[2023/10/03 18:30:50] ppocr INFO:         name : L2
+[2023/10/03 18:30:50] ppocr INFO: PostProcess :
+[2023/10/03 18:30:50] ppocr INFO:     name : CTCLabelDecode
+[2023/10/03 18:30:50] ppocr INFO: Train :
+[2023/10/03 18:30:50] ppocr INFO:     dataset :
+[2023/10/03 18:30:50] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/train_large
+[2023/10/03 18:30:50] ppocr INFO:         ext_op_transform_idx : 1
+[2023/10/03 18:30:50] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+[2023/10/03 18:30:50] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 18:30:50] ppocr INFO:         transforms :
+[2023/10/03 18:30:50] ppocr INFO:             DecodeImage :
+[2023/10/03 18:30:50] ppocr INFO:                 channel_first : False
+[2023/10/03 18:30:50] ppocr INFO:                 img_mode : BGR
+[2023/10/03 18:30:50] ppocr INFO:             RecConAug :
+[2023/10/03 18:30:50] ppocr INFO:                 ext_data_num : 2
+[2023/10/03 18:30:50] ppocr INFO:                 image_shape : [48, 480, 3]
+[2023/10/03 18:30:50] ppocr INFO:                 max_text_length : 100
+[2023/10/03 18:30:50] ppocr INFO:                 prob : 0.5
+[2023/10/03 18:30:50] ppocr INFO:             RecAug : None
+[2023/10/03 18:30:50] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 18:30:50] ppocr INFO:             RecResizeImg :
+[2023/10/03 18:30:50] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/03 18:30:50] ppocr INFO:             KeepKeys :
+[2023/10/03 18:30:50] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 18:30:50] ppocr INFO:     loader :
+[2023/10/03 18:30:50] ppocr INFO:         batch_size_per_card : 128
+[2023/10/03 18:30:50] ppocr INFO:         drop_last : True
+[2023/10/03 18:30:50] ppocr INFO:         num_workers : 8
+[2023/10/03 18:30:50] ppocr INFO:         shuffle : True
+[2023/10/03 18:30:50] ppocr INFO: profiler_options : None
+[2023/10/03 18:30:50] ppocr INFO: wandb :
+[2023/10/03 18:30:50] ppocr INFO:     project : text_rec_ppocrv3_v2_03102023
+[2023/10/03 18:30:50] ppocr INFO:     save_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 18:30:50] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/03 18:30:52] ppocr INFO: load pretrain successful from /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_v2_03102023/best_accuracy
+[2023/10/03 18:30:53] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000001.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: Tiredness	0.998478889465332
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000002.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: kills	0.9980023503303528
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000003.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: A	0.9986044764518738
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000004.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: short	0.9954980611801147
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000005.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: break	0.9914692640304565
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000006.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: could	0.9978639483451843
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000007.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: save	0.9905083179473877
+[2023/10/03 18:30:54] ppocr INFO: 	 result: your	0.9994630813598633
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000009.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: life	0.9779086112976074
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000010.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: 8	0.9551887512207031
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000011.jpg
+[2023/10/03 18:30:54] ppocr INFO: 	 result: 319	0.7121914029121399
+[2023/10/03 18:30:54] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000012.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: I0	0.46278196573257446
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000013.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Saeco	0.9926584362983704
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000014.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: ENT	0.9927473664283752
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000015.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: ESC	0.9299665093421936
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000016.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Betriebsbereit	0.98164302110672
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000017.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Produkt	0.9779699444770813
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000018.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Wahler	0.7599043250083923
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000019.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: hungry	0.9995144009590149
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000020.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Ifalling	0.849506676197052
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000021.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: on	0.8710163831710815
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000022.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: my	0.6455671787261963
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000023.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: knecs]	0.5116657614707947
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000024.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Campus	0.9742968082427979
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000025.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: shop	0.9060488939285278
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000026.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Gt.	0.9984054565429688
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000027.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Yarmouth	0.9974876642227173
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000028.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Ipswich	0.974502682685852
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000029.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: A12)	0.945231556892395
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000030.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Harwich	0.9970735311508179
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000031.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: A120)	0.9768953323364258
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000032.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Clacton	0.9932948350906372
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000033.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: A133	0.9987853169441223
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000034.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: GREEK	0.9976927638053894
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000035.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: COOKERY	0.9972606301307678
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000036.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: &	0.9978368878364563
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000037.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: WINES	0.9980095624923706
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000038.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: LOCAL	0.9890931248664856
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000039.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: SPECIALTIES	0.9954105615615845
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000040.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: FESTIVE	0.9868229627609253
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000041.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: RECIPES	0.9978976845741272
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000042.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: ILLUSTRATED	0.9955442547798157
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000043.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: TOUBI'S	0.9717352986335754
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000044.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: e	0.9953746199607849
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000045.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: g	0.8538402915000916
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000046.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: intelligent	0.9997312426567078
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000047.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: inhabited	0.9982442855834961
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000048.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: group	0.9992855191230774
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000049.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: University	0.999304473400116
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000050.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: of	0.995057225227356
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000051.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Essex	0.9962298274040222
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000052.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Bernd	0.9991897344589233
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000053.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Reuse	0.9994542002677917
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000054.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Roland	0.999609649181366
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000055.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Vollmar	0.9986287951469421
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000056.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: (Hrsg.)	0.9834309816360474
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000057.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: Informatikforschung	0.9973981976509094
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000058.jpg
+[2023/10/03 18:30:55] ppocr INFO: 	 result: in	0.9983482360839844
+[2023/10/03 18:30:55] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000059.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Deutschland	0.9940805435180664
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000060.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Springer	0.9486696720123291
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000061.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Summer's	0.993563711643219
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000062.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Here!	0.9974783062934875
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000063.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: TM	0.7242843508720398
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000064.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: CHECK	0.9654142260551453
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000065.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: SIGNAL	0.8113510012626648
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000066.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: CABLE	0.9931409955024719
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000067.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: P	0.9888359904289246
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000068.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: WARNING	0.9989886283874512
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000069.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Trespassing	0.9980983138084412
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000070.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: or	0.9964831471443176
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000071.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: causing	0.9997631311416626
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000072.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: nuisance	0.9984234571456909
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000073.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: on	0.9974175691604614
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000074.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: a	0.9980223178863525
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000075.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: school	0.997136652469635
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000076.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: site	0.998816728591919
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000077.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: can	0.9980993866920471
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000078.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: lead	0.9956125617027283
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000079.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: to	0.9980769157409668
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000080.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: a	0.9965649247169495
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000081.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: criminal	0.9991557598114014
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000082.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: conviction	0.9982055425643921
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000083.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Under	0.9993277788162231
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000084.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Section	0.9992217421531677
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000085.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: 547	0.9978506565093994
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000086.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: of	0.908536434173584
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000087.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: the	0.9991475939750671
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000088.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Education	0.9990859627723694
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000089.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Act	0.9992668628692627
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000090.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: 1996	0.9973434805870056
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000091.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Essex	0.9912277460098267
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000092.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: County	0.9971611499786377
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000093.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Council	0.9643164873123169
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000094.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Learning	0.9980341792106628
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000095.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Services	0.9984405636787415
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000096.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Roland	0.9993913173675537
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000097.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: DIGITAL	0.9988012313842773
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000098.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: GROUP	0.9984383583068848
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000099.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Lord	0.9882981777191162
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000100.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Nelson	0.9825711250305176
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000101.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Servicemenu	0.9935465455055237
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000102.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Wahlwiederh.	0.9511528611183167
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000103.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Briefkasten	0.9962804317474365
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000104.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Lautsprecher	0.9944038987159729
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000105.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: ubernahwe	0.7865235805511475
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000106.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: abc	0.9904773831367493
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000107.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: 2	0.9997420907020569
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000108.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: 1	0.9994857311248779
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000109.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: 3	0.9990317821502686
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000110.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: def	0.9972264170646667
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000111.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Anrufliste	0.9946613311767578
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000112.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: NA	0.9821511507034302
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000113.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: IMPORTED	0.9953266382217407
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000114.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: BEER	0.9974475502967834
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000115.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: FROM	0.971808910369873
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000116.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: MEXICO	0.9765974879264832
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000117.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: WOLEGADG	0.8966388702392578
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000118.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: EmMERICH	0.8986526131629944
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000119.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Engin	0.9972726106643677
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000120.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: ing	0.9797930717468262
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000121.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: DistrinAed	0.8962299227714539
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000122.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Objects	0.989498496055603
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000123.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Gates	0.9990290403366089
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000124.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: 30	0.9987764358520508
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000125.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: &	0.9884769916534424
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000126.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: 88	0.9980816841125488
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000127.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: Emergency	0.9944297075271606
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000128.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: exit	0.9946755170822144
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000129.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: No	0.9532690048217773
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000130.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: unauthorised	0.9993379712104797
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000131.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: entry	0.9996193051338196
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000132.jpg
+[2023/10/03 18:30:56] ppocr INFO: 	 result: area!	0.9959270358085632
+[2023/10/03 18:30:56] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000133.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Permit	0.9995270371437073
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000134.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: system	0.9995522499084473
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000135.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: operation	0.9988396763801575
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000136.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Estates	0.9991150498390198
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000137.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Management	0.9989962577819824
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000138.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Section	0.999321460723877
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000139.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Tetley	0.9970219135284424
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000140.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: find	0.9926149249076843
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000141.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: out	0.9932239055633545
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000142.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: just	0.9950485825538635
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000143.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: how	0.996471643447876
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000144.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: much,	0.9730634689331055
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000145.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: visit	0.9922515153884888
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000146.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: U	0.9780846834182739
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000147.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Competence	0.9995539784431458
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000148.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Center	0.9994520545005798
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000149.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Virtual	0.9197088479995728
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000150.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Office	0.9995219111442566
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000151.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: of	0.9982321262359619
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000152.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: the	0.9988589882850647
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000153.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Future	0.9989080429077148
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000154.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Deutsches	0.9992178678512573
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000155.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Forschungszentrum	0.9968176484107971
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000156.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Kunstliche	0.9991304278373718
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000157.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Intelligenz	0.9971539974212646
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000158.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: GmbH	0.9916478991508484
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000159.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: 1st	0.9951046109199524
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000160.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: floor	0.9986181259155273
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000161.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: 1.21	0.979375958442688
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000162.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: FINAL	0.999211311340332
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000163.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: clearance	0.9969661235809326
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000164.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: BURTON	0.9954257011413574
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000165.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: GARNIER	0.9960312843322754
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000166.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: LABORATOIRES	0.9935099482536316
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000167.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: 2.17	0.9996175765991211
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000168.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Knowledge	0.9988433122634888
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000169.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Management	0.998751163482666
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000170.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: (KM)	0.9712571501731873
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000171.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Dr.	0.9944801330566406
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000172.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Faisal	0.997473955154419
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000173.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Shafait	0.9970575571060181
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000174.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Multimedia	0.9991868138313293
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000175.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: and	0.9988954067230225
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000176.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Data	0.9968936443328857
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000177.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Mining	0.9993601441383362
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000178.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Analysis	0.9982105493545532
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000179.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Chocome	0.9854761362075806
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000180.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: hot	0.9899463057518005
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000181.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: DE	0.9981253147125244
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000182.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: ENIGE	0.99676114320755
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000183.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: ECHTE	0.9966837167739868
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000184.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: 4	0.9262752532958984
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000185.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: 5	0.9959463477134705
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000186.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: sensed	0.7555087208747864
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000187.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: padmachines	0.9980791211128235
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000188.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: ZIE	0.9118086695671082
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000189.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: ACHTERZIJDE	0.9714866876602173
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000190.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: baby's	0.9949747920036316
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000191.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: animal	0.9966080784797668
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000192.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: word	0.9975100755691528
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000193.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: book	0.9870008826255798
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000194.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: Senseo	0.9984511733055115
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000195.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: NEW	0.9986142516136169
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000196.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: GENERATION	0.9995747804641724
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000197.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: A	0.34082287549972534
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000198.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: OF	0.6094884276390076
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000199.jpg
+[2023/10/03 18:30:57] ppocr INFO: 	 result: DIESEL	0.9951956868171692
+[2023/10/03 18:30:57] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000200.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: DENIM	0.9528571963310242
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000201.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: PSON	0.6317782998085022
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000202.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 2002	0.9992991089820862
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000203.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Manchester	0.9988322257995605
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000204.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: THE	0.9959423542022705
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000205.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: XVII	0.9846841096878052
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000206.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: COMMONWEALTH	0.9985320568084717
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000207.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: GAMES	0.9972597360610962
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000208.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: FARNBOROUGH	0.9994243383407593
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000209.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: AIRSHOW	0.9969377517700195
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000210.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 28	0.9984774589538574
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000211.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: JULY	0.9962579607963562
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000212.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 2002	0.9979499578475952
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000213.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: daily	0.981662392616272
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000214.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: flying	0.9503026008605957
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000215.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: programme	0.9747856855392456
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000216.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: @	0.356510192155838
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000217.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 17	0.9980147480964661
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000218.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 59	0.9825938940048218
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000219.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: TM	0.9946971535682678
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000220.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: GUINNESS	0.9997045993804932
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000221.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: DRAUGHT	0.9984378814697266
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000222.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Extra	0.9856562614440918
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000223.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 30	0.9960126876831055
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000224.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: THE	0.9922395348548889
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000225.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: WALLACE	0.9992691278457642
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000226.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: SWORD	0.9977203607559204
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000227.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Softvare	0.8298289775848389
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000228.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Engineering	0.9325395822525024
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000229.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: lan	0.9720666408538818
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000230.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Sommerville	0.9992772936820984
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000231.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: HEPB	0.9014999270439148
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000232.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Verbandstoffe	0.9172074794769287
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000233.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Teer:	0.9866305589675903
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000234.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 7	0.9980085492134094
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000235.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: mg	0.988465428352356
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000236.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Nikotin:	0.9905054569244385
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000237.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 0,6	0.9664310812950134
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000238.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: mg	0.9793374538421631
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000239.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Kohlen-	0.994669497013092
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000240.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: monoxid:	0.9875648021697998
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000241.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 9	0.9852452874183655
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000242.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: mg	0.9828665852546692
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000243.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: AN	0.9969888925552368
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000244.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: INTRODUCTION	0.9976988434791565
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000245.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: TO	0.9832263588905334
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000246.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: DATABASE	0.9980325102806091
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000247.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: SVSTEMS	0.8857024312019348
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000248.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: C	0.8433002829551697
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000249.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: J.	0.7180626392364502
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000250.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: DATE	0.9938866496086121
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000251.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: EDITION	0.9948474168777466
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000252.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: RIVERSIDE	0.9990246295928955
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000253.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: WALK	0.9987958073616028
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000254.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: REGISTERED	0.9974550008773804
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000255.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: TRADE	0.9955297708511353
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000256.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: MARR	0.9293708801269531
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000257.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: pentium	0.9963369965553284
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000258.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: 4	0.9930158853530884
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000259.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: hoss	0.9921981692314148
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000260.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Standort	0.9883996248245239
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000261.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Feuerloscher	0.9980711340904236
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000262.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Rettungsweg/	0.9992616176605225
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000263.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Notausgang	0.9991948008537292
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000264.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Brandmelder	0.9990835785865784
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000265.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Treppenraum	0.998278021812439
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000266.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Rettungsweg	0.9688662886619568
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000267.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: Richtungsangabe	0.9977293014526367
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000268.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: EINWLRF	0.8891679644584656
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000269.jpg
+[2023/10/03 18:30:58] ppocr INFO: 	 result: EURD	0.7964947819709778
+[2023/10/03 18:30:58] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000270.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: 0.05-2.00	0.9928738474845886
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000271.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: 1)	0.9927489757537842
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000272.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: GELD	0.9981294274330139
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000273.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: EINWERFEN	0.9983982443809509
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000274.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: 2)	0.9972399473190308
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000275.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: NUMMER	0.9980244636535645
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000276.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: DES	0.9990789294242859
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000277.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: FACHES	0.9970555305480957
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000278.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: WAHLEN	0.997394859790802
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000279.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: 3)	0.9972578287124634
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000280.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: GELDRUCKGABE	0.999591588973999
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000281.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: :	0.38327786326408386
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000282.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: TASTER)DRUCKEN	0.9605637192726135
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000283.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: HEALTHY	0.9987029433250427
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000284.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: COLCHESTER	0.9998329281806946
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000285.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: 2000	0.9985299110412598
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000286.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: Communication	0.9859556555747986
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000287.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: for	0.9976933598518372
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000288.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: E	0.982837438583374
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000289.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: ineering	0.9964143633842468
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000290.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: Students	0.9989427328109741
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000291.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: TESCO	0.997868537902832
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000292.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: VALUE	0.9979070425033569
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000293.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: Washing	0.9983602166175842
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000294.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: UP	0.6701824069023132
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000295.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: liquid	0.995720386505127
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000296.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: SOUNDS	0.9198300838470459
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000297.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: OF	0.9977555274963379
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000298.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: SUMMER	0.9966485500335693
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000299.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: The	0.9779965281486511
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000300.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: CS	0.463358610868454
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000301.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: best	0.8719314932823181
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000302.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: live	0.9959081411361694
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000303.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: music	0.9876963496208191
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000304.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: events	0.9959391951560974
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000305.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: orange	0.9992585778236389
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000306.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: Telephone	0.9987322688102722
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000307.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: FOCAL	0.998869776725769
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000308.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: DISPLAYS	0.9986396431922913
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000309.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: 01-640 6821/2 REF	0.9521016478538513
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000310.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: A11	0.9933593273162842
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000311.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: dtoly	0.6245735883712769
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000312.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: Informal	0.9647789001464844
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000313.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: ESSEX	0.9957610964775085
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000314.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: SUMMER	0.9975045323371887
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000315.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: SCHOOL	0.9981579184532166
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000316.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: IN	0.9890397191047668
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000317.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: DATA	0.9983947277069092
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000318.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: ANALYSIS	0.9977671504020691
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000319.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: 4.311	0.9964578747749329
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000320.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: YOU	0.9937103390693665
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000321.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: ARE	0.9984683990478516
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000322.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: HERE	0.9992080926895142
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000323.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: DEPARTMENT	0.9995740652084351
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000324.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: OF	0.9913247227668762
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000325.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: GOVERNMENT	0.9992141723632812
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000326.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: COURSES	0.9989719390869141
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000327.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: FOR	0.9991292953491211
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000328.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: STAFF	0.9965832829475403
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000329.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: lyama	0.8806427121162415
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000330.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: POCKET	0.9970014095306396
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000331.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: FLASH	0.9278410077095032
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000332.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: READER	0.9969818592071533
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000333.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: stat	0.8308839201927185
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000334.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: WrM	0.7298521995544434
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000335.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: Technology	0.9985874891281128
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000336.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: for	0.9984045624732971
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000337.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: life	0.9901502132415771
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000338.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: SNOUT	0.9705265760421753
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000339.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: graphic	0.9969142079353333
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000340.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: Mastering	0.999343991279602
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000341.jpg
+[2023/10/03 18:30:59] ppocr INFO: 	 result: the	0.9995597004890442
+[2023/10/03 18:30:59] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000342.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: JFC	0.9796505570411682
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000343.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: 3R0	0.8701400756835938
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000344.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: EDITION	0.9939759373664856
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000345.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: TM	0.9925192594528198
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000346.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: 2	0.9993501305580139
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000347.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: WRIGLEY'S	0.955418586730957
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000348.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: DOUBLEMINT	0.9987310171127319
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000349.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: CHEWING	0.9977399110794067
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000350.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: GUM	0.9966407418251038
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000351.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Kenco	0.9703599214553833
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000352.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: nco	0.9739894270896912
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000353.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: FIRE	0.9979822635650635
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000354.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: HOSE	0.9977872967720032
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000355.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: REEL	0.9991061687469482
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000356.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: EXCLUSIVELY	0.9988327026367188
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000357.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: FOR	0.9989476799964905
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000358.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: WHEELCHAIR	0.9984472990036011
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000359.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: USERS	0.9983878135681152
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000360.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Metool	0.9137218594551086
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000361.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Gallery	0.9994408488273621
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000362.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: 1	0.9977734684944153
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000363.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Please	0.9988598823547363
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000364.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Enter	0.9995185732841492
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000365.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: SIZE	0.9962520003318787
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000366.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: QUEEN	0.9985752105712891
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000367.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: LITTER	0.9856657981872559
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000368.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: COLCHESTER	0.9987545013427734
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000369.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: BOROUGH	0.9943601489067078
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000370.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: DEBENHAMS	0.9983997344970703
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000371.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: BRITAIN'S	0.9815083742141724
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000372.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: FAVOURITE	0.9986553192138672
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000373.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: DEPARTMENT	0.9976064562797546
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000374.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: STORE	0.9974508285522461
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000375.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: www.debenhams.com	0.9973890781402588
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000376.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Videos	0.9870830178260803
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000377.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: avaihble	0.9649339914321899
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000378.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: here	0.9910856485366821
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000379.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: ALL	0.7703835368156433
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000380.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: our	0.9744697213172913
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000381.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: videos	0.9353507161140442
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000382.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: are	0.9772936701774597
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000383.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: loaned	0.9181006550788879
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000384.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: for	0.9935387969017029
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000385.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: one	0.9847738146781921
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000386.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: week	0.9962114095687866
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000387.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: 2	0.999420166015625
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000388.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: NatWest	0.983247697353363
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000389.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: PAST	0.9887123703956604
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000390.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: TIMES	0.9977605938911438
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000391.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Essex	0.9911848306655884
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000392.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: County	0.9987999796867371
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000393.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Council	0.9398100972175598
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000394.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Colchester	0.9926959872245789
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000395.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Library	0.9976348280906677
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000396.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Library	0.9992855191230774
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000397.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Open	0.9988424777984619
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000398.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Essex	0.9955838918685913
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000399.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: County	0.9958754181861877
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000400.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Council	0.9979147911071777
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000401.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: Libraries	0.9886711835861206
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000402.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: FORUM	0.9969035387039185
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000403.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: trinity	0.9980478286743164
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000404.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: street	0.9977191090583801
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000405.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: studios	0.9907759428024292
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000406.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: WHILE	0.9974972009658813
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000407.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: YOU	0.9760109782218933
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000408.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: WAIT	0.9657745957374573
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000409.jpg
+[2023/10/03 18:31:00] ppocr INFO: 	 result: SHOE	0.9962970018386841
+[2023/10/03 18:31:00] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000410.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: REPAIRS	0.9981087446212769
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000411.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: AVAILABLE	0.9990130662918091
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000412.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: CRAHAMS	0.8791342377662659
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000413.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: AFA	0.9949250221252441
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000414.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: XEY	0.7165229916572571
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000415.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: WEST	0.9188647270202637
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000416.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Zone	0.9968555569648743
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000417.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: ENDS	0.999356746673584
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000418.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Videos	0.9987866878509521
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000419.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Here	0.9982808828353882
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000420.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: QUEEN	0.9983723759651184
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000421.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: STREET	0.9961580634117126
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000422.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: FORMERLY	0.9911999702453613
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000423.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: SOUTHGATE	0.9966357350349426
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000424.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: STREET	0.9886558651924133
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000425.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: ROUTE	0.9997361898422241
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000426.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: BUS	0.9977546334266663
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000427.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Tourist	0.9984055757522583
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000428.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: information	0.9990302920341492
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000429.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Castle	0.9980270266532898
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000430.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: i	0.5168212056159973
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000431.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: hills	0.9660967588424683
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000432.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: RESIDENTIAL	0.999230146408081
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000433.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: hills	0.9907220602035522
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000434.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: &	0.9984948635101318
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000435.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: es	0.7630442380905151
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000436.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: EVe	0.7430259585380554
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000437.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: ROGERS	0.998751163482666
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000438.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: CARTER	0.9975200295448303
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000439.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: 10	0.9971851706504822
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000440.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: HARWICH	0.9985905289649963
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000441.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: COURT	0.9966276288032532
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000442.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: HOUSE	0.9977110028266907
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000443.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: 11	0.9986761212348938
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000444.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: GAS	0.9772176742553711
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000445.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: GAS	0.9968626499176025
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000446.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: GAS	0.9954622387886047
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000447.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: GAS	0.9976105690002441
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000448.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: GAS	0.9778921604156494
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000449.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Fire	0.9986190795898438
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000450.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: door	0.9994785785675049
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000451.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: keep	0.9995317459106445
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000452.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: locked	0.9508960843086243
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000453.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: WALK	0.9849563837051392
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000454.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: PLANT	0.9993234872817993
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000455.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: ROOM	0.9980214834213257
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000456.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: No	0.9426313638687134
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000457.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: unauthorised	0.9988880157470703
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000458.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: entry	0.9993820190429688
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000459.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Permit	0.999323308467865
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000460.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: to	0.9932353496551514
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000461.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: work	0.9981071352958679
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000462.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: system	0.999504804611206
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000463.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: in	0.9994025230407715
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000464.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: operation	0.9983486533164978
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000465.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Estates	0.9991674423217773
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000466.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Management	0.9989063143730164
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000467.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Section	0.9993568062782288
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000468.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Coach	0.9982918500900269
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000469.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Stop	0.9963009357452393
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000470.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: NATIONAL	0.9985089302062988
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000471.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: EXPRESS	0.9971984028816223
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000472.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: First	0.9886237382888794
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000473.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Used	0.9991378784179688
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000474.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: tickets	0.9981040954589844
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000475.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Alarm	0.9925800561904907
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000476.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: Fitted	0.9994123578071594
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000477.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: FIRE	0.9913898706436157
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000478.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: EXTINGUISHER	0.998260498046875
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000479.jpg
+[2023/10/03 18:31:01] ppocr INFO: 	 result: BREAK	0.9976517558097839
+[2023/10/03 18:31:01] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000480.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: GLASS	0.9568155407905579
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000481.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: CASUAL	0.9735605716705322
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000482.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: PLUS	0.9949909448623657
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000483.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: 002101	0.999213695526123
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000484.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: NEW	0.9994625449180603
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000485.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: SUPERKINGS	0.998755931854248
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000486.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: Meet	0.9989526867866516
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000487.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: the	0.9995465278625488
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000488.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: big	0.9960985779762268
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000489.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: three.	0.9982743263244629
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000490.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: in	0.7859126925468445
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000491.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: the	0.9995719790458679
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000492.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: interest	0.9995393753051758
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000493.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: Of	0.804639458656311
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000494.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: Health	0.9882785677909851
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000495.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: and	0.9991747736930847
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000496.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: Hygiene	0.9982300996780396
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000497.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: PLEASE	0.999500572681427
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000498.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: DO	0.996759831905365
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000499.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: NOT	0.9389373660087585
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000500.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: FEED	0.9960806369781494
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000501.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: THE	0.9942706227302551
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000502.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: PIGEONS	0.9985100030899048
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000503.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: CELCON	0.9282774925231934
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000504.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: No	0.951824426651001
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000505.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: cycling	0.9995704293251038
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000506.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: CoA	0.586418867111206
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000507.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: MED	0.9876766800880432
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000508.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: cuisine	0.9959339499473572
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000509.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: FIRED	0.9983100891113281
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000510.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: EARTH	0.9973489046096802
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000511.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: lowns-uk.co	0.9867826700210571
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000512.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: HOME	0.9977835416793823
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000513.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: ENTERTAINMENT	0.9987589716911316
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000514.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: HFC	0.9962857365608215
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000515.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: BANK	0.9975539445877075
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000516.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: STAR	0.99183589220047
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000517.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: WARS	0.9963942170143127
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000518.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: EPISODE	0.9986411333084106
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000519.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: 1I:	0.740393340587616
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000520.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: ATTACK	0.9963046908378601
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000521.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: OF	0.998860776424408
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000522.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: THE	0.9963662624359131
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000523.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: CLONES	0.998814582824707
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000524.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: STAR	0.8963868021965027
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000525.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: WARS	0.9797878265380859
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000526.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: SPIDER-MAN	0.9943496584892273
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000527.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: NATURAL	0.9990513920783997
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000528.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: HISTORY	0.9975546002388
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000529.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: MUSEUM	0.9957584738731384
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000530.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: CLOSING	0.9989258050918579
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000531.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: DOWN	0.9980290532112122
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000532.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: SALE	0.9988957643508911
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000533.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: one	0.9980009198188782
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000534.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: hour	0.9991631507873535
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000535.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: the	0.9995107650756836
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000536.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: eyecare	0.9995328783988953
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000537.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: clinic	0.9943728446960449
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000538.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: contact	0.9990116357803345
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000539.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: lens	0.9832721948623657
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000540.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: centre	0.9990696907043457
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000541.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: one	0.9836897253990173
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000542.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: bars	0.8134527206420898
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000543.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: FUN	0.9975475668907166
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000544.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: FASHION	0.9991438984870911
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000545.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: LADIES	0.9992808699607849
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000546.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: LINGERIE	0.9996509552001953
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000547.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: SHOP	0.9983413815498352
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000548.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: 01206368166	0.9998243451118469
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000549.jpg
+[2023/10/03 18:31:02] ppocr INFO: 	 result: FUNFASHION@HOTMAIL.COM	0.999370813369751
+[2023/10/03 18:31:02] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000550.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: S	0.6606374382972717
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000551.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 3	0.9927828311920166
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000552.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: P	0.9757810235023499
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000553.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Counselling	0.9996801614761353
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000554.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Helpline	0.9991353750228882
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000555.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Lifelines	0.998335599899292
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000556.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Farmily	0.9487689733505249
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000557.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Support	0.9984091520309448
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000558.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: UK	0.9887256622314453
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000559.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: DANCE	0.9987702369689941
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000560.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: PROTOTYPE	0.999506950378418
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000561.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: &	0.9885205626487732
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000562.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: INSPIRED	0.9996432065963745
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000563.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: RECORDS	0.9997456669807434
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000564.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: First	0.9735102653503418
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000565.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Eastern	0.997851550579071
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000566.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: National	0.9979744553565979
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000567.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Bus	0.9457969069480896
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000568.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Times	0.9808046221733093
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000569.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Next	0.9980509877204895
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000570.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Departure	0.9992644786834717
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000571.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 1231	0.8980493545532227
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000572.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: ENE	0.5742301344871521
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000573.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 202 	0.35518306493759155
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000574.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: FTRST	0.8815901875495911
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000575.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 	0.0
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000576.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: KNOW	0.9964161515235901
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000577.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: YOUR	0.9985308051109314
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000578.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: First	0.9865517616271973
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000579.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: TICKET!	0.9917132258415222
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000580.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: London	0.9988949298858643
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000581.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Ipswich	0.9702721834182739
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000582.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: A12)	0.9373495578765869
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000583.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Town	0.9859936237335205
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000584.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Centre	0.9989385008811951
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000585.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Longridge	0.973261833190918
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000586.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Park	0.9966762661933899
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000587.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: PREMIER	0.9994195103645325
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000588.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: TEAM	0.9968845248222351
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000589.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Famous	0.9985466003417969
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000590.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: for	0.9995080828666687
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000591.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: our	0.9957830309867859
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000592.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: fish	0.9989850521087646
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000593.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: &	0.9979085922241211
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000594.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: chips	0.9985163807868958
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000595.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: BUFFETT	0.9938024282455444
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000596.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: WAY	0.9967692494392395
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000597.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: CUL	0.9966674447059631
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000598.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: -	0.7085211277008057
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000599.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: DE	0.9993880391120911
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000600.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: -	0.36816006898880005
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000601.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: SAC	0.9983518123626709
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000602.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: University	0.9969043731689453
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000603.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: of	0.992146372795105
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000604.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Essex	0.9961916208267212
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000605.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 1	0.9977883100509644
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000606.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: leading	0.9463785886764526
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000607.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: to	0.9985973834991455
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000608.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Wivenhoe	0.9976159334182739
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000609.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Trail	0.9154084920883179
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000610.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 114	0.949610710144043
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000611.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: Greenstead	0.9994117617607117
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000612.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: centre	0.9984822273254395
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000613.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 5	0.31583577394485474
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000614.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 2	0.9996169805526733
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000615.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: DANGER	0.9982423186302185
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000616.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: KEEP	0.9989507794380188
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000617.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: OUT	0.9916538596153259
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000618.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: BMC	0.8805062770843506
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000619.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 75	0.9958841800689697
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000620.jpg
+[2023/10/03 18:31:03] ppocr INFO: 	 result: 5	0.24349388480186462
+[2023/10/03 18:31:03] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000621.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: University	0.9985933303833008
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000622.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: of	0.9340929985046387
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000623.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Essex	0.9971132278442383
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000624.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: 34	0.9959855079650879
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000625.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: leading	0.9055377840995789
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000626.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: to	0.9988721609115601
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000627.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Wivenhoe	0.9972732663154602
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000628.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Trail	0.9307435154914856
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000629.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: 1	0.998872697353363
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000630.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Greenstead	0.9971628189086914
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000631.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: centre	0.9994800090789795
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000632.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: University	0.9983412027359009
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000633.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: of	0.9710204601287842
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000634.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Essex	0.9900608062744141
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000635.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Day	0.9984670281410217
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000636.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Nursery	0.9791370630264282
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000637.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Keynes	0.9988402724266052
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000638.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Rayleigh	0.9989440441131592
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000639.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: and	0.9990589022636414
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000640.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: William	0.9976981282234192
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000641.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Morris	0.9973211288452148
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000642.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Towers	0.9959055781364441
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000643.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Wolfson	0.9965195655822754
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000644.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Buses	0.9984557032585144
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000645.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: and	0.9987542629241943
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000646.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Only	0.9942119717597961
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000647.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: CONFERENCE	0.9993168711662292
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000648.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: CAR	0.9987969398498535
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000649.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: PARK	0.9988216161727905
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000650.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Entrance	0.9993914365768433
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000651.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: 4	0.999722421169281
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000652.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: STOP	0.9951869249343872
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000653.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: AUSTRALIA	0.9699718952178955
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000654.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: FIRE	0.9992028474807739
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000655.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: EXIT	0.997728168964386
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000656.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Keep	0.9994192123413086
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000657.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: clear	0.9997390508651733
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000658.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Roland	0.9991353154182434
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000659.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: DIGITAL	0.9983972907066345
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000660.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: GROUP	0.9982867240905762
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000661.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: 571	0.9917495250701904
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000662.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: 4B.532	0.9920842051506042
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000663.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: AOnDO	0.8137439489364624
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000664.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: CAFE	0.8332010507583618
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000665.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: -	0.6562806367874146
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000666.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: BAR	0.8521443009376526
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000667.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: -	0.564990758895874
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000668.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: UCnUE	0.6502799391746521
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000669.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: food	0.9971982836723328
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000670.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Sports	0.9985671043395996
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000671.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Centre	0.9997275471687317
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000672.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: ark	0.9978339076042175
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000673.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Conference	0.9996727108955383
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000674.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Centre	0.9997362494468689
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000675.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Car	0.9962965846061707
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000676.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: Parks	0.998589038848877
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000677.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: UDX	0.9929077625274658
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000678.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: MAYFAIR	0.9934621453285217
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000679.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: MINI	0.9983099699020386
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000680.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: PEUGEOT	0.9961708188056946
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000681.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: EXIT	0.9972211718559265
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000682.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: EMERGENCY	0.9989743828773499
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000683.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: SERVICE	0.9993234276771545
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000684.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: VEHICLES	0.9402256011962891
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000685.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: ONLY	0.9982993006706238
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000686.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: CHALLENGE	0.9976338148117065
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000687.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: RESTAURANT	0.9995654225349426
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000688.jpg
+[2023/10/03 18:31:04] ppocr INFO: 	 result: FLATS	0.998947024345398
+[2023/10/03 18:31:04] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000689.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 61to69	0.9992707371711731
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000690.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 1	0.9808716773986816
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000691.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 2	0.9988119602203369
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000692.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 3	0.9991402626037598
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000693.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 4	0.9994150400161743
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000694.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 5	0.7640551924705505
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000695.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 6	0.9901657700538635
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000696.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 7	0.9889394640922546
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000697.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 8	0.991960346698761
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000698.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 9	0.9664192795753479
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000699.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: the	0.9993900656700134
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000700.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: one-line	0.9992230534553528
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000701.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: guice	0.9752328991889954
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000702.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: go	0.8582779169082642
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000703.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Post	0.9552839994430542
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000704.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Office	0.9993288516998291
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000705.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 99	0.9782121777534485
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000706.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 5	0.9980364441871643
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000707.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: SPRINKLER	0.9996964335441589
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000708.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: VALVE	0.9990216493606567
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000709.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: CHAMBER	0.9984062314033508
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000710.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: ION	0.9898455739021301
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000711.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: The	0.9971070885658264
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000712.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Linen	0.9998489618301392
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000713.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Factory	0.9990468621253967
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000714.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: ICE	0.9979564547538757
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000715.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: CREAM	0.997189998626709
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000716.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: PHARMACY	0.9951634407043457
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000717.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: CamaUFaae	0.49671417474746704
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000718.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: JACKS	0.9936826825141907
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000719.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: FAMOUS	0.9926603436470032
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000720.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: EST.	0.9840657114982605
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000721.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 1946	0.9977186322212219
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000722.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: PLAY	0.9959938526153564
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000723.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: THUNDERBALL	0.9891555309295654
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000724.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: HERE	0.9941118955612183
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000725.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 20P	0.9355692267417908
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000726.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: A	0.9978803396224976
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000727.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: RIDE	0.9988752603530884
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000728.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Peacocks	0.9941481351852417
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000729.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: SLUSH	0.9888370633125305
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000730.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: PUPPIE	0.9059919714927673
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000731.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: AS	0.9501932859420776
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000732.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: COOL	0.9095260500907898
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000733.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: AS	0.8668463230133057
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000734.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: IT	0.9612823724746704
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000735.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: GETS	0.9796143770217896
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000736.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Cheques	0.9978815317153931
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000737.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: CALORE	0.9659650921821594
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000738.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: PIZZA	0.747593343257904
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000739.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: The	0.9886578917503357
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000740.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Adult	0.9948949813842773
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000741.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Community	0.9955839514732361
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000742.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: College	0.8510074019432068
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000743.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 11	0.9991202354431152
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000744.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Fire	0.9974970817565918
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000745.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: up	0.9954167604446411
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000746.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: your	0.999643087387085
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000747.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: senses	0.9985857009887695
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000748.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Save	0.9853010177612305
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000749.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Family	0.8776998519897461
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000750.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: day	0.9870214462280273
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000751.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: try	0.9739423394203186
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000752.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: 4	0.9995375871658325
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000753.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: SECOM	0.9461376070976257
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000754.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: Except	0.995103120803833
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000755.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: for	0.999434769153595
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000756.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: access	0.9978271126747131
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000757.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: and	0.9990966320037842
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000758.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: buses	0.9927371740341187
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000759.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: pRiORY	0.8393840193748474
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000760.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: galLeRies	0.9347946643829346
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000761.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: at	0.9950186014175415
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000762.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: the	0.9995571970939636
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000763.jpg
+[2023/10/03 18:31:05] ppocr INFO: 	 result: ship	0.9929226040840149
+[2023/10/03 18:31:05] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000764.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: pRIORy	0.799824059009552
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000765.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: galleRies	0.9244586229324341
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000766.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: TANFORDS	0.9970803260803223
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000767.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: NO	0.9981520175933838
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000768.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: SMOKING	0.9989646673202515
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000769.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: MAXIMUM	0.9969897866249084
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000770.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: PENALTY	0.9989522099494934
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000771.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Colchester	0.9971147775650024
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000772.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Insurance	0.9993122816085815
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000773.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Centre	0.998833179473877
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000774.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: EAST	0.9939485788345337
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000775.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: HILL	0.9979574680328369
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000776.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: chips	0.9971240758895874
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000777.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: cut	0.9989964962005615
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000778.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: over	0.9871390461921692
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000779.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: prices	0.9988489151000977
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000780.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: chopped	0.9972087144851685
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000781.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: 4,000	0.9764631390571594
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000782.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: ANTIQUES	0.9992584586143494
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000783.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: MILL	0.9992560148239136
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000784.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: ION	0.9813949465751648
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000785.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: 4447	0.9958572387695312
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000786.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: HAMBLION	0.9676977396011353
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000787.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: TRANSPORT	0.9570297598838806
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000788.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: STORAGE	0.9983786344528198
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000789.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: &	0.9934422969818115
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000790.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: DISTRIBUTION	0.9681360721588135
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000791.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: COLCHESTER	0.9981878995895386
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000792.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: 794447	0.9850337505340576
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000793.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: 6	0.9992145299911499
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000794.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: University	0.9995609521865845
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000795.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: of	0.9886119961738586
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000796.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Essex	0.9946191906929016
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000797.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Gas	0.9938833117485046
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000798.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Station	0.9985491037368774
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000799.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: No	0.9634381532669067
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000800.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Dry	0.998791515827179
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000801.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: riser	0.9995450973510742
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000802.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Department	0.9997251629829407
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000803.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: of	0.9782081842422485
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000804.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Psychology	0.9951351284980774
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000805.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Second	0.9997097849845886
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000806.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Year	0.9983868598937988
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000807.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: 3	0.9995450377464294
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000808.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: FLOOR	0.8492623567581177
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000809.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: POST	0.9964838624000549
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000810.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: OFFICE	0.9990250468254089
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000811.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: NATIONAL	0.9964408874511719
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000812.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: EXPRESS	0.99814373254776
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000813.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: POSTPAK	0.9969272613525391
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000814.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: POSTPAK	0.9974469542503357
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000815.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: POST	0.9952317476272583
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000816.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: OFFICE	0.9985918402671814
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000817.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: the	0.9989180564880371
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000818.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: copy	0.8810386657714844
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000819.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: centre	0.999694287776947
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000820.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: COPTES	0.8361110687255859
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000821.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: EASER	0.8839119076728821
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000822.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: COEUOER	0.6850452423095703
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000823.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: U	0.9704204201698303
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000824.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Tetley	0.9975273013114929
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000825.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: To	0.974010169506073
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000826.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: find	0.9996771216392517
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000827.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: out	0.9992807507514954
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000828.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: just	0.9996123313903809
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000829.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: hellmann	0.9946370124816895
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000830.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: parcel	0.9975368976593018
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000831.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: systems	0.9985400438308716
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000832.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Free	0.9978088140487671
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000833.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Travel	0.9505497813224792
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000834.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: Please	0.9976045489311218
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000835.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: wait	0.9978102445602417
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000836.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: here	0.9997416734695435
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000837.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: until	0.9994215965270996
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000838.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: a	0.995747983455658
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000839.jpg
+[2023/10/03 18:31:06] ppocr INFO: 	 result: cashier	0.9996265769004822
+[2023/10/03 18:31:06] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000840.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: is	0.9958488941192627
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000841.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: available	0.9977272748947144
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000842.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: SHOP	0.9956522583961487
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000843.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: TO	0.8913590908050537
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000844.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: LET	0.9957345128059387
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000845.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Oxfam	0.9759101867675781
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000846.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Bookshop	0.9985292553901672
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000847.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: No	0.9721517562866211
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000848.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: smoking	0.9997025728225708
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000849.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: beyond	0.9996376633644104
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000850.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: this	0.9984167814254761
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000851.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: point	0.9995511770248413
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000852.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: High	0.9975992441177368
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000853.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Fidelity	0.9986642599105835
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000854.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: NICK	0.9979338645935059
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000855.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: HORNBY	0.9822372794151306
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000856.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Mark	0.9967861175537109
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000857.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Z.	0.8971195220947266
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000858.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Danielewski's	0.9940808415412903
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000859.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: HOUSE	0.997307300567627
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000860.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: OF	0.9836415648460388
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000861.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: LEAVES	0.9979641437530518
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000862.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: John	0.9976905584335327
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000863.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Stein	0.9990078210830688
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000864.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: beck	0.9541686773300171
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000865.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: The	0.9960977435112
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000866.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Grapes	0.9983270764350891
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000867.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: of	0.9977282285690308
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000868.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Wrath	0.9895837903022766
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000869.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: HEART	0.9981039762496948
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000870.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: OF	0.9987913370132446
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000871.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: DARKNESS	0.9977238774299622
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000872.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: JOSEPH	0.9987452626228333
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000873.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: CONRAD	0.9991349577903748
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000874.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Truman	0.9907875657081604
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000875.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Capote	0.9983963966369629
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000876.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Breakfast	0.9978024363517761
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000877.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: at	0.9976168870925903
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000878.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Tiffany's	0.9944485425949097
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000879.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: NAD	0.9980077743530273
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000880.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: IR	0.9964423179626465
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000881.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: EAST	0.9959211349487305
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000882.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: COURT	0.9967115521430969
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000883.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: HOUSE	0.9975675344467163
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000884.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Student	0.9977765679359436
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000885.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Accounts	0.9991759061813354
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000886.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Do	0.9066466689109802
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000887.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: you	0.9944445490837097
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000888.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Know	0.9980475902557373
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000889.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: anyone	0.9836966395378113
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000890.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: starting	0.910071611404419
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000891.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: university	0.9981122016906738
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000892.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: this	0.9990770816802979
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000893.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: yeor?	0.9870108366012573
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000894.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: TESCO	0.997456431388855
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000895.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: EXIT	0.9699064493179321
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000896.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: SERVICE	0.999651312828064
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000897.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: VEHICLES	0.9990366697311401
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000898.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: YOU	0.9945518374443054
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000899.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: ARE	0.9988222718238831
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000900.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: HERE	0.9989013671875
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000901.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Student	0.9993770718574524
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000902.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Residence	0.9996525645256042
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000903.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: 2	0.9991798996925354
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000904.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Antl	0.8718307018280029
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000905.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Nazi	0.9086754322052002
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000906.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Loaque	0.919947624206543
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000907.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Black	0.9982619285583496
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000908.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: &	0.9968098998069763
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000909.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: White	0.9937976002693176
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000910.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: Unite	0.9914959073066711
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000911.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: HSBC	0.9965494871139526
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000912.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: gtioroup	0.8528244495391846
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000913.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: THE	0.9951242804527283
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000914.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: SOUTH	0.9973659515380859
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000915.jpg
+[2023/10/03 18:31:07] ppocr INFO: 	 result: COLONNADE	0.9996703267097473
+[2023/10/03 18:31:07] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000916.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: E14	0.9983511567115784
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000917.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: CABOT	0.9900717735290527
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000918.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: PLACE	0.9994487762451172
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000919.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Meditative	0.9992055892944336
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000920.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Rose	0.9979859590530396
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000921.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: (1958)	0.9837510585784912
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000922.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: CANARY	0.9982069134712219
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000923.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: WHARF	0.9968364834785461
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000924.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: STATION	0.9985262751579285
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000925.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Mews	0.9972532391548157
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000926.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Exmouth	0.9946223497390747
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000927.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Camden	0.9991691708564758
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000928.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: BREAK	0.9978452920913696
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000929.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: GLASS	0.986846923828125
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000930.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: FOR	0.9986321330070496
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000931.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: KEY	0.9957017302513123
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000932.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: CAUTION	0.9997538328170776
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000933.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: SITE	0.9979259967803955
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000934.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: TRAFFIC	0.9992503523826599
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000935.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: CROSSING	0.9995673298835754
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000936.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: DRIVERS	0.999200165271759
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000937.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: BEWARE!	0.9957128167152405
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000938.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: CONTRACTOR'S	0.9977769255638123
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000939.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: VEHICLES	0.9990334510803223
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000940.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: ROSE	0.9992645978927612
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000941.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Builders	0.9995399713516235
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000942.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: &	0.9993903636932373
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000943.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Contractors	0.9994044899940491
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000944.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: OF	0.8900666236877441
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000945.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 4	0.941044270992279
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000946.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Accommodation	0.9994816184043884
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000947.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Office	0.9995160102844238
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000948.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: South	0.9975934028625488
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000949.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Campus	0.9989935755729675
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000950.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 2076	0.9900809526443481
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000951.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: CANS	0.9983335733413696
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000952.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: ONLY	0.9989200830459595
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000953.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: BROW	0.9963346719741821
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000954.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: GLASS	0.9991695284843445
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000955.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: ONLY	0.9985241293907166
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000956.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: BEWARE	0.9979274272918701
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000957.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: ALLIGATOR	0.9992498755455017
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000958.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: TEETH	0.9966924786567688
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000959.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: SV	0.8462351560592651
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000960.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: GAS	0.9975680708885193
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000961.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 180	0.996285617351532
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000962.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: T	0.6967673897743225
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000963.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 2	0.9996564388275146
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000964.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: moto	0.9868947267532349
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000965.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: BANK	0.973728597164154
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000966.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 9.-12	0.9927361607551575
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000967.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: September	0.9997039437294006
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000968.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 2002	0.9993552565574646
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000969.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Oldenburg	0.9986379146575928
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000970.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Germ	0.9992489218711853
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000971.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: FTRTFT	0.9926347732543945
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000972.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 2002	0.9976695775985718
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000973.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: ESPRESSO	0.9987020492553711
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000974.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: ESPRESSOCHOC	0.9978203773498535
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000975.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: HOT MILK	0.942648708820343
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000976.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: CHOCOMILK	0.9973042607307434
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000977.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 52	0.993381142616272
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000978.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 55	0.9964505434036255
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000979.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: 20p	0.9950407147407532
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000980.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: Metool	0.9468104243278503
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000981.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: STANLEY	0.9986129999160767
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000982.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: KUBRICK'S	0.9970294237136841
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000983.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: THE	0.9969632625579834
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000984.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: SHINUG	0.8648841381072998
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000985.jpg
+[2023/10/03 18:31:08] ppocr INFO: 	 result: MEMENTO	0.9788705706596375
+[2023/10/03 18:31:08] ppocr INFO: infer_img: /content/drive/MyDrive/PaddleOCR/data2/images/20230420_000986.jpg

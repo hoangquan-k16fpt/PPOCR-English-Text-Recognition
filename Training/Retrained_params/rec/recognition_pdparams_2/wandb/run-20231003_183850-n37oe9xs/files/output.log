@@ -1,0 +1,166 @@
+[2023/10/03 18:38:51] ppocr INFO: Architecture :
+[2023/10/03 18:38:51] ppocr INFO:     Backbone :
+[2023/10/03 18:38:51] ppocr INFO:         last_conv_stride : [1, 2]
+[2023/10/03 18:38:51] ppocr INFO:         last_pool_kernel_size : [2, 2]
+[2023/10/03 18:38:51] ppocr INFO:         last_pool_type : avg
+[2023/10/03 18:38:51] ppocr INFO:         name : MobileNetV1Enhance
+[2023/10/03 18:38:51] ppocr INFO:         scale : 0.5
+[2023/10/03 18:38:51] ppocr INFO:     Head :
+[2023/10/03 18:38:51] ppocr INFO:         head_list :
+[2023/10/03 18:38:51] ppocr INFO:             CTCHead :
+[2023/10/03 18:38:51] ppocr INFO:                 Head :
+[2023/10/03 18:38:51] ppocr INFO:                     fc_decay : 1e-05
+[2023/10/03 18:38:51] ppocr INFO:                 Neck :
+[2023/10/03 18:38:51] ppocr INFO:                     depth : 2
+[2023/10/03 18:38:51] ppocr INFO:                     dims : 64
+[2023/10/03 18:38:51] ppocr INFO:                     hidden_dims : 120
+[2023/10/03 18:38:51] ppocr INFO:                     name : svtr
+[2023/10/03 18:38:51] ppocr INFO:                     use_guide : True
+[2023/10/03 18:38:51] ppocr INFO:             SARHead :
+[2023/10/03 18:38:51] ppocr INFO:                 enc_dim : 512
+[2023/10/03 18:38:51] ppocr INFO:                 max_text_length : 100
+[2023/10/03 18:38:51] ppocr INFO:         name : MultiHead
+[2023/10/03 18:38:51] ppocr INFO:     Transform : None
+[2023/10/03 18:38:51] ppocr INFO:     algorithm : SVTR_LCNet
+[2023/10/03 18:38:51] ppocr INFO:     model_type : rec
+[2023/10/03 18:38:51] ppocr INFO: Eval :
+[2023/10/03 18:38:51] ppocr INFO:     dataset :
+[2023/10/03 18:38:51] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/data2/images
+[2023/10/03 18:38:51] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/data2/outputlabel.txt']
+[2023/10/03 18:38:51] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 18:38:51] ppocr INFO:         transforms :
+[2023/10/03 18:38:51] ppocr INFO:             DecodeImage :
+[2023/10/03 18:38:51] ppocr INFO:                 channel_first : False
+[2023/10/03 18:38:51] ppocr INFO:                 img_mode : BGR
+[2023/10/03 18:38:51] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 18:38:51] ppocr INFO:             RecResizeImg :
+[2023/10/03 18:38:51] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/03 18:38:51] ppocr INFO:             KeepKeys :
+[2023/10/03 18:38:51] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 18:38:51] ppocr INFO:     loader :
+[2023/10/03 18:38:51] ppocr INFO:         batch_size_per_card : 16
+[2023/10/03 18:38:51] ppocr INFO:         drop_last : False
+[2023/10/03 18:38:51] ppocr INFO:         num_workers : 4
+[2023/10/03 18:38:51] ppocr INFO:         shuffle : True
+[2023/10/03 18:38:51] ppocr INFO: Global :
+[2023/10/03 18:38:51] ppocr INFO:     cal_metric_during_train : True
+[2023/10/03 18:38:51] ppocr INFO:     calc_metric_during_train : True
+[2023/10/03 18:38:51] ppocr INFO:     character_dict_path : ppocr/utils/en_dict.txt
+[2023/10/03 18:38:51] ppocr INFO:     checkpoints : /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_v2_03102023/best_accuracy.pdparams
+[2023/10/03 18:38:51] ppocr INFO:     debug : False
+[2023/10/03 18:38:51] ppocr INFO:     distributed : False
+[2023/10/03 18:38:51] ppocr INFO:     epoch_num : 100
+[2023/10/03 18:38:51] ppocr INFO:     eval_batch_step : [0, 100]
+[2023/10/03 18:38:51] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2023/10/03 18:38:51] ppocr INFO:     infer_mode : True
+[2023/10/03 18:38:51] ppocr INFO:     log_smooth_window : 20
+[2023/10/03 18:38:51] ppocr INFO:     max_text_length : 25
+[2023/10/03 18:38:51] ppocr INFO:     pretrained_model : None
+[2023/10/03 18:38:51] ppocr INFO:     print_batch_step : 10
+[2023/10/03 18:38:51] ppocr INFO:     save_epoch_step : 3
+[2023/10/03 18:38:51] ppocr INFO:     save_inference_dir : ./output/v3_en_mobile_v2_03102023_infer
+[2023/10/03 18:38:51] ppocr INFO:     save_model_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 18:38:51] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3_en_v2_03102023.txt
+[2023/10/03 18:38:51] ppocr INFO:     use_gpu : True
+[2023/10/03 18:38:51] ppocr INFO:     use_space_char : True
+[2023/10/03 18:38:51] ppocr INFO:     use_visualdl : False
+[2023/10/03 18:38:51] ppocr INFO: Loss :
+[2023/10/03 18:38:51] ppocr INFO:     loss_config_list :
+[2023/10/03 18:38:51] ppocr INFO:         CTCLoss : None
+[2023/10/03 18:38:51] ppocr INFO:         SARLoss : None
+[2023/10/03 18:38:51] ppocr INFO:     name : MultiLoss
+[2023/10/03 18:38:51] ppocr INFO: Metric :
+[2023/10/03 18:38:51] ppocr INFO:     ignore_space : False
+[2023/10/03 18:38:51] ppocr INFO:     main_indicator : acc
+[2023/10/03 18:38:51] ppocr INFO:     name : RecMetric
+[2023/10/03 18:38:51] ppocr INFO: Optimizer :
+[2023/10/03 18:38:51] ppocr INFO:     beta1 : 0.9
+[2023/10/03 18:38:51] ppocr INFO:     beta2 : 0.999
+[2023/10/03 18:38:51] ppocr INFO:     lr :
+[2023/10/03 18:38:51] ppocr INFO:         learning_rate : 0.001
+[2023/10/03 18:38:51] ppocr INFO:         name : Cosine
+[2023/10/03 18:38:51] ppocr INFO:         warmup_epoch : 5
+[2023/10/03 18:38:51] ppocr INFO:     name : Adam
+[2023/10/03 18:38:51] ppocr INFO:     regularizer :
+[2023/10/03 18:38:51] ppocr INFO:         factor : 3e-05
+[2023/10/03 18:38:51] ppocr INFO:         name : L2
+[2023/10/03 18:38:51] ppocr INFO: PostProcess :
+[2023/10/03 18:38:51] ppocr INFO:     name : CTCLabelDecode
+[2023/10/03 18:38:51] ppocr INFO: Train :
+[2023/10/03 18:38:51] ppocr INFO:     dataset :
+[2023/10/03 18:38:51] ppocr INFO:         data_dir : /content/drive/MyDrive/PaddleOCR/train_data/train_large
+[2023/10/03 18:38:51] ppocr INFO:         ext_op_transform_idx : 1
+[2023/10/03 18:38:51] ppocr INFO:         label_file_list : ['/content/drive/MyDrive/PaddleOCR/train_data/train_large/transcrip.txt']
+[2023/10/03 18:38:51] ppocr INFO:         name : SimpleDataSet
+[2023/10/03 18:38:51] ppocr INFO:         transforms :
+[2023/10/03 18:38:51] ppocr INFO:             DecodeImage :
+[2023/10/03 18:38:51] ppocr INFO:                 channel_first : False
+[2023/10/03 18:38:51] ppocr INFO:                 img_mode : BGR
+[2023/10/03 18:38:51] ppocr INFO:             RecConAug :
+[2023/10/03 18:38:51] ppocr INFO:                 ext_data_num : 2
+[2023/10/03 18:38:51] ppocr INFO:                 image_shape : [48, 480, 3]
+[2023/10/03 18:38:51] ppocr INFO:                 max_text_length : 100
+[2023/10/03 18:38:51] ppocr INFO:                 prob : 0.5
+[2023/10/03 18:38:51] ppocr INFO:             RecAug : None
+[2023/10/03 18:38:51] ppocr INFO:             MultiLabelEncode : None
+[2023/10/03 18:38:51] ppocr INFO:             RecResizeImg :
+[2023/10/03 18:38:51] ppocr INFO:                 image_shape : [3, 48, 320]
+[2023/10/03 18:38:51] ppocr INFO:             KeepKeys :
+[2023/10/03 18:38:51] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_sar', 'length', 'valid_ratio']
+[2023/10/03 18:38:51] ppocr INFO:     loader :
+[2023/10/03 18:38:51] ppocr INFO:         batch_size_per_card : 128
+[2023/10/03 18:38:51] ppocr INFO:         drop_last : True
+[2023/10/03 18:38:51] ppocr INFO:         num_workers : 8
+[2023/10/03 18:38:51] ppocr INFO:         shuffle : True
+[2023/10/03 18:38:51] ppocr INFO: profiler_options : None
+[2023/10/03 18:38:51] ppocr INFO: wandb :
+[2023/10/03 18:38:51] ppocr INFO:     project : text_rec_ppocrv3_v2_03102023
+[2023/10/03 18:38:51] ppocr INFO:     save_dir : ./output/v3_en_mobile_v2_03102023
+[2023/10/03 18:38:51] ppocr INFO: train with paddle 2.5.1 and device Place(gpu:0)
+[2023/10/03 18:38:51] ppocr INFO: Initialize indexs of datasets:['/content/drive/MyDrive/PaddleOCR/data2/outputlabel.txt']
+[2023/10/03 18:38:53] ppocr INFO: resume from /content/drive/MyDrive/PaddleOCR/output/v3_en_mobile_v2_03102023/best_accuracy
+[2023/10/03 18:38:53] ppocr INFO: metric in ckpt ***************
+[2023/10/03 18:38:53] ppocr INFO: acc:0.7531034378882284
+[2023/10/03 18:38:53] ppocr INFO: is_float16:False
+[2023/10/03 18:38:53] ppocr INFO: norm_edit_dis:0.9646916672076624
+[2023/10/03 18:38:53] ppocr INFO: fps:694.3921731519326
+[2023/10/03 18:38:53] ppocr INFO: best_epoch:3
+[2023/10/03 18:38:53] ppocr INFO: start_epoch:4
+eval model::   0% 0/63 [00:00<?, ?it/s]Exception in thread Traceback (most recent call last):
+Thread-4 (_thread_loop):
+  File "/content/drive/MyDrive/PaddleOCR/tools/eval.py", line 146, in <module>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 604, in _thread_loop
+    main()    batch = self._get_data()
+  File "/content/drive/MyDrive/PaddleOCR/tools/eval.py", line 136, in main
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 752, in _get_data
+    batch.reraise()
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/worker.py", line 178, in reraise
+    raise self.exc_type(msg)
+ValueError: DataLoader worker(2) caught ValueError with message:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/worker.py", line 363, in _worker_loop
+    batch = fetcher.fetch(indices)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/fetcher.py", line 86, in fetch
+    data = self.collate_fn(data)
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/collate.py", line 75, in default_collate_fn
+    return [default_collate_fn(fields) for fields in zip(*batch)]
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/collate.py", line 75, in <listcomp>
+    return [default_collate_fn(fields) for fields in zip(*batch)]
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/collate.py", line 56, in default_collate_fn
+    batch = np.stack(batch, axis=0)
+  File "<__array_function__ internals>", line 180, in stack
+  File "/usr/local/lib/python3.10/dist-packages/numpy/core/shape_base.py", line 426, in stack
+    raise ValueError('all input arrays must have the same shape')
+ValueError: all input arrays must have the same shape
+    metric = program.eval(model, valid_dataloader, post_process_class,
+  File "/content/drive/MyDrive/PaddleOCR/tools/program.py", line 517, in eval
+    for idx, batch in enumerate(valid_dataloader):
+  File "/usr/local/lib/python3.10/dist-packages/paddle/io/dataloader/dataloader_iter.py", line 825, in __next__
+    self._reader.read_next_list()[0]
+SystemError: (Fatal) Blocking queue is killed because the data reader raises an exception.
+  [Hint: Expected killed_ != true, but received killed_:1 == true:1.] (at ../paddle/fluid/operators/reader/blocking_queue.h:175)

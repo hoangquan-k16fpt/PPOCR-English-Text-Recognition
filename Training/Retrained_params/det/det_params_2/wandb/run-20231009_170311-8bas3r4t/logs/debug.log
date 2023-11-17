@@ -1,0 +1,30 @@
+2023-10-09 17:03:11,444 INFO    MainThread:20745 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-10-09 17:03:11,445 INFO    MainThread:20745 [wandb_setup.py:_flush():76] Configure stats pid to 20745
+2023-10-09 17:03:11,445 INFO    MainThread:20745 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2023-10-09 17:03:11,445 INFO    MainThread:20745 [wandb_setup.py:_flush():76] Loading settings from /content/drive/MyDrive/ColabNotebooks/PaddleOCR/wandb/settings
+2023-10-09 17:03:11,445 WARNING MainThread:20745 [wandb_setup.py:_flush():76] Unknown environment variable: WANDB_SERVICE
+2023-10-09 17:03:11,445 INFO    MainThread:20745 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-10-09 17:03:11,445 INFO    MainThread:20745 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-10-09 17:03:11,446 INFO    MainThread:20745 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'tools/train.py', 'program_abspath': '/content/drive/MyDrive/ColabNotebooks/PaddleOCR/tools/train.py', 'program': '/content/drive/MyDrive/ColabNotebooks/PaddleOCR/tools/train.py'}
+2023-10-09 17:03:11,446 INFO    MainThread:20745 [wandb_init.py:_log_setup():528] Logging user logs to ./output/detection_PPOCR3student_1/wandb/run-20231009_170311-8bas3r4t/logs/debug.log
+2023-10-09 17:03:11,446 INFO    MainThread:20745 [wandb_init.py:_log_setup():529] Logging internal logs to ./output/detection_PPOCR3student_1/wandb/run-20231009_170311-8bas3r4t/logs/debug-internal.log
+2023-10-09 17:03:11,447 INFO    MainThread:20745 [wandb_init.py:init():568] calling init triggers
+2023-10-09 17:03:11,447 INFO    MainThread:20745 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {}
+2023-10-09 17:03:11,447 INFO    MainThread:20745 [wandb_init.py:init():618] starting backend
+2023-10-09 17:03:11,447 INFO    MainThread:20745 [wandb_init.py:init():622] setting up manager
+2023-10-09 17:03:11,451 INFO    MainThread:20745 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-10-09 17:03:11,455 INFO    MainThread:20745 [wandb_init.py:init():628] backend started and connected
+2023-10-09 17:03:11,464 INFO    MainThread:20745 [wandb_init.py:init():720] updated telemetry
+2023-10-09 17:03:11,510 INFO    MainThread:20745 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-10-09 17:04:41,538 ERROR   MainThread:20745 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-10-09 17:04:41,720 ERROR   MainThread:20745 [wandb_init.py:init():1188] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
